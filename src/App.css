@@ -1,5 +1,62 @@
-*{
+* {
   margin: 0;
-  padding: 0;   
+  padding: 0;
   box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  background: #05090c;
+}
+
+/* IMPORTANT */
+.hero-stage {
+  position: relative;
+  height: 500vh;
+  width: 100%;
+  overflow: visible;
+  background: #05090c;
+}
+
+.hero-stage {
+  position: relative;
+  height: 500vh;      /* total scroll length driving the whole sequence */
+  width: 100%;
+  background: #05090c;
+}
+
+.hero-stack {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;    /* guarantees no blank/white flash at the edges */
+}
+
+.hero-stack > .hero,
+.hero-stack > .hero1 {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-stack > .hero  { z-index: 1; }
+.hero-stack > .hero1 { z-index: 5; }
+
+/* =========================================================
+   NEXT SECTION
+========================================================= */
+
+.next-section {
+  min-height: 100vh;
+
+  background: #ffffff;
 }

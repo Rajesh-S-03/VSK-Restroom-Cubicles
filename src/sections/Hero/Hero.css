@@ -1,17 +1,13 @@
 .hero {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
 
   width: 100%;
   height: 100vh;
-  min-height: 700px;
 
+  z-index: 1;
   overflow: hidden;
-
-  background: #05090c;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 
@@ -71,7 +67,7 @@
     /* Bottom cinematic fade */
     linear-gradient(
       0deg,
-      rgba(1, 5, 7, 0.88) 0%,
+      rgba(0, 0, 0, 0.08) 0%,
       rgba(1, 5, 7, 0.35) 28%,
       rgba(1, 5, 7, 0) 65%
     ),
@@ -79,7 +75,7 @@
     /* Subtle VSK green glow */
     radial-gradient(
       circle at 72% 45%,
-      rgba(18, 105, 76, 0.13),
+      rgba(10, 90, 66, 0.13),
       transparent 42%
     );
 }

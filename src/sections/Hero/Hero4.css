@@ -1,0 +1,142 @@
+/* =========================================================
+   HERO 4 - BUILT TO LAST
+   Logo Navy #2c2a7c | Logo Green #009058
+========================================================= */
+
+.hero4 {
+  --vsk-navy: #2c2a7c;
+  --vsk-green: #009058;
+
+  position: relative;
+  overflow: hidden;
+  padding: 70px 8%;
+  background: linear-gradient(135deg, #e6f3fb 0%, #dcf3f0 50%, #e2f7ec 100%);
+}
+
+/* ---------- Heading ---------- */
+
+.hero4-head {
+  text-align: center;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.hero4.is-visible .hero4-head {
+  opacity: 1;
+  transform: none;
+}
+
+.hero4-label {
+  margin: 0 0 14px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--vsk-green);
+}
+
+.hero4-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--vsk-navy);   /* "Built to" = logo navy */
+}
+
+.hero4-accent {
+  color: var(--vsk-green);  /* "Last" = logo green */
+}
+
+/* ---------- Cards ---------- */
+
+.hero4-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.hero4-card {
+  position: relative;
+  padding: 26px 24px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(44, 42, 124, 0.10);
+  box-shadow: 0 8px 24px rgba(44, 42, 124, 0.08);
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s ease var(--delay),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) var(--delay),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease,
+    background 0.4s ease;
+}
+
+.hero4.is-visible .hero4-card {
+  opacity: 1;
+  transform: none;
+}
+
+.hero4.is-visible .hero4-card:hover {
+  transform: translateY(-8px);
+  background: #ffffff;
+  border-color: var(--vsk-green);
+  box-shadow:
+    0 0 24px rgba(0, 144, 88, 0.30),
+    0 18px 40px rgba(44, 42, 124, 0.15);
+  transition-delay: 0s;
+}
+
+.hero4-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  font-size: 22px;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--vsk-navy), var(--vsk-green));
+  box-shadow: 0 6px 18px rgba(44, 42, 124, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero4-card:hover .hero4-icon {
+  transform: scale(1.12) rotate(-6deg);
+  box-shadow: 0 0 20px rgba(0, 144, 88, 0.55);
+}
+
+.hero4-card-title {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--vsk-navy);
+}
+
+.hero4-card-text {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(44, 42, 124, 0.75);
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 900px) {
+  .hero4 { padding: 60px 6%; }
+  .hero4-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px) {
+  .hero4 { padding: 50px 6%; }
+  .hero4-head { margin-bottom: 28px; }
+  .hero4-grid { grid-template-columns: 1fr; gap: 14px; }
+  .hero4-card { padding: 20px; }
+}

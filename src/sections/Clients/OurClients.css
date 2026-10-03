@@ -1,0 +1,1573 @@
+/* =========================================================
+   OUR CLIENTS — VSK ENTERPRISES
+   Clean Navy + Green Theme
+========================================================= */
+
+:root {
+  --vsk-navy: #2c2a7c;
+  --vsk-navy-deep: #1f2159;
+
+  --vsk-green: #009058;
+  --vsk-green-light: #4be39a;
+
+  --vsk-text-muted: #5a5c86;
+
+  --vsk-border: rgba(44, 42, 124, 0.1);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.our-clients {
+  position: relative;
+
+  overflow: hidden;
+
+  font-family:
+    "Segoe UI",
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+
+  color: var(--vsk-navy);
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   BACKGROUND ORBS
+========================================================= */
+
+.clients-orb {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(70px);
+
+  opacity: 0.45;
+}
+
+
+.clients-orb-one {
+  width: 420px;
+  height: 420px;
+
+  top: -230px;
+  right: -150px;
+
+  background:
+    rgba(0, 144, 88, 0.07);
+}
+
+
+.clients-orb-two {
+  width: 350px;
+  height: 350px;
+
+  top: 650px;
+  left: -200px;
+
+  background:
+    rgba(44, 42, 124, 0.05);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.clients-hero {
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  padding:
+    105px
+    20px
+    55px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.clients-eyebrow,
+.section-eyebrow {
+  display: block;
+
+  margin-bottom: 13px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.26em;
+
+  text-transform: uppercase;
+
+  color: var(--vsk-green);
+}
+
+
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.clients-hero h1 {
+  margin: 0 0 16px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      34px,
+      4.5vw,
+      3rem
+    );
+
+  line-height: 1.2;
+
+  font-weight: 400;
+
+  letter-spacing: -0.025em;
+
+  color: var(--vsk-navy);
+}
+
+
+.clients-hero h1 em {
+  font-style: normal;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--vsk-navy),
+      var(--vsk-green)
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.clients-hero p {
+  margin: 0;
+
+  color: var(--vsk-text-muted);
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   TRUST STATS
+========================================================= */
+
+.clients-stats {
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding:
+    35px
+    20px
+    85px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   STAT CARD
+========================================================= */
+
+.client-stat {
+  position: relative;
+
+  padding:
+    26px
+    15px;
+
+  background: #ffffff;
+
+  border:
+    1px solid
+    var(--vsk-border);
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 10px 28px
+    rgba(44, 42, 124, 0.045);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.client-stat:hover {
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 16px 34px
+    rgba(44, 42, 124, 0.09);
+}
+
+
+/* =========================================================
+   STAT VALUE
+========================================================= */
+
+.client-stat strong {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      24px,
+      2.5vw,
+      2rem
+    );
+
+  line-height: 1.2;
+
+  font-weight: 400;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--vsk-navy),
+      var(--vsk-green)
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+/* =========================================================
+   STAT LABEL
+========================================================= */
+
+.client-stat span {
+  color:
+    var(--vsk-text-muted);
+
+  font-size: 0.78rem;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   LOGO SECTION
+========================================================= */
+
+.clients-logo-section {
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding:
+    10px
+    20px
+    105px;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+  max-width: 700px;
+
+  margin:
+    0 auto
+    45px;
+
+  text-align: center;
+}
+
+
+.section-heading h2 {
+  margin: 0 0 12px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      27px,
+      3vw,
+      2.2rem
+    );
+
+  line-height: 1.25;
+
+  font-weight: 400;
+
+  color: var(--vsk-navy);
+}
+
+
+.section-heading h2 em {
+  font-style: normal;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--vsk-navy),
+      var(--vsk-green)
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+.section-heading p {
+  max-width: 620px;
+
+  margin: 0 auto;
+
+  color: var(--vsk-text-muted);
+
+  font-size: 0.96rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CLIENT GRID
+========================================================= */
+
+.clients-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   CLIENT CARD
+========================================================= */
+
+.client-box {
+  position: relative;
+
+  min-height: 145px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border:
+    1px solid
+    var(--vsk-border);
+
+  border-radius: 10px;
+
+  opacity: 0;
+
+  transform:
+    translateY(22px);
+
+  animation:
+    clientReveal
+    0.65s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+
+  box-shadow:
+    0 12px 30px
+    rgba(44, 42, 124, 0.055);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+
+.client-box:hover {
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(0, 144, 88, 0.25);
+
+  box-shadow:
+    0 20px 42px
+    rgba(44, 42, 124, 0.11);
+}
+
+
+/* =========================================================
+   CLIENT INNER
+========================================================= */
+
+.client-box-inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  min-height: 145px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 22px;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.client-box-inner img {
+  display: block;
+
+  width: auto;
+
+  max-width: 82%;
+
+  height: auto;
+
+  max-height: 70px;
+
+  object-fit: contain;
+
+  opacity: 1;
+
+  filter: none;
+
+  transition:
+    transform 0.45s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.client-box:hover
+.client-box-inner img {
+  transform:
+    scale(1.06);
+}
+
+
+/* =========================================================
+   GREEN TOP BORDER
+========================================================= */
+
+.client-box::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--vsk-navy),
+      var(--vsk-green)
+    );
+
+  transform:
+    scaleX(0);
+
+  transform-origin: left;
+
+  transition:
+    transform 0.5s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+
+  z-index: 5;
+}
+
+
+.client-box:hover::before {
+  transform:
+    scaleX(1);
+}
+
+
+/* =========================================================
+   CORNER DETAILS
+========================================================= */
+
+.client-corner {
+  position: absolute;
+
+  z-index: 4;
+
+  width: 13px;
+  height: 13px;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.client-corner.top-left {
+  top: 10px;
+  left: 10px;
+
+  border-top:
+    1px solid
+    var(--vsk-green);
+
+  border-left:
+    1px solid
+    var(--vsk-green);
+
+  transform:
+    translate(-4px, -4px);
+}
+
+
+.client-corner.bottom-right {
+  right: 10px;
+  bottom: 10px;
+
+  border-right:
+    1px solid
+    var(--vsk-green);
+
+  border-bottom:
+    1px solid
+    var(--vsk-green);
+
+  transform:
+    translate(4px, 4px);
+}
+
+
+.client-box:hover
+.client-corner {
+  opacity: 1;
+
+  transform:
+    translate(0, 0);
+}
+
+
+/* =========================================================
+   SHINE
+========================================================= */
+
+.client-shine {
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  z-index: 3;
+
+  width: 70%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    );
+
+  transform:
+    skewX(-20deg);
+
+  pointer-events: none;
+}
+
+
+.client-box:hover
+.client-shine {
+  animation:
+    clientShine
+    0.8s
+    ease;
+}
+
+
+/* =========================================================
+   CLIENT COUNT
+========================================================= */
+
+.client-count {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  margin-top: 42px;
+}
+
+
+.client-count span {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.9rem;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--vsk-navy),
+      var(--vsk-green)
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+.client-count p {
+  margin: 0;
+
+  color:
+    var(--vsk-text-muted);
+
+  font-size: 0.78rem;
+
+  letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   WHY VSK
+========================================================= */
+
+.why-vsk-section {
+  position: relative;
+
+  padding:
+    100px
+    20px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f7f8fb 0%,
+      #ffffff 100%
+    );
+}
+
+
+/* =========================================================
+   WHY HEADING
+========================================================= */
+
+.why-vsk-heading {
+  max-width: 700px;
+
+  margin:
+    0 auto
+    50px;
+
+  text-align: center;
+}
+
+
+.why-vsk-heading h2 {
+  margin: 0 0 18px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      28px,
+      3.5vw,
+      2.5rem
+    );
+
+  line-height: 1.25;
+
+  font-weight: 400;
+
+  color: var(--vsk-navy);
+}
+
+
+.why-vsk-heading h2 em {
+  font-style: normal;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--vsk-navy),
+      var(--vsk-green)
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+.why-vsk-heading p {
+  max-width: 680px;
+
+  margin: 0 auto;
+
+  color: var(--vsk-text-muted);
+
+  font-size: 0.98rem;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   TRUST GRID
+========================================================= */
+
+.trust-grid {
+  max-width: 1150px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   TRUST CARD
+========================================================= */
+
+.trust-card {
+  position: relative;
+
+  overflow: hidden;
+
+  padding:
+    32px
+    26px;
+
+  background: #ffffff;
+
+  border:
+    1px solid
+    var(--vsk-border);
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 12px 30px
+    rgba(44, 42, 124, 0.055);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+.trust-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--vsk-navy),
+      var(--vsk-green)
+    );
+
+  transform:
+    scaleX(0);
+
+  transform-origin: left;
+
+  transition:
+    transform 0.5s ease;
+}
+
+
+.trust-card:hover {
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+    0 20px 42px
+    rgba(44, 42, 124, 0.1);
+
+  border-color:
+    rgba(0, 144, 88, 0.2);
+}
+
+
+.trust-card:hover::before {
+  transform:
+    scaleX(1);
+}
+
+
+/* =========================================================
+   TRUST NUMBER
+========================================================= */
+
+.trust-number {
+  position: absolute;
+
+  top: 15px;
+  right: 18px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.5rem;
+
+  color:
+    rgba(44, 42, 124, 0.08);
+}
+
+
+/* =========================================================
+   TRUST ICON
+========================================================= */
+
+.trust-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 144, 88, 0.1);
+
+  color:
+    var(--vsk-green);
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   TRUST TITLE
+========================================================= */
+
+.trust-card h3 {
+  margin:
+    0 0 10px;
+
+  font-size: 1.08rem;
+
+  font-weight: 700;
+
+  color:
+    var(--vsk-navy);
+}
+
+
+/* =========================================================
+   TRUST TEXT
+========================================================= */
+
+.trust-card p {
+  margin: 0;
+
+  color:
+    var(--vsk-text-muted);
+
+  font-size: 0.88rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   PARTNERSHIP CTA
+   LIGHT VSK STYLE
+========================================================= */
+
+.clients-cta {
+  position: relative;
+
+  overflow: hidden;
+
+  padding:
+    105px
+    20px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f7f8fb 45%,
+      #eefaf5 100%
+    );
+
+  border-top:
+    1px solid
+    rgba(44, 42, 124, 0.06);
+}
+
+
+/* =========================================================
+   CTA GLOW
+========================================================= */
+
+.cta-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(75px);
+}
+
+
+/* GREEN GLOW */
+
+.cta-glow-one {
+  width: 420px;
+  height: 420px;
+
+  top: -250px;
+  right: -120px;
+
+  background:
+    rgba(75, 227, 154, 0.13);
+}
+
+
+/* NAVY GLOW */
+
+.cta-glow-two {
+  width: 360px;
+  height: 360px;
+
+  bottom: -230px;
+  left: -100px;
+
+  background:
+    rgba(44, 42, 124, 0.07);
+}
+
+
+/* =========================================================
+   CTA CONTENT
+========================================================= */
+
+.cta-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 720px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   CTA EYEBROW
+========================================================= */
+
+.cta-content .section-eyebrow {
+  color:
+    var(--vsk-green);
+}
+
+
+/* =========================================================
+   CTA HEADING
+========================================================= */
+
+.cta-content h2 {
+  margin:
+    0 0 18px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      30px,
+      4vw,
+      2.7rem
+    );
+
+  line-height: 1.25;
+
+  font-weight: 400;
+
+  color:
+    var(--vsk-navy);
+}
+
+
+.cta-content h2 em {
+  font-style: normal;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--vsk-navy),
+      var(--vsk-green)
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+/* =========================================================
+   CTA TEXT
+========================================================= */
+
+.cta-content p {
+  max-width: 620px;
+
+  margin:
+    0 auto;
+
+  color:
+    var(--vsk-text-muted);
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.clients-cta-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 32px;
+
+  padding:
+    15px
+    28px;
+
+  border:
+    1px solid
+    rgba(44, 42, 124, 0.25);
+
+  border-radius: 999px;
+
+  background:
+    #ffffff;
+
+  color:
+    var(--vsk-navy);
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+
+  box-shadow:
+    0 10px 28px
+    rgba(44, 42, 124, 0.08);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+.clients-cta-button:hover {
+  transform:
+    translateY(-4px);
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--vsk-navy),
+      var(--vsk-green)
+    );
+
+  color:
+    #ffffff;
+
+  border-color:
+    transparent;
+
+  box-shadow:
+    0 16px 35px
+    rgba(44, 42, 124, 0.18);
+}
+
+
+.clients-cta-button span {
+  font-size: 18px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.clients-cta-button:hover span {
+  transform:
+    translateX(5px);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes clientReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+@keyframes clientShine {
+
+  0% {
+    left: -120%;
+  }
+
+  100% {
+    left: 140%;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .clients-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+
+  .trust-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .clients-hero {
+    padding:
+      80px
+      20px
+      45px;
+  }
+
+
+  .clients-stats {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    padding:
+      25px
+      20px
+      65px;
+  }
+
+
+  .clients-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 14px;
+  }
+
+
+  .client-box,
+  .client-box-inner {
+    min-height: 125px;
+  }
+
+
+  .client-box-inner {
+    padding: 18px;
+  }
+
+
+  .client-box-inner img {
+    max-width: 85%;
+
+    max-height: 60px;
+  }
+
+
+  .why-vsk-section {
+    padding:
+      75px
+      20px;
+  }
+
+
+  .trust-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 14px;
+  }
+
+
+  .trust-card {
+    padding:
+      27px
+      20px;
+  }
+
+
+  .clients-cta {
+    padding:
+      80px
+      20px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .clients-hero {
+    padding:
+      70px
+      16px
+      35px;
+  }
+
+
+  .clients-hero h1 {
+    font-size: 30px;
+  }
+
+
+  .clients-hero p {
+    font-size: 0.9rem;
+  }
+
+
+  .clients-stats {
+    gap: 10px;
+
+    padding:
+      20px
+      12px
+      55px;
+  }
+
+
+  .client-stat {
+    padding:
+      20px
+      8px;
+  }
+
+
+  .client-stat strong {
+    font-size: 1.5rem;
+  }
+
+
+  .client-stat span {
+    font-size: 0.65rem;
+  }
+
+
+  .clients-logo-section {
+    padding:
+      10px
+      12px
+      75px;
+  }
+
+
+  .section-heading {
+    margin-bottom: 35px;
+  }
+
+
+  .section-heading h2 {
+    font-size: 25px;
+  }
+
+
+  .section-heading p {
+    font-size: 0.88rem;
+  }
+
+
+  .clients-grid {
+    gap: 10px;
+  }
+
+
+  .client-box,
+  .client-box-inner {
+    min-height: 105px;
+  }
+
+
+  .client-box-inner {
+    padding: 10px;
+  }
+
+
+  .client-box-inner img {
+    max-width: 88%;
+
+    max-height: 50px;
+  }
+
+
+  .client-count {
+    flex-direction: column;
+
+    gap: 4px;
+
+    margin-top: 35px;
+
+    text-align: center;
+  }
+
+
+  .client-count span {
+    font-size: 1.7rem;
+  }
+
+
+  .client-count p {
+    font-size: 0.67rem;
+  }
+
+
+  .trust-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .trust-card {
+    padding: 25px;
+  }
+
+
+  .cta-content h2 {
+    font-size: 28px;
+  }
+
+
+  .cta-content p {
+    font-size: 0.9rem;
+  }
+
+
+  .clients-cta-button {
+    padding:
+      14px
+      21px;
+
+    font-size: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .clients-grid {
+    gap: 8px;
+  }
+
+
+  .client-box,
+  .client-box-inner {
+    min-height: 95px;
+  }
+
+
+  .client-box-inner img {
+    max-height: 44px;
+  }
+
+}

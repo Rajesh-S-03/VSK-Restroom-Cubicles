@@ -1,0 +1,471 @@
+/* =========================================================
+   HERO1 STAGE
+========================================================= */
+
+.hero1 {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  z-index: 10;
+
+  pointer-events: none;
+
+  background: transparent;
+
+  transform: translateY(100%);
+
+  will-change: transform;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO1 SCREEN
+========================================================= */
+
+.hero1-screen {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  min-height: 650px;
+
+  overflow: hidden;
+
+  background: transparent;
+}
+
+
+/* =========================================================
+   FRAME IMAGE
+========================================================= */
+
+.hero1-frame {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  z-index: 0;
+
+  user-select: none;
+
+  pointer-events: none;
+
+  transform: scale(1.025);
+
+  filter:
+    brightness(0.98)
+    contrast(1.03)
+    saturate(1.05);
+}
+
+
+/* =========================================================
+   LIGHT OVERLAY
+========================================================= */
+
+.hero1-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 7, 10, 0.34) 0%,
+      rgba(2, 7, 10, 0.18) 25%,
+      rgba(2, 7, 10, 0.06) 50%,
+      rgba(2, 7, 10, 0.02) 75%,
+      rgba(2, 7, 10, 0.04) 100%
+    ),
+
+    linear-gradient(
+      0deg,
+      rgba(1, 5, 7, 0.25) 0%,
+      rgba(1, 5, 7, 0.06) 40%,
+      rgba(1, 5, 7, 0) 75%
+    );
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.hero1-content {
+  position: absolute;
+
+  left: 8%;
+  top: 50%;
+
+  z-index: 3;
+
+  width: min(700px, 80%);
+
+  transform: translateY(-50%);
+
+  color: #ffffff;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.hero1-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 28px;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.28em;
+
+  text-transform: uppercase;
+
+  color: #39c987;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+
+.label-line {
+  width: 55px;
+
+  height: 1px;
+
+  background: #39c987;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.hero1-title {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size:
+    clamp(
+      48px,
+      6vw,
+      88px
+    );
+
+  line-height: 0.98;
+
+  font-weight: 400;
+
+  letter-spacing: -0.035em;
+
+  color: #ffffff;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+
+.hero1-title span {
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.70
+    );
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero1-description {
+  margin:
+    30px 0 0;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  letter-spacing: 0.04em;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.72
+    );
+
+  will-change:
+    transform,
+    opacity;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.hero1-button {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 36px;
+
+  font-size: 10px;
+
+  letter-spacing: 0.24em;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.90
+    );
+
+  will-change:
+    transform,
+    opacity;
+}
+
+
+.button-circle {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.40
+    );
+
+  border-radius: 50%;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   RIGHT INDICATOR
+========================================================= */
+
+.hero1-indicator {
+  position: absolute;
+
+  right: 5%;
+  top: 50%;
+
+  z-index: 4;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 14px;
+
+  transform:
+    translateY(-50%);
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.70
+    );
+}
+
+
+.indicator-line {
+  position: relative;
+
+  width: 1px;
+
+  height: 100px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.20
+    );
+}
+
+
+.indicator-progress {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 1px;
+
+  background: #39c987;
+}
+
+
+/* =========================================================
+   FRAME COUNTER
+========================================================= */
+
+.hero1-counter {
+  position: absolute;
+
+  right: 5%;
+  bottom: 35px;
+
+  z-index: 4;
+
+  font-size: 9px;
+
+  letter-spacing: 0.15em;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.50
+    );
+}
+
+
+.hero1-counter span {
+  margin:
+    0 6px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.20
+    );
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .hero1-content {
+    left: 6%;
+  }
+
+  .hero1-title {
+    font-size:
+      clamp(
+        44px,
+        8vw,
+        70px
+      );
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .hero1-screen {
+    min-height: 600px;
+  }
+
+  .hero1-content {
+    left: 7%;
+
+    width: 82%;
+  }
+
+  .hero1-title {
+    font-size:
+      clamp(
+        40px,
+        11vw,
+        58px
+      );
+  }
+
+  .hero1-description {
+    font-size: 13px;
+  }
+
+  .hero1-label {
+    font-size: 9px;
+  }
+
+  .label-line {
+    width: 35px;
+  }
+
+  .hero1-indicator {
+    right: 4%;
+  }
+
+  .hero1-counter {
+    right: 4%;
+
+    bottom: 25px;
+  }
+
+}

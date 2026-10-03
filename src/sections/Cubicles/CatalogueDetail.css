@@ -1,0 +1,591 @@
+/* =========================================================
+   CATALOGUE DETAIL — SOFTENED DARK THEME & UNIFIED CARDS
+========================================================= */
+
+:root {
+  --vsk-dark-bg: #0d0f1d;
+  --vsk-panel-bg: #121526;
+  --vsk-card-bg: #1a1e36;
+  --vsk-border-dark: #2a2f4c;
+  --vsk-mint-accent: #4be39a;
+  --vsk-green-accent: #009058;
+  --vsk-text-light: #f1f5f9;
+  --vsk-text-muted: #94a3b8;
+}
+
+.catalogue-detail-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(8, 10, 20, 0.75);
+  backdrop-filter: blur(8px);
+  animation: catDetailOverlayIn 0.3s ease;
+}
+
+@keyframes catDetailOverlayIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* =========================================================
+   DARK PANEL & TYPOGRAPHY
+========================================================= */
+
+.catalogue-detail-panel {
+  width: min(980px, 100%);
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 32px;
+  border-radius: 20px;
+  background: var(--vsk-panel-bg);
+  border: 1px solid var(--vsk-border-dark);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  color: var(--vsk-text-light);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  animation: catDetailPanelIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes catDetailPanelIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* HEADER */
+.catalogue-detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--vsk-border-dark);
+}
+
+.catalogue-detail-eyebrow {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--vsk-mint-accent);
+}
+
+.catalogue-detail-header h2 {
+  margin: 0;
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.catalogue-detail-close {
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--vsk-border-dark);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--vsk-text-light);
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.catalogue-detail-close:hover {
+  background: var(--vsk-mint-accent);
+  color: var(--vsk-dark-bg);
+  border-color: var(--vsk-mint-accent);
+}
+
+/* =========================================================
+   UNIFIED CARD & SECTION STYLING
+========================================================= */
+
+.catalogue-detail-card-section,
+.catalogue-detail-about {
+  margin-bottom: 24px;
+  padding: 22px;
+  background: var(--vsk-card-bg);
+  border: 1px solid var(--vsk-border-dark);
+  border-radius: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.catalogue-detail-card-section:hover,
+.catalogue-detail-about:hover {
+  border-color: #3b426b;
+}
+
+/* UNIFIED SECTION HEADINGS */
+.catalogue-detail-card-section h3,
+.catalogue-detail-about h3,
+.catalogue-detail-specifications h3 {
+  margin: 0 0 14px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--vsk-mint-accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.catalogue-detail-card-section h3::before,
+.catalogue-detail-about h3::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 14px;
+  background: var(--vsk-mint-accent);
+  border-radius: 2px;
+}
+
+.catalogue-detail-about p,
+.catalogue-detail-card-section p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+/* UNIFIED LISTS */
+.catalogue-detail-card-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 20px;
+}
+
+.catalogue-detail-card-section li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+.feature-dot {
+  flex: 0 0 6px;
+  width: 6px;
+  height: 6px;
+  margin-top: 8px;
+  border-radius: 50%;
+  background: var(--vsk-mint-accent);
+}
+
+/* =========================================================
+   GALLERY & IMAGE CARDS
+========================================================= */
+
+.catalogue-detail-image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.catalogue-detail-image-card {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #101222;
+  border: 1px solid var(--vsk-border-dark);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.catalogue-detail-image-card.clickable {
+  cursor: pointer;
+}
+
+.catalogue-detail-image-card.clickable:hover {
+  transform: translateY(-2px);
+  border-color: var(--vsk-mint-accent);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.catalogue-detail-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.catalogue-detail-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--vsk-text-muted);
+  font-size: 11px;
+}
+
+.placeholder-icon {
+  font-size: 20px;
+}
+
+/* =========================================================
+   1. MATERIALS SPECIFIC LAYOUT
+========================================================= */
+
+.material-detail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.material-detail-hero {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 22px;
+  background: linear-gradient(135deg, #182830 0%, #17203d 100%);
+  border-radius: 14px;
+  border: 1px solid #234c4b;
+}
+
+.material-badge-card {
+  flex: 0 0 auto;
+  padding: 12px 18px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 1px solid var(--vsk-mint-accent);
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-title {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--vsk-text-muted);
+}
+
+.badge-value {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 2px;
+}
+
+.material-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.material-spec-grid .catalogue-detail-card-section {
+  margin-bottom: 0;
+}
+
+.highlight-text {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* =========================================================
+   2. STANDARD COLOURS LAYOUT
+========================================================= */
+
+.colours-filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.colour-search-input {
+  flex: 1;
+  max-width: 450px;
+  padding: 10px 18px;
+  background: var(--vsk-card-bg);
+  border: 1px solid var(--vsk-border-dark);
+  border-radius: 20px;
+  font-size: 13px;
+  color: #ffffff;
+  outline: none;
+}
+
+.colour-search-input:focus {
+  border-color: var(--vsk-mint-accent);
+}
+
+.catalogue-colour-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 14px;
+}
+
+.catalogue-colour-card {
+  padding: 8px;
+  border: 1px solid var(--vsk-border-dark);
+  border-radius: 10px;
+  background: var(--vsk-card-bg);
+  transition: all 0.2s ease;
+}
+
+.catalogue-colour-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--vsk-mint-accent);
+}
+
+.catalogue-colour-swatch {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 6px;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.colour-card-name {
+  display: block;
+  padding-top: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+}
+
+.colour-card-code {
+  display: block;
+  font-size: 9px;
+  color: var(--vsk-text-muted);
+  text-align: center;
+}
+
+/* =========================================================
+   3. SPECIAL WOODEN GRAIN COLOURS LAYOUT
+========================================================= */
+
+.special-colours-intro {
+  font-size: 13.5px;
+  color: var(--vsk-text-muted);
+  margin-bottom: 20px;
+}
+
+.special-colour-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.special-colour-card {
+  border: 1px solid var(--vsk-border-dark);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--vsk-card-bg);
+  transition: border-color 0.2s ease;
+}
+
+.special-colour-card:hover {
+  border-color: var(--vsk-mint-accent);
+}
+
+.special-colour-texture {
+  height: 110px;
+  width: 100%;
+  position: relative;
+}
+
+.texture-zoom-tag {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 9px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+
+.special-colour-info {
+  padding: 12px;
+}
+
+.special-colour-info h4 {
+  margin: 0;
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.special-colour-info span {
+  font-size: 10px;
+  color: var(--vsk-text-muted);
+}
+
+/* =========================================================
+   SPECIFICATIONS TABLE
+========================================================= */
+
+.catalogue-detail-specifications {
+  margin-bottom: 24px;
+}
+
+.catalogue-detail-spec-table {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.catalogue-detail-spec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--vsk-card-bg);
+  border: 1px solid var(--vsk-border-dark);
+  border-radius: 8px;
+}
+
+.catalogue-detail-spec-label {
+  font-size: 12.5px;
+  color: var(--vsk-text-muted);
+}
+
+.catalogue-detail-spec-value {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #ffffff; /* Changed from mint blue to white */
+}
+
+/* =========================================================
+   REQUEST QUOTATION SECTION
+========================================================= */
+
+.catalogue-detail-quotation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 28px;
+  padding: 24px;
+  background: linear-gradient(135deg, #1b2142 0%, #005e3a 100%);
+  border: 1px solid var(--vsk-mint-accent);
+  border-radius: 16px;
+  color: #ffffff;
+}
+
+.catalogue-detail-quotation-eyebrow {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--vsk-mint-accent);
+}
+
+.catalogue-detail-quotation h3 {
+  margin: 4px 0 6px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.catalogue-detail-quotation p {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.catalogue-detail-quotation-button {
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #0052d4 0%, #4be39a 100%); /* Blue to Green Gradient */
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 82, 212, 0.3);
+}
+
+.catalogue-detail-quotation-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(75, 227, 154, 0.4);
+}
+
+/* =========================================================
+   DARK IMAGE ZOOM MODAL
+========================================================= */
+
+.image-zoom-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(5, 7, 15, 0.92);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-zoom-container {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.zoom-controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  background: var(--vsk-card-bg);
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--vsk-border-dark);
+}
+
+.zoom-controls button {
+  border: none;
+  background: transparent;
+  padding: 4px 10px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--vsk-mint-accent);
+}
+
+.zoom-img-wrapper {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.zoom-img-wrapper img {
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+  transition: transform 0.15s ease-out;
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 768px) {
+  .material-spec-grid,
+  .catalogue-detail-spec-table,
+  .catalogue-detail-card-section ul {
+    grid-template-columns: 1fr;
+  }
+
+  .catalogue-detail-quotation {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .catalogue-detail-image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

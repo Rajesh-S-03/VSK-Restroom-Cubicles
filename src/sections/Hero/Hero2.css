@@ -1,0 +1,691 @@
+/* =========================================================
+   HERO 2 - VSK AT A GLANCE
+   Navy #2c2a7c | Green #009058 | White
+========================================================= */
+
+.hero2-stage {
+  --vsk-navy: #2c2a7c;
+  --vsk-green: #009058;
+
+  position: relative;
+
+  width: 100%;
+
+  /*
+    Longer scroll distance keeps the Hero2
+    screen sticky for longer.
+  */
+  height: 180vh;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   STICKY SCREEN
+========================================================= */
+
+.hero2-sticky {
+  position: sticky;
+
+  top: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 10% 90%,
+      rgba(44, 42, 124, 0.20),
+      transparent 50%
+    ),
+
+    radial-gradient(
+      circle at 90% 12%,
+      rgba(0, 144, 88, 0.20),
+      transparent 46%
+    ),
+
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #eef2fb 50%,
+      #e8f6ef 100%
+    );
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.hero2-glow {
+  position: absolute;
+
+  top: -20%;
+  right: -8%;
+
+  width: 55%;
+
+  aspect-ratio: 1 / 1;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 144, 88, 0.10) 0%,
+      transparent 68%
+    );
+
+  filter: blur(35px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.hero2-inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    1.1fr
+    0.9fr;
+
+  align-items: center;
+
+  gap: 70px;
+
+  padding: 0 8%;
+}
+
+
+/* =========================================================
+   TEXT CONTENT
+========================================================= */
+
+.hero2-content {
+  max-width: 650px;
+}
+
+
+/* =========================================================
+   ANIMATED ITEMS
+========================================================= */
+
+.hero2-label,
+.hero2-line,
+.hero2-chunk,
+.hero2-button {
+  will-change:
+    opacity,
+    transform;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.hero2-label {
+  margin-bottom: 26px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.28em;
+
+  text-transform: uppercase;
+
+  color: var(--vsk-navy);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.hero2-title {
+  margin: 0 0 26px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      38px,
+      4.5vw,
+      58px
+    );
+
+  line-height: 1.03;
+
+  font-weight: 400;
+
+  letter-spacing: -0.035em;
+
+  color: var(--vsk-navy);
+}
+
+
+.hero2-line {
+  display: inline-block;
+}
+
+
+.hero2-accent {
+  background:
+    linear-gradient(
+      90deg,
+      var(--vsk-navy),
+      var(--vsk-green)
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero2-description {
+  max-width: 500px;
+
+  margin: 0;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  letter-spacing: 0.015em;
+
+  color:
+    rgba(
+      44,
+      42,
+      124,
+      0.82
+    );
+}
+
+
+/*
+   Each description sentence
+   appears separately
+*/
+
+.hero2-chunk {
+  display: block;
+}
+
+
+/* =========================================================
+   ABOUT US BUTTON
+========================================================= */
+
+.hero2-button {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 38px;
+
+  padding:
+    16px 28px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.26em;
+
+  text-transform: uppercase;
+
+  color: var(--vsk-navy);
+
+  background: transparent;
+
+  border:
+    1.5px solid
+    var(--vsk-navy);
+
+  border-radius: 2px;
+
+  transition:
+    color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+/* =========================================================
+   BUTTON HOVER FILL
+========================================================= */
+
+.hero2-button::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--vsk-navy),
+      var(--vsk-green)
+    );
+
+  transform:
+    scaleX(0);
+
+  transform-origin: left;
+
+  transition:
+    transform 0.45s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   BUTTON CONTENT
+========================================================= */
+
+.hero2-button-text,
+.hero2-button-arrow {
+  position: relative;
+
+  z-index: 1;
+}
+
+
+.hero2-button-arrow {
+  display: inline-block;
+
+  font-size: 16px;
+
+  letter-spacing: 0;
+
+  transition:
+    transform 0.4s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+========================================================= */
+
+.hero2-button:hover {
+  color: #ffffff;
+
+  border-color:
+    var(--vsk-green);
+
+  box-shadow:
+    0 10px 28px
+    rgba(
+      44,
+      42,
+      124,
+      0.25
+    );
+}
+
+
+.hero2-button:hover::before {
+  transform:
+    scaleX(1);
+}
+
+
+.hero2-button:hover
+.hero2-button-arrow {
+  transform:
+    translateX(6px);
+}
+
+
+/* =========================================================
+   BUTTON FOCUS
+========================================================= */
+
+.hero2-button:focus-visible {
+  outline:
+    2px solid
+    var(--vsk-green);
+
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.hero2-visual {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+
+.hero2-photo {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 500px;
+
+  aspect-ratio: 4 / 5;
+
+  overflow: hidden;
+
+  border-radius: 4px;
+
+  background: #eef3f1;
+
+  box-shadow:
+
+    0 25px 60px
+    rgba(
+      44,
+      42,
+      124,
+      0.18
+    ),
+
+    0 0 0 1px
+    rgba(
+      44,
+      42,
+      124,
+      0.08
+    );
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.hero2-photo img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transform:
+    scale(1);
+
+  transition:
+    transform 0.55s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+
+  will-change:
+    transform;
+}
+
+
+.hero2-photo:hover img {
+  transform:
+    scale(1.10);
+}
+
+
+/* =========================================================
+   CORNER DETAILS
+========================================================= */
+
+.corner {
+  position: absolute;
+
+  width: 34px;
+
+  height: 34px;
+
+  border:
+    2px solid
+    var(--vsk-navy);
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+.corner-tl {
+  top: -1px;
+
+  left: -1px;
+
+  border-right: none;
+
+  border-bottom: none;
+}
+
+
+.corner-br {
+  right: -1px;
+
+  bottom: -1px;
+
+  border-left: none;
+
+  border-top: none;
+
+  border-color:
+    var(--vsk-green);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .hero2-stage {
+    height: 180vh;
+  }
+
+
+  .hero2-inner {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+
+    padding: 0 6%;
+  }
+
+
+  .hero2-content {
+    max-width: 650px;
+  }
+
+
+  .hero2-visual {
+    justify-content: flex-start;
+
+    max-width: 460px;
+  }
+
+
+  .hero2-photo {
+    max-width: 460px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .hero2-stage {
+    height: 180vh;
+  }
+
+
+  .hero2-inner {
+    gap: 34px;
+
+    padding: 0 7%;
+  }
+
+
+  .hero2-label {
+    margin-bottom: 18px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.22em;
+  }
+
+
+  .hero2-title {
+    margin-bottom: 18px;
+
+    font-size:
+      clamp(
+        30px,
+        9vw,
+        40px
+      );
+
+    line-height: 1.05;
+  }
+
+
+  .hero2-description {
+    max-width: 100%;
+
+    font-size: 13.5px;
+
+    line-height: 1.75;
+  }
+
+
+  .hero2-button {
+    margin-top: 28px;
+
+    padding:
+      14px 22px;
+
+    font-size: 10px;
+  }
+
+
+  .hero2-visual {
+    justify-content: center;
+
+    max-width: 100%;
+  }
+
+
+  .hero2-photo {
+    max-width: 420px;
+
+    aspect-ratio: 5 / 4;
+  }
+
+
+  .corner {
+    width: 25px;
+
+    height: 25px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .hero2-inner {
+    padding: 0 6%;
+
+    gap: 28px;
+  }
+
+
+  .hero2-title {
+    font-size: 30px;
+  }
+
+
+  .hero2-description {
+    font-size: 13px;
+  }
+
+
+  .hero2-photo {
+    aspect-ratio: 4 / 3;
+  }
+
+}

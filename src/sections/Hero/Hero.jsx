@@ -1,7 +1,5 @@
-import React from 'react';
 import './Hero.css';
 import heroImg from '../../assets/heroimg.png';
-import Hero1 from '../Hero1';
 
 const Hero = () => {
   return (
@@ -45,7 +43,6 @@ const Hero = () => {
 
       </div>
 
-<Hero1/>
     </section>
   );
 };

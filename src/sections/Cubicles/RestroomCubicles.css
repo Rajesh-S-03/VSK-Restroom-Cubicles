@@ -1,0 +1,2261 @@
+/* =========================================================
+   VSK RESTROOM CUBICLES
+   PREMIUM PRODUCT CATALOGUE
+========================================================= */
+
+.vsk-restroom-page {
+  --vsk-navy: #2c2a7c;
+  --vsk-navy-deep: #1f2159;
+  --vsk-green: #009058;
+  --vsk-mint: #4be39a;
+
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+
+  background: #07100f;
+  color: #ffffff;
+
+  font-family:
+    "Segoe UI",
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.vsk-product-background {
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+  background-size: cover;
+  background-position: center;
+
+  animation:
+    vskProductImageIn 0.9s ease,
+    vskProductSlowZoom 18s ease-in-out infinite alternate;
+
+  transform-origin: center;
+}
+
+@keyframes vskProductImageIn {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes vskProductSlowZoom {
+  from {
+    transform: scale(1.08);
+  }
+
+  to {
+    transform: scale(1.14);
+  }
+}
+
+
+/* =========================================================
+   BACKGROUND GRADIENT
+========================================================= */
+
+.vsk-background-gradient {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 7, 12, 0.94) 0%,
+      rgba(3, 7, 12, 0.80) 30%,
+      rgba(3, 7, 12, 0.48) 58%,
+      rgba(3, 7, 12, 0.15) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(2, 6, 8, 0.88) 0%,
+      transparent 48%,
+      rgba(2, 6, 8, 0.28) 100%
+    );
+}
+
+
+/* =========================================================
+   GREEN / NAVY AMBIENT GLOW
+========================================================= */
+
+.vsk-background-glow {
+  position: absolute;
+  width: 560px;
+  height: 560px;
+
+  left: -180px;
+  top: 12%;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 144, 88, 0.16),
+      transparent 68%
+    );
+
+  filter: blur(20px);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.vsk-product-header {
+  position: relative;
+
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 28px 5.5%;
+}
+
+
+/* BRAND */
+
+.vsk-product-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.vsk-brand-main {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 23px;
+  font-weight: 700;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      var(--vsk-mint)
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.vsk-brand-sub {
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.28em;
+
+  color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* PAGE LABEL */
+
+.vsk-product-page-label {
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.22em;
+
+  color: rgba(255, 255, 255, 0.58);
+}
+
+
+/* =========================================================
+   CATALOGUE BUTTON
+========================================================= */
+
+.vsk-catalogue-button {
+  position: absolute;
+
+  top: 96px;
+  right: 5.5%;
+
+  z-index: 50;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  height: 46px;
+
+  padding: 0 15px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.25);
+
+  border-radius: 8px;
+
+  background:
+    rgba(7, 13, 17, 0.62);
+
+  backdrop-filter: blur(14px);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.vsk-catalogue-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      var(--vsk-navy),
+      var(--vsk-green)
+    );
+
+  border-color: transparent;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 30px
+    rgba(0, 144, 88, 0.3);
+}
+
+
+/* THREE LINES */
+
+.vsk-menu-lines {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 4px;
+
+  width: 18px;
+}
+
+.vsk-menu-lines span {
+  display: block;
+
+  width: 100%;
+  height: 1.5px;
+
+  background: #ffffff;
+
+  border-radius: 10px;
+}
+
+.vsk-menu-lines span:nth-child(2) {
+  width: 13px;
+}
+
+.vsk-menu-lines span:nth-child(3) {
+  width: 8px;
+}
+
+
+/* LABEL */
+
+.vsk-catalogue-label {
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.vsk-product-main {
+  position: relative;
+
+  z-index: 5;
+
+  height: calc(100vh - 90px);
+
+  display: flex;
+  align-items: center;
+
+  padding:
+    0 5.5%
+    170px;
+}
+
+
+/* =========================================================
+   PRODUCT INFORMATION
+========================================================= */
+
+.vsk-product-information {
+  width: min(590px, 52vw);
+
+  animation:
+    vskInformationIn
+    0.75s
+    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes vskInformationIn {
+  from {
+    opacity: 0;
+    transform:
+      translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.vsk-product-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 20px;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  color:
+    rgba(255, 255, 255, 0.62);
+}
+
+.vsk-product-eyebrow i {
+  width: 34px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--vsk-green),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.vsk-product-title {
+  margin: 0;
+
+  max-width: 700px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      42px,
+      5.5vw,
+      78px
+    );
+
+  line-height: 0.98;
+
+  font-weight: 400;
+
+  letter-spacing: -0.035em;
+
+  text-shadow:
+    0 12px 35px
+    rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.vsk-product-subtitle {
+  margin:
+    18px 0
+    0;
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  color: var(--vsk-mint);
+
+  letter-spacing: 0.02em;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.vsk-product-description {
+  max-width: 500px;
+
+  margin:
+    18px 0
+    0;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  color:
+    rgba(255, 255, 255, 0.72);
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.vsk-product-features {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px 20px;
+
+  margin-top: 24px;
+}
+
+.vsk-feature {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 11px;
+
+  color:
+    rgba(255, 255, 255, 0.82);
+}
+
+.vsk-feature-number {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 144, 88, 0.25);
+
+  border:
+    1px solid
+    rgba(75, 227, 154, 0.35);
+
+  color: var(--vsk-mint);
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.vsk-product-actions {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 32px;
+}
+
+
+/* PRIMARY */
+
+.vsk-primary-product-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding:
+    13px
+    20px;
+
+  border:
+    1px solid
+    var(--vsk-navy);
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: var(--vsk-navy);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+
+  cursor: pointer;
+
+  transition:
+    0.3s ease;
+}
+
+.vsk-primary-product-btn span {
+  font-size: 15px;
+}
+
+.vsk-primary-product-btn:hover {
+  background:
+    linear-gradient(
+      90deg,
+      var(--vsk-navy),
+      var(--vsk-green)
+    );
+
+  color: #ffffff;
+
+  border-color: transparent;
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 12px 28px
+    rgba(0, 144, 88, 0.28);
+}
+
+
+/* SECONDARY */
+
+.vsk-secondary-product-btn {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding:
+    13px
+    20px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.25);
+
+  border-radius: 7px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.05em;
+
+  backdrop-filter: blur(10px);
+
+  cursor: pointer;
+
+  transition:
+    0.3s ease;
+}
+
+.vsk-secondary-product-btn:hover {
+  background:
+    rgba(75, 227, 154, 0.15);
+
+  border-color:
+    rgba(75, 227, 154, 0.55);
+
+  color:
+    var(--vsk-mint);
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+   PRODUCT INDEX
+========================================================= */
+
+.vsk-product-index {
+  position: absolute;
+
+  right: 5.5%;
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  display: flex;
+  align-items: center;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  opacity: 0.7;
+}
+
+.index-current {
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 18px;
+
+  color: var(--vsk-mint);
+}
+
+.index-line {
+  width: 1px;
+  height: 52px;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--vsk-green),
+      transparent
+    );
+}
+
+.index-total {
+  font-size: 9px;
+
+  letter-spacing: 0.12em;
+
+  color:
+    rgba(255, 255, 255, 0.5);
+}
+
+
+/* =========================================================
+   BOTTOM PRODUCT SELECTOR
+========================================================= */
+
+.vsk-product-selector {
+  position: absolute;
+
+  left: 5.5%;
+  right: 5.5%;
+  bottom: 28px;
+
+  z-index: 20;
+}
+
+
+/* HEADING */
+
+.vsk-selector-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 10px;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  color:
+    rgba(255, 255, 255, 0.5);
+}
+
+.vsk-selector-line {
+  width: 42px;
+  height: 1px;
+
+  background:
+    var(--vsk-green);
+}
+
+.vsk-selector-heading small {
+  margin-left: auto;
+
+  font-size: 9px;
+
+  color:
+    rgba(255, 255, 255, 0.48);
+}
+
+
+/* ROW */
+
+.vsk-selector-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+/* TRACK */
+
+.vsk-product-track {
+  flex: 1;
+
+  display: flex;
+  align-items: flex-end;
+
+  gap: 9px;
+
+  height: 122px;
+
+  padding:
+    8px
+    4px
+    4px;
+
+  overflow-x: auto;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+}
+
+.vsk-product-track::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.vsk-product-card {
+  position: relative;
+
+  flex:
+    0 0
+    94px;
+
+  height: 104px;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.16);
+
+  border-radius: 7px;
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  cursor: pointer;
+
+  transition:
+    flex-basis 0.5s
+      cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.5s
+      cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.vsk-product-card:hover {
+  transform:
+    translateY(-5px);
+
+  border-color:
+    rgba(75, 227, 154, 0.5);
+}
+
+.vsk-product-card.active {
+  flex-basis: 142px;
+
+  height: 116px;
+
+  border-color:
+    rgba(75, 227, 154, 0.75);
+
+  box-shadow:
+    0 14px 35px
+    rgba(0, 144, 88, 0.26);
+}
+
+
+/* CARD IMAGE */
+
+.vsk-product-card-image {
+  position: absolute;
+
+  inset: 0;
+
+  background-size: cover;
+  background-position: center;
+
+  transition:
+    transform 0.7s ease,
+    filter 0.5s ease;
+}
+
+.vsk-product-card:hover
+.vsk-product-card-image {
+  transform:
+    scale(1.06);
+}
+
+
+/* CARD OVERLAY */
+
+.vsk-product-card-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      0deg,
+      rgba(2, 5, 8, 0.94),
+      rgba(2, 5, 8, 0.08) 75%
+    );
+}
+
+
+/* CARD CONTENT */
+
+.vsk-product-card-content {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  padding:
+    9px;
+}
+
+.vsk-card-number {
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 10px;
+
+  color:
+    rgba(255, 255, 255, 0.6);
+}
+
+.vsk-product-card.active
+.vsk-card-number {
+  color:
+    var(--vsk-mint);
+}
+
+.vsk-card-name {
+  max-width: 110px;
+
+  text-align: left;
+
+  font-size: 9px;
+
+  line-height: 1.25;
+
+  font-weight: 600;
+
+  color:
+    rgba(255, 255, 255, 0.88);
+}
+
+.vsk-product-card.active
+.vsk-card-name {
+  color: #ffffff;
+}
+
+
+/* ACTIVE MARKER */
+
+.vsk-active-card-marker {
+  position: absolute;
+
+  left: 9px;
+  bottom: 0;
+
+  width: 28px;
+  height: 2px;
+
+  background:
+    var(--vsk-mint);
+
+  z-index: 4;
+}
+
+
+/* =========================================================
+   SELECTOR ARROWS
+========================================================= */
+
+.vsk-selector-arrow {
+  flex:
+    0 0
+    38px;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.22);
+
+  border-radius: 50%;
+
+  background:
+    rgba(5, 10, 13, 0.58);
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  backdrop-filter:
+    blur(10px);
+
+  transition:
+    0.3s ease;
+}
+
+.vsk-selector-arrow:hover {
+  background:
+    var(--vsk-green);
+
+  border-color:
+    var(--vsk-green);
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 8px 22px
+    rgba(0, 144, 88, 0.35);
+}
+
+
+/* =========================================================
+   TIMER
+========================================================= */
+
+.vsk-timer {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 7px;
+
+  padding:
+    0 48px;
+}
+
+.vsk-timer-track {
+  flex: 1;
+
+  height: 2px;
+
+  overflow: hidden;
+
+  background:
+    rgba(255, 255, 255, 0.13);
+
+  border-radius: 999px;
+}
+
+.vsk-timer-progress {
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--vsk-navy),
+      var(--vsk-green),
+      var(--vsk-mint)
+    );
+
+  border-radius: 999px;
+}
+
+.vsk-timer span {
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  color:
+    rgba(255, 255, 255, 0.4);
+}
+
+
+/* =========================================================
+   CATALOGUE OVERLAY
+========================================================= */
+
+.vsk-catalogue-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 998;
+
+  background:
+    rgba(1, 5, 7, 0.62);
+
+  backdrop-filter:
+    blur(8px);
+
+  animation:
+    vskOverlayIn
+    0.3s ease;
+}
+
+@keyframes vskOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   CATALOGUE DRAWER
+========================================================= */
+
+.vsk-catalogue-drawer {
+  position: fixed;
+
+  top: 0;
+  right: 0;
+
+  z-index: 999;
+
+  width:
+    min(
+      420px,
+      92vw
+    );
+
+  height: 100vh;
+
+  box-sizing: border-box;
+
+  padding:
+    30px
+    28px;
+
+  overflow-y: auto;
+
+  background:
+    linear-gradient(
+      145deg,
+      #101522 0%,
+      #0b1118 52%,
+      #071714 100%
+    );
+
+  border-left:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  box-shadow:
+    -20px 0 60px
+    rgba(0, 0, 0, 0.5);
+
+  transform:
+    translateX(105%);
+
+  transition:
+    transform
+    0.5s
+    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.vsk-catalogue-drawer.open {
+  transform:
+    translateX(0);
+}
+
+
+/* DRAWER HEADER */
+
+.vsk-drawer-header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+}
+
+.vsk-drawer-eyebrow {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  color:
+    var(--vsk-mint);
+}
+
+.vsk-drawer-header h3 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 27px;
+
+  font-weight: 400;
+}
+
+
+/* CLOSE */
+
+.vsk-drawer-close {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.18);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  color: #ffffff;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  transition:
+    0.25s ease;
+}
+
+.vsk-drawer-close:hover {
+  background:
+    var(--vsk-green);
+
+  border-color:
+    var(--vsk-green);
+}
+
+
+/* INTRO */
+
+.vsk-drawer-intro {
+  padding:
+    18px
+    0
+    22px;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  color:
+    rgba(255, 255, 255, 0.54);
+}
+
+
+/* =========================================================
+   DRAWER SECTION
+========================================================= */
+
+.vsk-drawer-section {
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+}
+
+.vsk-drawer-section-header {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding:
+    17px
+    0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+.vsk-drawer-section-header > div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+.vsk-drawer-section-header > div span {
+  font-size: 8px;
+
+  font-weight: 700;
+
+  color:
+    rgba(75, 227, 154, 0.7);
+
+  letter-spacing: 0.1em;
+}
+
+.vsk-drawer-section-header strong {
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.02em;
+}
+
+.drawer-plus {
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.13);
+
+  border-radius: 50%;
+
+  font-size: 15px;
+
+  color:
+    rgba(255, 255, 255, 0.6);
+}
+
+.vsk-drawer-section-header:hover strong,
+.vsk-drawer-section-header.active strong {
+  color:
+    var(--vsk-mint);
+}
+
+
+/* =========================================================
+   DRAWER LIST
+========================================================= */
+
+.vsk-drawer-list {
+  padding:
+    0 0 15px
+    38px;
+
+  animation:
+    vskDrawerListIn
+    0.3s ease;
+}
+
+@keyframes vskDrawerListIn {
+  from {
+    opacity: 0;
+    transform:
+      translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
+}
+
+
+/* =========================================================
+   ADDED — PRODUCTS SUB-GROUPS
+   (Cubicle Series / Modular Furniture / Interior & Exterior
+   Cladding dropdowns inside the "Products" section)
+========================================================= */
+
+.vsk-drawer-subgroup {
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+}
+
+.vsk-drawer-subgroup:last-child {
+  border-bottom: none;
+}
+
+.vsk-drawer-subgroup-header {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding:
+    13px
+    0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.vsk-drawer-subgroup-header > div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.vsk-drawer-subgroup-header > div span {
+  font-size: 8px;
+
+  font-weight: 700;
+
+  color:
+    rgba(75, 227, 154, 0.7);
+
+  letter-spacing: 0.1em;
+}
+
+.vsk-drawer-subgroup-header strong {
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.02em;
+
+  color:
+    rgba(255, 255, 255, 0.85);
+
+  transition:
+    color 0.25s ease;
+}
+
+.vsk-drawer-subgroup-header:hover strong,
+.vsk-drawer-subgroup-header.active strong {
+  color:
+    var(--vsk-mint);
+}
+
+.vsk-drawer-subgroup-header .drawer-plus {
+  width: 22px;
+  height: 22px;
+
+  font-size: 13px;
+}
+
+.vsk-drawer-subgroup-list {
+  padding:
+    0 0 10px
+    4px;
+
+  animation:
+    vskDrawerListIn
+    0.3s ease;
+}
+
+
+/* PRODUCT BUTTON */
+
+.vsk-drawer-product {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    25px
+    1fr
+    20px;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    11px
+    10px;
+
+  margin-bottom: 3px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  background: transparent;
+
+  text-align: left;
+
+  color:
+    rgba(255, 255, 255, 0.65);
+
+  cursor: pointer;
+
+  transition:
+    0.25s ease;
+}
+
+.vsk-drawer-product:hover,
+.vsk-drawer-product.selected {
+  background:
+    rgba(75, 227, 154, 0.09);
+
+  color: #ffffff;
+}
+
+.drawer-product-number {
+  font-size: 8px;
+
+  color:
+    rgba(75, 227, 154, 0.65);
+}
+
+.drawer-product-name {
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+.drawer-product-arrow {
+  font-size: 13px;
+
+  color:
+    rgba(255, 255, 255, 0.35);
+}
+
+.vsk-drawer-product.selected
+.drawer-product-arrow {
+  color:
+    var(--vsk-mint);
+}
+
+
+/* INFO ITEMS */
+
+.vsk-drawer-info-item {
+  display: grid;
+
+  grid-template-columns:
+    26px
+    1fr;
+
+  gap: 8px;
+
+  padding:
+    9px 10px;
+
+  border-radius: 5px;
+
+  transition:
+    0.25s ease;
+}
+
+.vsk-drawer-info-item:hover {
+  background:
+    rgba(255, 255, 255, 0.035);
+}
+
+.vsk-drawer-info-item span {
+  padding-top: 2px;
+
+  font-size: 8px;
+
+  color:
+    rgba(75, 227, 154, 0.6);
+}
+
+.vsk-drawer-info-item p {
+  margin: 0;
+
+  font-size: 11px;
+
+  line-height: 1.45;
+
+  color:
+    rgba(255, 255, 255, 0.66);
+}
+
+
+/* =========================================================
+   COLOUR OPTIONS
+========================================================= */
+
+.vsk-colour-options {
+  padding:
+    0 0 18px
+    38px;
+}
+
+.vsk-colour-options button {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    18px
+    1fr
+    18px;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 6px;
+
+  padding:
+    11px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 6px;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  color:
+    rgba(255, 255, 255, 0.7);
+
+  text-align: left;
+
+  font-size: 10px;
+
+  cursor: pointer;
+
+  transition:
+    0.25s ease;
+}
+
+.vsk-colour-options button:hover {
+  border-color:
+    rgba(75, 227, 154, 0.45);
+
+  background:
+    rgba(75, 227, 154, 0.08);
+
+  color:
+    #ffffff;
+}
+
+.colour-option-dot {
+  width: 11px;
+  height: 11px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.3);
+}
+
+.colour-option-dot.standard {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #7d858a,
+      #252525
+    );
+}
+
+.colour-option-dot.special {
+  background:
+    linear-gradient(
+      135deg,
+      #c68a4c,
+      #4a2c11,
+      #1f1f1f
+    );
+}
+
+
+/* =========================================================
+   DRAWER FOOTER
+========================================================= */
+
+.vsk-drawer-footer {
+  margin-top: 28px;
+
+  padding-top: 22px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+}
+
+.vsk-drawer-footer span {
+  display: block;
+
+  margin-bottom: 13px;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  color:
+    rgba(255, 255, 255, 0.35);
+}
+
+.vsk-drawer-footer button {
+  width: 100%;
+
+  padding:
+    12px;
+
+  border:
+    1px solid
+    var(--vsk-green);
+
+  border-radius: 6px;
+
+  background:
+    rgba(0, 144, 88, 0.08);
+
+  color:
+    var(--vsk-mint);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+
+  transition:
+    0.3s ease;
+}
+
+.vsk-drawer-footer button:hover {
+  background:
+    linear-gradient(
+      90deg,
+      var(--vsk-navy),
+      var(--vsk-green)
+    );
+
+  border-color:
+    transparent;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   COLOUR MODAL
+========================================================= */
+
+.vsk-colour-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2000;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+
+  background:
+    rgba(2, 5, 7, 0.82);
+
+  backdrop-filter:
+    blur(10px);
+
+  animation:
+    vskModalIn
+    0.3s ease;
+}
+
+@keyframes vskModalIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* MODAL */
+
+.vsk-colour-modal {
+  width: min(920px, 100%);
+
+  max-height: 86vh;
+
+  overflow-y: auto;
+
+  padding: 28px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #121824,
+      #09110f
+    );
+
+  box-shadow:
+    0 30px 80px
+    rgba(0, 0, 0, 0.6);
+}
+
+
+/* MODAL HEADER */
+
+.vsk-colour-modal-header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+
+  margin-bottom: 22px;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+}
+
+.vsk-colour-modal-header span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  color:
+    var(--vsk-mint);
+}
+
+.vsk-colour-modal-header h2 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 27px;
+
+  font-weight: 400;
+}
+
+.vsk-colour-modal-header button {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.15);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  color: #ffffff;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition:
+    0.25s ease;
+}
+
+.vsk-colour-modal-header button:hover {
+  background:
+    var(--vsk-green);
+
+  border-color:
+    var(--vsk-green);
+}
+
+
+/* =========================================================
+   COLOUR GRID
+========================================================= */
+
+.vsk-colour-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(130px, 1fr)
+    );
+
+  gap: 12px;
+}
+
+
+/* CARD */
+
+.vsk-colour-card {
+  padding: 8px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+
+  border-radius: 8px;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  transition:
+    0.25s ease;
+}
+
+.vsk-colour-card:hover {
+  transform:
+    translateY(-3px);
+
+  border-color:
+    rgba(75, 227, 154, 0.45);
+}
+
+
+/* SWATCH */
+
+.vsk-colour-swatch {
+  width: 100%;
+  height: 76px;
+
+  border-radius: 5px;
+
+  box-shadow:
+    inset 0 0 12px
+    rgba(0, 0, 0, 0.25);
+}
+
+.vsk-colour-card span {
+  display: block;
+
+  padding:
+    9px
+    3px
+    4px;
+
+  font-size: 10px;
+
+  color:
+    rgba(255, 255, 255, 0.75);
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .vsk-product-information {
+    width: 58vw;
+  }
+
+  .vsk-product-index {
+    display: none;
+  }
+
+  .vsk-product-card {
+    flex-basis: 84px;
+  }
+
+  .vsk-product-card.active {
+    flex-basis: 125px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .vsk-restroom-page {
+    min-height: 100svh;
+    height: auto;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+
+  .vsk-product-header {
+    padding:
+      20px 5%;
+  }
+
+  .vsk-product-page-label {
+    display: none;
+  }
+
+
+  .vsk-catalogue-button {
+    top: 20px;
+    right: 5%;
+
+    height: 40px;
+
+    padding:
+      0 11px;
+  }
+
+  .vsk-catalogue-label {
+    display: none;
+  }
+
+
+  .vsk-product-main {
+    min-height: 670px;
+
+    height: auto;
+
+    padding:
+      60px 5%
+      180px;
+
+    align-items: center;
+  }
+
+
+  .vsk-product-information {
+    width: 100%;
+  }
+
+
+  .vsk-product-title {
+    font-size:
+      clamp(
+        40px,
+        12vw,
+        58px
+      );
+  }
+
+
+  .vsk-product-subtitle {
+    font-size: 14px;
+  }
+
+
+  .vsk-product-description {
+    font-size: 13px;
+
+    max-width: 100%;
+  }
+
+
+  .vsk-product-features {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+
+  .vsk-product-actions {
+    margin-top: 25px;
+  }
+
+
+  .vsk-product-selector {
+    position: relative;
+
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    padding:
+      0 5%
+      25px;
+  }
+
+
+  .vsk-product-track {
+    height: 108px;
+  }
+
+
+  .vsk-product-card {
+    flex-basis: 75px;
+
+    height: 92px;
+  }
+
+
+  .vsk-product-card.active {
+    flex-basis: 110px;
+
+    height: 102px;
+  }
+
+
+  .vsk-selector-arrow {
+    flex-basis: 32px;
+
+    width: 32px;
+    height: 32px;
+
+    font-size: 13px;
+  }
+
+
+  .vsk-timer {
+    padding:
+      0 42px;
+  }
+
+
+  .vsk-catalogue-drawer {
+    width:
+      min(
+        390px,
+        94vw
+      );
+
+    padding:
+      25px 20px;
+  }
+
+
+  .vsk-drawer-header h3 {
+    font-size: 24px;
+  }
+
+
+  .vsk-colour-modal {
+    padding: 20px;
+
+    max-height: 90vh;
+  }
+
+
+  .vsk-colour-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        1fr
+      );
+
+    gap: 9px;
+  }
+
+
+  .vsk-colour-swatch {
+    height: 65px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .vsk-brand-main {
+    font-size: 20px;
+  }
+
+  .vsk-brand-sub {
+    font-size: 8px;
+  }
+
+
+  .vsk-product-main {
+    min-height: 650px;
+
+    padding-top: 45px;
+  }
+
+
+  .vsk-product-title {
+    font-size: 39px;
+  }
+
+
+  .vsk-product-description {
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+
+
+  .vsk-primary-product-btn,
+  .vsk-secondary-product-btn {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+
+  .vsk-product-card {
+    flex-basis: 68px;
+
+    height: 86px;
+  }
+
+
+  .vsk-product-card.active {
+    flex-basis: 100px;
+
+    height: 98px;
+  }
+
+
+  .vsk-card-name {
+    font-size: 8px;
+  }
+
+
+  .vsk-product-track {
+    gap: 6px;
+  }
+
+
+  .vsk-selector-row {
+    gap: 6px;
+  }
+
+
+  .vsk-colour-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        1fr
+      );
+  }
+
+}

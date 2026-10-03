@@ -1,0 +1,608 @@
+/* =========================================================
+   HERO 6 — APPLICATIONS
+   VSK ENTERPRISES
+   ABOUT US THEME
+========================================================= */
+
+.hero6 {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 125px 0 115px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 92% 8%,
+      rgba(0, 144, 88, 0.07),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 6% 92%,
+      rgba(44, 42, 124, 0.06),
+      transparent 45%
+    ),
+    #f6f8f9;
+
+  color: #2c2a7c;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.hero6-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(70px);
+
+  opacity: 0.45;
+}
+
+.hero6-glow-left {
+  width: 360px;
+  height: 360px;
+
+  left: -210px;
+  top: 180px;
+
+  background: radial-gradient(
+    circle,
+    rgba(44, 42, 124, 0.10),
+    transparent 68%
+  );
+}
+
+.hero6-glow-right {
+  width: 400px;
+  height: 400px;
+
+  right: -220px;
+  bottom: 100px;
+
+  background: radial-gradient(
+    circle,
+    rgba(0, 144, 88, 0.12),
+    transparent 68%
+  );
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.hero6-heading {
+  position: relative;
+
+  z-index: 3;
+
+  width: min(850px, 90%);
+
+  margin: 0 auto 70px;
+
+  text-align: center;
+}
+
+.hero6-label {
+  display: inline-block;
+
+  margin-bottom: 17px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+  color: #009058;
+}
+
+.hero6-heading h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(38px, 5vw, 66px);
+
+  line-height: 1.08;
+
+  font-weight: 400;
+
+  letter-spacing: -1.5px;
+
+  color: #2c2a7c;
+}
+
+.hero6-heading h2 span {
+  background: linear-gradient(
+    90deg,
+    #2c2a7c,
+    #009058
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.hero6-heading p {
+  max-width: 650px;
+
+  margin: 22px auto 0;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  font-weight: 400;
+
+  color: #5a5c86;
+}
+
+
+/* =========================================================
+   SLIDER
+========================================================= */
+
+.hero6-slider {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  z-index: 2;
+
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 7%,
+    black 93%,
+    transparent 100%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 7%,
+    black 93%,
+    transparent 100%
+  );
+}
+
+
+/* =========================================================
+   TRACK
+========================================================= */
+
+.hero6-track {
+  display: flex;
+
+  width: max-content;
+
+  gap: 24px;
+
+  padding-left: 28px;
+
+  animation: hero6Move 52s linear infinite;
+
+  will-change: transform;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.hero6-card {
+  position: relative;
+
+  flex: 0 0 325px;
+
+  height: 425px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(44, 42, 124, 0.10);
+
+  box-shadow:
+    0 20px 44px rgba(44, 42, 124, 0.08);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.hero6-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(0, 144, 88, 0.25);
+
+  box-shadow:
+    0 22px 46px rgba(44, 42, 124, 0.14);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.hero6-image {
+  position: relative;
+
+  width: 100%;
+  height: 245px;
+
+  overflow: hidden;
+}
+
+.hero6-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter: saturate(0.92);
+
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.6s ease;
+}
+
+.hero6-card:hover .hero6-image img {
+  transform: scale(1.07);
+
+  filter: saturate(1);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.hero6-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      0deg,
+      rgba(15, 12, 40, 0.68) 0%,
+      rgba(15, 12, 40, 0.08) 58%,
+      transparent 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.hero6-number {
+  position: absolute;
+
+  top: 17px;
+  right: 17px;
+
+  width: 41px;
+  height: 41px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.90);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  backdrop-filter: blur(8px);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  color: #2c2a7c;
+
+  box-shadow:
+    0 5px 16px rgba(44, 42, 124, 0.12);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.hero6-content {
+  height: calc(100% - 245px);
+
+  padding: 26px 26px 23px;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.hero6-content h3 {
+  margin: 0;
+
+  font-size: 1.15rem;
+
+  line-height: 1.25;
+
+  font-weight: 700;
+
+  color: #2c2a7c;
+}
+
+.hero6-content p {
+  margin: 14px 0 0;
+
+  max-width: 270px;
+
+  font-size: 0.92rem;
+
+  line-height: 1.7;
+
+  font-weight: 400;
+
+  color: #5a5c86;
+}
+
+
+/* =========================================================
+   CARD LINE
+========================================================= */
+
+.hero6-card-line {
+  width: 42px;
+  height: 3px;
+
+  margin-top: auto;
+
+  border-radius: 3px;
+
+  background: linear-gradient(
+    90deg,
+    #2c2a7c,
+    #009058
+  );
+
+  opacity: 0.8;
+
+  transition:
+    width 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.4s ease;
+}
+
+.hero6-card:hover .hero6-card-line {
+  width: 75px;
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   INFINITE MOVEMENT
+========================================================= */
+
+@keyframes hero6Move {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(
+      calc(-50% - 12px)
+    );
+  }
+}
+
+
+/* =========================================================
+   PAUSE ON HOVER
+========================================================= */
+
+.hero6-slider:hover .hero6-track {
+  animation-play-state: paused;
+}
+
+
+/* =========================================================
+   BOTTOM FADE
+========================================================= */
+
+.hero6-bottom-fade {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 130px;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(246, 248, 249, 0.9)
+    );
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .hero6 {
+    padding: 105px 0 95px;
+  }
+
+  .hero6-heading {
+    margin-bottom: 55px;
+  }
+
+  .hero6-card {
+    flex-basis: 300px;
+
+    height: 405px;
+  }
+
+  .hero6-image {
+    height: 225px;
+  }
+
+  .hero6-content {
+    height: calc(100% - 225px);
+
+    padding: 24px;
+  }
+
+  .hero6-track {
+    gap: 20px;
+
+    animation-duration: 48s;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .hero6 {
+    min-height: auto;
+
+    padding: 90px 0 85px;
+  }
+
+  .hero6-heading {
+    width: 88%;
+
+    margin-bottom: 45px;
+  }
+
+  .hero6-label {
+    margin-bottom: 14px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+  }
+
+  .hero6-heading h2 {
+    font-size: 37px;
+
+    letter-spacing: -1px;
+  }
+
+  .hero6-heading p {
+    margin-top: 17px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .hero6-track {
+    gap: 16px;
+
+    padding-left: 18px;
+
+    animation-duration: 42s;
+  }
+
+  .hero6-card {
+    flex: 0 0 275px;
+
+    height: 375px;
+
+    border-radius: 10px;
+  }
+
+  .hero6-image {
+    height: 205px;
+  }
+
+  .hero6-content {
+    height: calc(100% - 205px);
+
+    padding: 21px;
+  }
+
+  .hero6-content h3 {
+    font-size: 18px;
+  }
+
+  .hero6-content p {
+    font-size: 12px;
+
+    line-height: 1.6;
+  }
+
+  .hero6-number {
+    width: 36px;
+    height: 36px;
+
+    top: 14px;
+    right: 14px;
+
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+  .hero6-heading h2 {
+    font-size: 32px;
+  }
+
+  .hero6-card {
+    flex-basis: 255px;
+
+    height: 355px;
+  }
+
+  .hero6-image {
+    height: 190px;
+  }
+
+  .hero6-content {
+    height: calc(100% - 190px);
+
+    padding: 19px;
+  }
+}

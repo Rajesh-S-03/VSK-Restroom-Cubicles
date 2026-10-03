@@ -1,6 +1,7 @@
 import React from 'react';
 import './Navbar.css';
 import logo from '../../assets/vsklogo.png';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -13,11 +14,11 @@ const Navbar = () => {
       </div>
 
       <nav className="navbar-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#projects">Projects</a>
-        <a href="#clients">Clients</a>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/restroom-cubicles">Restroom Cubicles</Link>
+        <Link to="/our-clients">Clients</Link>
+        <Link to="/contact-us">Contact Us</Link>
       </nav>
 
       <a href="#contact" className="navbar-contact">

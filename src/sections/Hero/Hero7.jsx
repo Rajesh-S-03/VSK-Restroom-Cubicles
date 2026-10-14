@@ -9,15 +9,15 @@ import {
 const reviews = [
   {
     id: 1,
-    name: "Arun Kumar",
-    place: "Chennai",
+    name: "Kapil Vasanthan",
+    place: "Tenkasi",
     review:
       "We are very satisfied with the restroom cubicle installation by VSK Enterprises. The material quality, finishing, and overall design were excellent. The team completed the work professionally and maintained good attention to detail.",
   },
 
   {
     id: 2,
-    name: "Suresh B",
+    name: "Irfana Assiff",
     place: "Chennai",
     review:
       "VSK Enterprises provided a clean and professional restroom solution for our commercial space. The cubicles look modern, strong, and well-finished. Their team was responsive and completed the installation as discussed.",
@@ -25,8 +25,8 @@ const reviews = [
 
   {
     id: 3,
-    name: "Karthik R",
-    place: "Kanchipuram",
+    name: "Rajesh S",
+    place: "Sivaganga",
     review:
       "Good quality restroom cubicles with a professional finish. We were impressed with the material selection and installation work. The VSK team understood our requirements and delivered a neat and practical solution.",
   },

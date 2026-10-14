@@ -956,7 +956,7 @@ const AboutUs = () => {
             className="vision-button"
           >
 
-            <span onClick={() => navigate("/contact-us")}>
+            <span onClick={() => navigate("/contact-us#register")}>
               GET IN TOUCH
             </span>
 

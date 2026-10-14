@@ -21,7 +21,7 @@ const productsData = [
     subtitle: 'SECURE & MODULAR STORAGE',
     description: 'Heavy-duty modular compact laminate lockers designed for corporate offices, fitness centers, and schools.',
     image: LockerSystems,
-    link: '/lockers',
+    link: '/restroom-cubicles',
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const productsData = [
     subtitle: 'HYGIENIC & MODERN DESIGN',
     description: 'Sleek wall-hung dividers providing privacy and a clean aesthetic for high-traffic corporate washrooms.',
     image: UrinalPartitions,
-    link: '/urinal-partitions',
+    link: '/restroom-cubicles',
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const productsData = [
     subtitle: 'EXTERIOR & INTERIOR PANELS',
     description: 'Weather-resistant decorative panel systems providing long-lasting durability and high thermal resistance.',
     image: gladding,
-    link: '/hpl-cladding',
+    link: '/restroom-cubicles',
   },
 ];
 

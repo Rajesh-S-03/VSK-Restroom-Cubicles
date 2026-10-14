@@ -133,11 +133,11 @@ function MaterialGallery({ item }) {
           <div className="vsk-material-sample vsk-material-sample--front">
             <span className="vsk-material-sample-edge" />
           </div>
-          <div className="vsk-material-art-caption">
+          {/* <div className="vsk-material-art-caption">
             <span>{galleryCaptions[activeIndex]}</span>
             <strong>{item.number} / 0{slideNumber}</strong>
           </div>
-          <span className="vsk-material-art-note">ADD MATERIAL PHOTO</span>
+          <span className="vsk-material-art-note">ADD MATERIAL PHOTO</span> */}
         </div>
       )}
 

@@ -4,26 +4,18 @@
 
 .hero1 {
   position: absolute;
-
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100vh;
-
+  height: 100svh;
   z-index: 10;
-
   pointer-events: none;
-
   background: transparent;
-
   transform: translateY(100%);
-
   will-change: transform;
-
   overflow: hidden;
 }
-
 
 /* =========================================================
    HERO1 SCREEN
@@ -31,51 +23,43 @@
 
 .hero1-screen {
   position: absolute;
-
-  top: 0;
-  left: 0;
-
+  inset: 0;
   width: 100%;
   height: 100vh;
-
+  height: 100svh;
   min-height: 650px;
-
   overflow: hidden;
-
-  background: transparent;
+  background: #080b0a;
 }
 
-
 /* =========================================================
-   FRAME IMAGE
+   FRAME IMAGE — DESKTOP
+
+   NOTE: the old `filter: brightness() contrast() saturate()`
+   was removed. A CSS filter on a full-screen image forces the
+   browser to re-process the whole picture every time the frame
+   changes, which made the animation feel jerky. The look is
+   handled by .hero1-overlay instead.
 ========================================================= */
 
 .hero1-frame {
   position: absolute;
-
   inset: 0;
-
+  display: block;
   width: 100%;
   height: 100%;
 
   object-fit: cover;
+  object-position: center center;
 
-  display: block;
-
-  z-index: 0;
+  /* own GPU layer, no per-frame filter work */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  image-rendering: auto;
 
   user-select: none;
-
-  pointer-events: none;
-
-  transform: scale(1.025);
-
-  filter:
-    brightness(0.98)
-    contrast(1.03)
-    saturate(1.05);
+  -webkit-user-drag: none;
 }
-
 
 /* =========================================================
    LIGHT OVERLAY
@@ -83,11 +67,8 @@
 
 .hero1-overlay {
   position: absolute;
-
   inset: 0;
-
   z-index: 1;
-
   pointer-events: none;
 
   background:
@@ -99,7 +80,6 @@
       rgba(2, 7, 10, 0.02) 75%,
       rgba(2, 7, 10, 0.04) 100%
     ),
-
     linear-gradient(
       0deg,
       rgba(1, 5, 7, 0.25) 0%,
@@ -108,28 +88,22 @@
     );
 }
 
-
 /* =========================================================
    CONTENT
 ========================================================= */
 
 .hero1-content {
   position: absolute;
-
   left: 8%;
   top: 50%;
-
   z-index: 3;
 
   width: min(700px, 80%);
 
   transform: translateY(-50%);
-
-  color: #ffffff;
-
+  color: #fff;
   pointer-events: none;
 }
-
 
 /* =========================================================
    LABEL
@@ -137,37 +111,28 @@
 
 .hero1-label {
   display: flex;
-
   align-items: center;
-
   gap: 14px;
 
   margin-bottom: 28px;
 
   font-size: 11px;
-
   font-weight: 500;
-
   letter-spacing: 0.28em;
-
   text-transform: uppercase;
 
   color: #39c987;
 
-  will-change:
-    transform,
-    opacity;
+  will-change: transform, opacity;
 }
-
 
 .label-line {
   width: 55px;
-
   height: 1px;
+  flex-shrink: 0;
 
   background: #39c987;
 }
-
 
 /* =========================================================
    TITLE
@@ -176,70 +141,37 @@
 .hero1-title {
   margin: 0;
 
-  font-family:
-    Georgia,
-    'Times New Roman',
-    serif;
-
-  font-size:
-    clamp(
-      48px,
-      6vw,
-      88px
-    );
-
-  line-height: 0.98;
-
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(48px, 6vw, 88px);
   font-weight: 400;
-
+  line-height: 0.98;
   letter-spacing: -0.035em;
 
-  color: #ffffff;
+  color: #fff;
 
-  will-change:
-    transform,
-    opacity;
+  overflow-wrap: break-word;
+  will-change: transform, opacity;
 }
-
 
 .hero1-title span {
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.70
-    );
+  color: rgba(255, 255, 255, 0.7);
 }
-
 
 /* =========================================================
    DESCRIPTION
 ========================================================= */
 
 .hero1-description {
-  margin:
-    30px 0 0;
+  margin: 30px 0 0;
 
   font-size: 15px;
-
   line-height: 1.8;
-
   letter-spacing: 0.04em;
 
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.72
-    );
+  color: rgba(255, 255, 255, 0.72);
 
-  will-change:
-    transform,
-    opacity;
+  will-change: transform, opacity;
 }
-
 
 /* =========================================================
    BUTTON
@@ -247,55 +179,33 @@
 
 .hero1-button {
   display: flex;
-
   align-items: center;
-
   gap: 18px;
 
   margin-top: 36px;
 
   font-size: 10px;
-
   letter-spacing: 0.24em;
 
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.90
-    );
+  color: rgba(255, 255, 255, 0.9);
 
-  will-change:
-    transform,
-    opacity;
+  will-change: transform, opacity;
 }
-
 
 .button-circle {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   width: 42px;
   height: 42px;
+  flex-shrink: 0;
 
-  border:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.40
-    );
-
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 50%;
 
   font-size: 17px;
 }
-
 
 /* =========================================================
    RIGHT INDICATOR
@@ -303,53 +213,31 @@
 
 .hero1-indicator {
   position: absolute;
-
   right: 5%;
   top: 50%;
-
   z-index: 4;
 
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
-
   gap: 14px;
 
-  transform:
-    translateY(-50%);
+  transform: translateY(-50%);
 
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.70
-    );
+  color: rgba(255, 255, 255, 0.7);
 }
-
 
 .indicator-line {
   position: relative;
 
   width: 1px;
-
   height: 100px;
 
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.20
-    );
+  background: rgba(255, 255, 255, 0.2);
 }
-
 
 .indicator-progress {
   position: absolute;
-
   top: 0;
   left: 0;
 
@@ -358,114 +246,335 @@
   background: #39c987;
 }
 
-
 /* =========================================================
    FRAME COUNTER
 ========================================================= */
 
 .hero1-counter {
   position: absolute;
-
   right: 5%;
   bottom: 35px;
-
   z-index: 4;
 
   font-size: 9px;
-
   letter-spacing: 0.15em;
 
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.50
-    );
+  color: rgba(255, 255, 255, 0.5);
 }
-
 
 .hero1-counter span {
-  margin:
-    0 6px;
-
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.20
-    );
+  margin: 0 6px;
+  color: rgba(255, 255, 255, 0.2);
 }
-
 
 /* =========================================================
    TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
-
   .hero1-content {
     left: 6%;
+    width: 84%;
   }
 
   .hero1-title {
-    font-size:
-      clamp(
-        44px,
-        8vw,
-        70px
-      );
+    font-size: clamp(44px, 8vw, 70px);
   }
-
 }
-
 
 /* =========================================================
    MOBILE
+   Full-height image with responsive content
 ========================================================= */
 
 @media (max-width: 600px) {
+  .hero1 {
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    min-height: 0;
+
+    overflow: hidden;
+  }
 
   .hero1-screen {
-    min-height: 600px;
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+
+    overflow: hidden;
+    background: #080b0a;
   }
 
-  .hero1-content {
-    left: 7%;
+  /* Fill the complete mobile screen (no filter, see note above) */
+  .hero1-frame {
+    position: absolute;
+    inset: 0;
 
-    width: 82%;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transform: translateZ(0);
   }
 
-  .hero1-title {
-    font-size:
-      clamp(
-        40px,
-        11vw,
-        58px
+  /* Full-screen overlay */
+  .hero1-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(2, 7, 10, 0.25) 0%,
+        rgba(2, 7, 10, 0.08) 50%,
+        rgba(2, 7, 10, 0.2) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(1, 5, 7, 0.48) 0%,
+        rgba(1, 5, 7, 0.12) 55%,
+        rgba(1, 5, 7, 0.08) 100%
       );
   }
 
-  .hero1-description {
-    font-size: 13px;
+  /* Content position */
+  .hero1-content {
+    left: 6%;
+    top: 50%;
+
+    width: 84%;
+    max-width: 420px;
+
+    transform: translateY(-50%);
   }
 
+  /* Label */
   .hero1-label {
-    font-size: 9px;
+    gap: 9px;
+    margin-bottom: 18px;
+
+    font-size: 8px;
+    letter-spacing: 0.2em;
   }
 
   .label-line {
-    width: 35px;
+    width: 28px;
+  }
+
+  /* Heading */
+  .hero1-title {
+    font-size: clamp(32px, 8.5vw, 48px);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+  }
+
+  /* Description */
+  .hero1-description {
+    max-width: 100%;
+    margin-top: 18px;
+
+    font-size: 12px;
+    line-height: 1.65;
+    letter-spacing: 0.01em;
+  }
+
+  .hero1-description br {
+    display: none;
+  }
+
+  /* Discover more button */
+  .hero1-button {
+    gap: 12px;
+    margin-top: 22px;
+
+    font-size: 9px;
+    letter-spacing: 0.16em;
+  }
+
+  .button-circle {
+    width: 34px;
+    height: 34px;
+
+    font-size: 15px;
+  }
+
+  /* Right-side slide indicator */
+  .hero1-indicator {
+    right: 3%;
+    top: 50%;
+    gap: 9px;
+
+    font-size: 9px;
+  }
+
+  .indicator-line {
+    height: 55px;
+  }
+
+  /* Frame counter */
+  .hero1-counter {
+    right: 5%;
+    bottom: 18px;
+
+    font-size: 8px;
+  }
+
+  .hero1-counter span {
+    margin: 0 4px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+  .hero1-content {
+    left: 5%;
+    width: 86%;
+    top: 50%;
+  }
+
+  .hero1-label {
+    gap: 7px;
+    margin-bottom: 14px;
+
+    font-size: 7px;
+    letter-spacing: 0.16em;
+  }
+
+  .label-line {
+    width: 22px;
+  }
+
+  .hero1-title {
+    font-size: clamp(29px, 8vw, 36px);
+    line-height: 1.06;
+  }
+
+  .hero1-description {
+    margin-top: 14px;
+
+    font-size: 11px;
+    line-height: 1.55;
+  }
+
+  .hero1-button {
+    gap: 10px;
+    margin-top: 16px;
+
+    font-size: 8px;
+  }
+
+  .button-circle {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
   }
 
   .hero1-indicator {
-    right: 4%;
+    right: 2%;
+  }
+
+  .indicator-line {
+    height: 45px;
   }
 
   .hero1-counter {
-    right: 4%;
+    bottom: 14px;
+  }
+}
 
-    bottom: 25px;
+/* =========================================
+   MOBILE — SMOOTHER SCROLL ANIMATION
+========================================= */
+
+@media (max-width: 600px) {
+
+  /* Give the animation more scroll distance */
+  .hero-stage {
+    height: 600svh;
+    min-height: 0;
   }
 
+  .hero1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100svh;
+    min-height: 0;
+    overflow: hidden;
+    transform: translateY(100%);
+  }
+
+  .hero1-screen {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+    background: #080b0a;
+  }
+
+  .hero1-frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center center;
+
+    /* Avoid unnecessary scaling */
+    transform: none;
+    backface-visibility: hidden;
+
+    /* Keep frame rendering simple */
+    filter: none;
+  }
+
+  .hero1-content {
+    left: 6%;
+    top: 48%;
+    width: 82%;
+    max-width: 360px;
+    transform: translateY(-50%);
+  }
+
+  .hero1-title {
+    font-size: clamp(30px, 8vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+
+  .hero1-description {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: 16px;
+  }
+
+  .hero1-label {
+    margin-bottom: 16px;
+    font-size: 8px;
+  }
+
+  .hero1-indicator {
+    right: 3%;
+  }
+
+  .hero1-counter {
+    bottom: 16px;
+  }
 }

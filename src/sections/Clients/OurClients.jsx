@@ -1,75 +1,141 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./OurClients.css";
 
-import client01 from "../../assets/clients/client01.png";
-import client02 from "../../assets/clients/client02.png";
-import client03 from "../../assets/clients/client03.png";
-import client04 from "../../assets/clients/client04.png";
-import client05 from "../../assets/clients/client05.png";
-import client06 from "../../assets/clients/client06.png";
-import client07 from "../../assets/clients/client07.png";
-import client08 from "../../assets/clients/client08.png";
-import client09 from "../../assets/clients/client09.jpg";
-import client10 from "../../assets/clients/client10.jpg";
-import client11 from "../../assets/clients/client11.png";
-import client12 from "../../assets/clients/client12.png";
-import client13 from "../../assets/clients/client13.png";
-import client14 from "../../assets/clients/client14.png";
-import client15 from "../../assets/clients/client15.png";
-import client16 from "../../assets/clients/client16.png";
-import client17 from "../../assets/clients/client17.png";
-import client18 from "../../assets/clients/client18.png";
-import client19 from "../../assets/clients/client19.png";
-import client20 from "../../assets/clients/client20.png";
-import client21 from "../../assets/clients/client21.png";
-import client22 from "../../assets/clients/client22.png";
-import client23 from "../../assets/clients/client23.png";
-import client24 from "../../assets/clients/client24.png";
-import client25 from "../../assets/clients/client25.png";
-import client26 from "../../assets/clients/client26.png";
-import client27 from "../../assets/clients/client27.png";
-import client28 from "../../assets/clients/client28.png";
-import client29 from "../../assets/clients/client29.png";
-import client30 from "../../assets/clients/client30.png";
-import client31 from "../../assets/clients/client31.jpg";
-import client32 from "../../assets/clients/client32.png";
+// =========================================================
+// CLIENT LOGOS
+// Keep these paths aligned with the actual filenames in
+// src/assets/clients/
+// =========================================================
 
+import client01 from "../../assets/clients/ADITYA INTERNATIONAL SCHOOL.png";
+import client02 from "../../assets/clients/ADYA.png";
+import client03 from "../../assets/clients/Asset 1@288x.png";
+import client04 from "../../assets/clients/CAPGEMINI.png";
+import client05 from "../../assets/clients/CAT.png";
+import client06 from "../../assets/clients/CLOUD NINE.png";
+import client07 from "../../assets/clients/CONGNIZANT.png";
+import client08 from "../../assets/clients/DHANALAKSHMI COLLEGE.png";
+import client09 from "../../assets/clients/DHANALAKSHMI TECHNOLOGY.png";
+import client10 from "../../assets/clients/H FOXCONN.png";
+import client11 from "../../assets/clients/HINDUSTAN.png";
+import client12 from "../../assets/clients/HYUNDA GLOVIS.png";
+import client13 from "../../assets/clients/HYUNDA MOBIS.png";
+import client14 from "../../assets/clients/HYUNDA.png";
+import client15 from "../../assets/clients/JOHN DEWEY-WOMENS COLLEGE.jpg";
+import client16 from "../../assets/clients/JS GLOBAL SCHOOL.png";
+import client17 from "../../assets/clients/KONGU SCHOOL.png";
+import client18 from "../../assets/clients/NATIONAL MODEL SCHOOL.png";
+import client19 from "../../assets/clients/OCEAN.png";
+import client20 from "../../assets/clients/PHOENIX.png";
+import client21 from "../../assets/clients/POTHYS.png";
+import client22 from "../../assets/clients/RAKKI CINEMAS.jpg";
+import client23 from "../../assets/clients/SCAD.jpg";
+import client24 from "../../assets/clients/SKCL.png";
+import client25 from "../../assets/clients/SOBHA.png";
+import client26 from "../../assets/clients/SRI CITY.png";
+import client27 from "../../assets/clients/SRM.png";
+import client28 from "../../assets/clients/TCCASW COLLEGE.png";
+import client29 from "../../assets/clients/THE NEST SCHOOL.png";
+import client30 from "../../assets/clients/TIPS EXTRAORDINARY.png";
+import client31 from "../../assets/clients/VIVEKANANDA SCHOOL.png";
+import client32 from "../../assets/clients/ZMHSS.png";
 
-const clients = [
-  client01,
-  client02,
-  client03,
-  client04,
-  client05,
-  client06,
-  client07,
-  client08,
-  client09,
-  client10,
-  client11,
-  client12,
-  client13,
-  client14,
-  client15,
-  client16,
-  client17,
-  client18,
-  client19,
-  client20,
-  client21,
-  client22,
-  client23,
-  client24,
-  client25,
-  client26,
-  client27,
-  client28,
-  client29,
-  client30,
-  client31,
-  client32,
+// =========================================================
+// CLIENT CATEGORIES
+// Each logo is assigned explicitly instead of using slices.
+// Some classifications are provisional where the filename
+// alone does not identify the organization's exact business.
+// =========================================================
+
+const clientCategories = [
+  {
+    id: "education",
+    number: "01",
+    eyebrow: "EDUCATION & ACADEMIA",
+    title: "Schools, Colleges & Educational Institutions",
+    description:
+      "Restroom solutions for schools, colleges and learning environments, designed around everyday use, durability and practical maintenance.",
+    logos: [
+      { image: client01, name: "Aditya International School" },
+      { image: client08, name: "Dhanalakshmi College" },
+      { image: client09, name: "Dhanalakshmi Technology" },
+      { image: client03, name: "Other Client" },
+      { image: client15, name: "John Dewey Women's College" },
+      { image: client16, name: "JS Global School" },
+      { image: client17, name: "Kongu School" },
+      { image: client18, name: "National Model School" },
+      { image: client23, name: "SCAD" },
+      { image: client27, name: "SRM" },
+      { image: client28, name: "TCCASW College" },
+      { image: client29, name: "The Nest School" },
+      { image: client30, name: "TIPS Extraordinary" },
+      { image: client31, name: "Vivekananda School" },
+      { image: client32, name: "ZMHSS" },
+    ],
+  },
+  {
+    id: "corporate",
+    number: "02",
+    eyebrow: "CORPORATE & IT",
+    title: "Corporate Offices & Technology Companies",
+    description:
+      "Solutions for professional workplaces and technology environments where functionality, clean design and dependable performance matter.",
+    logos: [
+      { image: client02, name: "ADYA" },
+      { image: client04, name: "Capgemini" },
+      { image: client07, name: "Cognizant" },
+    ],
+  },
+  {
+    id: "industrial",
+    number: "03",
+    eyebrow: "AUTOMOTIVE & INDUSTRIAL",
+    title: "Manufacturing, Automotive & Industrial Facilities",
+    description:
+      "Durable restroom systems for industrial and manufacturing environments that experience frequent use and demanding operating conditions.",
+    logos: [
+      { image: client05, name: "CAT" },
+      { image: client06, name: "Cloudnine" },
+      { image: client10, name: "Foxconn" },
+      { image: client12, name: "Hyundai Glovis" },
+      { image: client13, name: "Hyundai Mobis" },
+      { image: client14, name: "Hyundai" },
+      { image: client26, name: "Sri City" },
+    ],
+  },
+  {
+    id: "commercial",
+    number: "04",
+    eyebrow: "RETAIL & ENTERTAINMENT",
+    title: "Retail, Shopping & Entertainment Spaces",
+    description:
+      "Restroom solutions for public-facing commercial spaces where visitor comfort, appearance and efficient maintenance are important.",
+    logos: [
+      { image: client20, name: "Phoenix" },
+      { image: client21, name: "Pothys" },
+      { image: client22, name: "Rakki Cinemas" },
+    ],
+  },
+  {
+    id: "infrastructure",
+    number: "05",
+    eyebrow: "INFRASTRUCTURE & OTHER ORGANIZATIONS",
+    title: "Infrastructure, Real Estate & Other Institutions",
+    description:
+      "Flexible restroom solutions for construction, property, institutional and other projects with different site requirements.",
+    logos: [
+      { image: client11, name: "Hindustan" },
+      { image: client19, name: "Ocean" },
+      { image: client24, name: "SKCL" },
+      { image: client25, name: "Sobha" },
+    ],
+  },
 ];
 
+// =========================================================
+// TRUST POINTS
+// =========================================================
 
 const trustPoints = [
   {
@@ -94,155 +160,152 @@ const trustPoints = [
   },
 ];
 
-
 function OurClients() {
+  const totalClients = clientCategories.reduce(
+    (total, category) => total + category.logos.length,
+    0
+  );
+
   return (
     <section className="our-clients">
+      {/* Background decorations */}
+      <div className="clients-bg-grid" />
+      <div className="clients-orb clients-orb-one" />
+      <div className="clients-orb clients-orb-two" />
 
-      {/* =====================================================
-          BACKGROUND DECORATION
-      ===================================================== */}
-
-      <div className="clients-orb clients-orb-one"></div>
-      <div className="clients-orb clients-orb-two"></div>
-
-
-      {/* =====================================================
-          HERO
-      ===================================================== */}
-
+      {/* Hero */}
       <div className="clients-hero">
+        <div className="clients-hero-line">
+          <span />
+          <small>VSK ENTERPRISES</small>
+          <span />
+        </div>
 
-        <span className="clients-eyebrow">
-          OUR CLIENTS
-        </span>
+        <span className="clients-eyebrow">OUR CLIENTS</span>
 
         <h1>
-          Trusted by <em>Leading</em> Organizations
+          Trusted by <em>Leading</em>
+          <br />
+          Organizations
         </h1>
 
         <p>
-          Trusted partnerships built through quality,
-          reliability and precision.
+          Strong partnerships built through quality, reliability and precision.
         </p>
-
       </div>
 
-
-      {/* =====================================================
-          TRUST STATS
-      ===================================================== */}
-
+      {/* Statistics */}
       <div className="clients-stats">
-
-        <div className="client-stat">
-          <strong>32+</strong>
-          <span>Clients</span>
+        <div className="client-stat stat-one">
+          <strong>{totalClients}+</strong>
+          <span>Client Logos</span>
         </div>
 
-        <div className="client-stat">
-          <strong>Multiple</strong>
-          <span>Industries</span>
+        <div className="client-stat stat-two">
+          <strong>{String(clientCategories.length).padStart(2, "0")}</strong>
+          <span>Industry Categories</span>
         </div>
 
-        <div className="client-stat">
+        <div className="client-stat stat-three">
           <strong>Pan-India</strong>
           <span>Project Reach</span>
         </div>
 
-        <div className="client-stat">
-          <strong>Quality</strong>
-          <span>Focused</span>
+        <div className="client-stat stat-four">
+          <strong>100%</strong>
+          <span>Quality Focus</span>
         </div>
-
       </div>
 
-
-      {/* =====================================================
-          CLIENT LOGOS
-      ===================================================== */}
-
+      {/* Client categories */}
       <section className="clients-logo-section">
-
         <div className="section-heading">
-
-          <span className="section-eyebrow">
-            OUR PARTNERSHIPS
-          </span>
+          <span className="section-eyebrow">OUR PARTNERSHIPS</span>
 
           <h2>
             Organizations That <em>Trust VSK</em>
           </h2>
 
           <p>
-            Our growing client network reflects our commitment
-            to quality products, reliable execution and
-            professional service.
+            Explore our client network across education, corporate, healthcare,
+            industrial, retail and infrastructure sectors.
           </p>
-
         </div>
 
-
-        <div className="clients-grid">
-
-          {clients.map((logo, index) => (
-
-            <div
-              className="client-box"
-              key={index}
-              style={{
-                animationDelay: `${index * 0.04}s`,
-              }}
+        <div className="client-category-list">
+          {clientCategories.map((category, categoryIndex) => (
+            <section
+              className={`client-category category-${category.id}`}
+              key={category.id}
             >
+              <div className="category-header">
+                <div className="category-number">{category.number}</div>
 
-              <div className="client-box-inner">
+                <div className="category-heading-content">
+                  <span className="category-eyebrow">
+                    {category.eyebrow}
+                  </span>
 
-                <img
-                  src={logo}
-                  alt={`VSK Client ${index + 1}`}
-                />
+                  <h3>{category.title}</h3>
+                  <p>{category.description}</p>
+                </div>
 
+                <div className="category-index">
+                  {String(categoryIndex + 1).padStart(2, "0")}
+                </div>
               </div>
 
-              <div className="client-corner top-left"></div>
+              <div className="category-logos">
+                {category.logos.map((logo, index) => (
+                  <div
+                    className="client-box"
+                    key={`${category.id}-${logo.name}`}
+                    style={{
+                      animationDelay: `${
+                        categoryIndex * 0.15 + index * 0.05
+                      }s`,
+                    }}
+                    title={logo.name}
+                  >
+                    <div className="client-box-inner">
+                      <img
+                        src={logo.image}
+                        alt={logo.name}
+                        loading="lazy"
+                      />
+                    </div>
 
-              <div className="client-corner bottom-right"></div>
-
-              <div className="client-shine"></div>
-
-            </div>
-
+                    <span className="client-corner corner-top" />
+                    <span className="client-corner corner-bottom" />
+                  </div>
+                ))}
+              </div>
+            </section>
           ))}
-
         </div>
 
-
+        {/* Client count */}
         <div className="client-count">
+          <div className="client-count-number">
+            <span>{totalClients}</span>
+            <small>+</small>
+          </div>
 
-          <span>32+</span>
-
-          <p>
-            Organizations &nbsp;•&nbsp;
-            Institutions &nbsp;•&nbsp;
-            Commercial Spaces
-          </p>
-
+          <div className="client-count-text">
+            <strong>Growing Client Network</strong>
+            <p>
+              Education &nbsp;•&nbsp; Corporate &nbsp;•&nbsp; Healthcare
+              &nbsp;•&nbsp; Industrial &nbsp;•&nbsp; Retail &nbsp;•&nbsp;
+              Infrastructure
+            </p>
+          </div>
         </div>
-
       </section>
 
-
-      {/* =====================================================
-          WHY VSK
-      ===================================================== */}
-
+      {/* Why VSK */}
       <section className="why-vsk-section">
-
         <div className="why-vsk-heading">
-
-          <span className="section-eyebrow">
-            WHY VSK IS TRUSTED
-          </span>
+          <span className="section-eyebrow">WHY VSK IS TRUSTED</span>
 
           <h2>
             Built on Quality.
@@ -251,97 +314,52 @@ function OurClients() {
           </h2>
 
           <p>
-            In just one year, VSK Enterprises has built
-            strong client relationships by focusing on
-            quality products, reliable execution and
-            professional service.
+            VSK Enterprises focuses on delivering dependable restroom solutions
+            through quality products, professional execution and a clear
+            understanding of each client&apos;s requirements.
           </p>
-
         </div>
-
 
         <div className="trust-grid">
-
-          {trustPoints.map((item, index) => (
-
-            <div
-              className="trust-card"
-              key={index}
-            >
-
-              <span className="trust-number">
-                {item.number}
-              </span>
-
-              <div className="trust-icon">
-                ✓
-              </div>
-
-              <h3>
-                {item.title}
-              </h3>
-
-              <p>
-                {item.text}
-              </p>
-
+          {trustPoints.map((item) => (
+            <div className="trust-card" key={item.number}>
+              <span className="trust-number">{item.number}</span>
+              <div className="trust-icon">✓</div>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
             </div>
-
           ))}
-
         </div>
-
       </section>
 
-
-      {/* =====================================================
-          PARTNERSHIP CTA
-      ===================================================== */}
-
+      {/* Call to action */}
       <section className="clients-cta">
-
-        <div className="cta-glow cta-glow-one"></div>
-
-        <div className="cta-glow cta-glow-two"></div>
+        <div className="cta-grid" />
+        <div className="cta-glow cta-glow-one" />
+        <div className="cta-glow cta-glow-two" />
 
         <div className="cta-content">
-
-          <span className="section-eyebrow">
-            READY TO PARTNER WITH VSK?
-          </span>
+          <span className="section-eyebrow">READY TO PARTNER WITH VSK?</span>
 
           <h2>
-            Let's Build a
+            Let&apos;s Build a
             <br />
             <em>Strong Partnership.</em>
           </h2>
 
           <p>
-            Whether you're planning a new project or looking
-            for a reliable restroom solutions partner, let's
-            work together to create the right solution for
-            your space.
+            Whether you&apos;re planning a new project or looking for a reliable
+            restroom solutions partner, let&apos;s work together to create the
+            right solution for your space.
           </p>
 
-          <a
-            href="/contact"
-            className="clients-cta-button"
-          >
-            Let's Work Together
-
-            <span>
-              →
-            </span>
-
-          </a>
-
+          <Link to="/contact-us" className="clients-cta-button">
+            Let&apos;s Work Together <span>→</span>
+          </Link>
         </div>
-
       </section>
-
     </section>
   );
 }
-
 
 export default OurClients;

@@ -29,9 +29,9 @@
 
   /* LIGHTER IMAGE */
   filter:
-    brightness(1.05)
+    brightness(1.3)
     contrast(1.02)
-    saturate(1.08);
+    saturate(1.1);
 
   transform: scale(1.02);
 

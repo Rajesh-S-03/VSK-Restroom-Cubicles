@@ -1,0 +1,102 @@
+.vsk-showcase, .vsk-showcase * { box-sizing: border-box; }
+.vsk-showcase {
+  --showcase-navy: #20245f;
+  --showcase-green: #009058;
+  position: relative; isolation: isolate; min-height: 760px; overflow: hidden;
+  padding: 28px clamp(20px, 5vw, 76px) 30px; color: #fff; background: #11152b;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+.vsk-showcase-backdrop {
+  position: absolute;
+  z-index: -3;
+  inset: -8px;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  filter: blur(0px);
+  transform: scale(1.02);
+  opacity: 0.70;
+
+  transition: background-image 0.5s ease;
+}
+
+
+
+.vsk-showcase-shade {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+
+  background: linear-gradient(
+    105deg,
+    rgba(10, 13, 36, 0.42) 0%,
+    rgba(22, 26, 65, 0.30) 52%,
+    rgba(0, 65, 49, 0.20) 100%
+  );
+
+  pointer-events: none;
+}
+
+
+.vsk-showcase-header { display: flex; justify-content: space-between; align-items: center; gap: 20px; max-width: 1440px; margin: 0 auto; }
+.vsk-showcase-brand { display: flex; flex-direction: column; color: #fff; text-decoration: none; line-height: 1; }
+.vsk-showcase-brand strong { font-size: 28px; letter-spacing: .12em; }
+.vsk-showcase-brand span { margin-top: 5px; font-size: 9px; letter-spacing: .34em; }
+.vsk-showcase-label { color: rgba(255,255,255,.65); font-size: 10px; letter-spacing: .22em; }
+.vsk-showcase-main { display: flex; align-items: center; justify-content: space-between; gap: 32px; max-width: 1300px; min-height: 420px; margin: 0 auto; padding: 48px 0 30px; animation: vskShowcaseEnter .55s ease both; }
+.vsk-showcase-copy { max-width: 710px; }
+.vsk-showcase-eyebrow { display: inline-block; color: #71d7ae; font-size: 10px; font-weight: 800; letter-spacing: .23em; }
+
+.vsk-showcase-copy h1 { margin: 18px 0 8px; font-size: clamp(28px, 5.5vw, 46px); line-height: 1.02; letter-spacing: -.045em; }
+.vsk-showcase-copy h2 { margin: 0 0 18px; color: #9ee3c5; font-size: clamp(17px, 2vw, 24px); font-weight: 500; }
+.vsk-showcase-copy p { max-width: 600px; color: rgba(255,255,255,.76); font-size: 15px; line-height: 1.85; }
+.vsk-showcase-copy ul { display: flex; flex-wrap: wrap; gap: 10px 20px; margin: 24px 0 30px; padding: 0; list-style: none; }
+.vsk-showcase-copy li { color: rgba(255,255,255,.88); font-size: 12px; }
+.vsk-showcase-copy li::before { content: "＋"; margin-right: 8px; color: #65d6a8; }
+.vsk-showcase-cta { display: inline-flex; gap: 22px; align-items: center; padding: 14px 20px; border: 1px solid rgba(255,255,255,.3); border-radius: 3px; color: #fff; font-size: 12px; font-weight: 700; text-decoration: none; transition: background .25s, border-color .25s; }
+.vsk-showcase-cta:hover { border-color: #65d6a8; background: rgba(0,144,88,.25); }
+.vsk-showcase-cta span { color: #65d6a8; font-size: 18px; }
+.vsk-showcase-index { display: flex; align-items: center; gap: 12px; flex-shrink: 0; color: rgba(255,255,255,.65); }
+.vsk-showcase-index strong { color: #fff; font-family: Georgia, serif; font-size: 42px; font-weight: 400; }
+.vsk-showcase-index span { width: 50px; height: 1px; background: #65d6a8; }
+.vsk-showcase-index small { font-size: 12px; }
+.vsk-showcase-selector { max-width: 1300px; margin: 0 auto; }
+.vsk-showcase-selector-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; color: rgba(255,255,255,.72); font-size: 9px; font-weight: 800; letter-spacing: .2em; }
+.vsk-showcase-selector-heading i { flex: 1; height: 1px; background: rgba(255,255,255,.18); }
+.vsk-showcase-selector-heading small { font-size: 10px; }
+.vsk-showcase-track-row { display: flex; align-items: stretch; gap: 12px; }
+.vsk-showcase-arrow { width: 38px; flex: 0 0 38px; border: 1px solid rgba(255,255,255,.22); background: rgba(255,255,255,.04); color: #fff; cursor: pointer; font-size: 20px; transition: background .2s; }
+.vsk-showcase-arrow:hover { background: var(--showcase-green); }
+.vsk-showcase-track { display: flex; flex: 1; gap: 12px; overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; padding: 2px 2px 8px; }
+.vsk-showcase-track::-webkit-scrollbar { display: none; }
+.vsk-showcase-card { position: relative; isolation: isolate; display: flex; flex: 0 0 150px; min-height: 100px; flex-direction: column; justify-content: flex-end; overflow: hidden; padding: 13px; border: 1px solid rgba(255,255,255,.18); border-radius: 3px; background: #222744; color: #fff; text-align: left; cursor: pointer; }
+.vsk-showcase-card-image, .vsk-showcase-card-shade { position: absolute; z-index: -2; inset: 0; }
+.vsk-showcase-card-image { background-position: center; background-size: cover; opacity: .65; transition: transform .4s; }
+.vsk-showcase-card-shade { z-index: -1; background: linear-gradient(0deg, rgba(8,10,28,.95), rgba(8,10,28,.05)); }
+.vsk-showcase-card:hover .vsk-showcase-card-image { transform: scale(1.08); }
+.vsk-showcase-card.is-active { border-color: #67d6ab; box-shadow: inset 0 -3px #67d6ab; }
+.vsk-showcase-card-number { margin-bottom: 5px; color: #79dcb6; font-size: 9px; letter-spacing: .15em; }
+.vsk-showcase-card-title { font-size: 11px; font-weight: 700; line-height: 1.35; }
+.vsk-showcase-timer { display: flex; align-items: center; gap: 12px; margin: 12px 50px 0; }
+.vsk-showcase-timer > div { height: 2px; flex: 1; background: rgba(255,255,255,.18); }
+.vsk-showcase-timer > div span { display: block; height: 100%; background: #65d6a8; transition: width .05s linear; }
+.vsk-showcase-timer small { color: rgba(255,255,255,.45); font-size: 8px; letter-spacing: .16em; }
+@keyframes vskShowcaseEnter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 700px) {
+  .vsk-showcase { min-height: 0; padding: 22px 15px 25px; }
+  .vsk-showcase-label { max-width: 140px; text-align: right; line-height: 1.6; font-size: 8px; }
+  .vsk-showcase-main { min-height: 0; padding: 70px 0 55px; }
+  .vsk-showcase-copy h1 { font-size: clamp(38px, 11vw, 58px); }
+  .vsk-showcase-copy p { font-size: 13px; }
+  .vsk-showcase-copy ul { flex-direction: column; gap: 9px; }
+  .vsk-showcase-index { display: none; }
+  .vsk-showcase-card { flex-basis: 132px; min-height: 92px; }
+  .vsk-showcase-arrow { width: 30px; flex-basis: 30px; }
+  .vsk-showcase-timer { margin-right: 42px; margin-left: 42px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vsk-showcase-main { animation: none; }
+  .vsk-showcase-card-image, .vsk-showcase-cta { transition: none; }
+}

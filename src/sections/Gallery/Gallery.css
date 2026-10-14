@@ -1,0 +1,695 @@
+/* =========================================================
+   VSK GALLERY HERO
+========================================================= */
+
+.gallery-hero {
+  padding: 120px 8% 40px;
+
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(44, 42, 124, 0.20),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 90% 30%,
+      rgba(0, 144, 88, 0.12),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      #080b0a 0%,
+      #0b100e 50%,
+      #0d1411 100%
+    );
+
+  color: #fff;
+}
+
+
+/* =========================================================
+   GALLERY INTRO
+========================================================= */
+
+.gallery-title {
+  max-width: 900px;
+
+  margin: 0 auto 80px;
+
+  text-align: center;
+}
+
+.gallery-title span {
+  display: inline-block;
+
+  color: #18b878;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+  margin-bottom: 10px;
+}
+
+.gallery-title h2 {
+  margin: 20px 0;
+
+  font-family: "Cinzel", serif;
+
+  font-size: clamp(40px, 5vw, 64px);
+
+  line-height: 1.15;
+
+  font-weight: 600;
+
+  color: #f5f7f6;
+}
+
+.gallery-title p {
+  max-width: 720px;
+
+  margin: 0 auto;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 17px;
+
+  line-height: 1.9;
+
+  color: #aeb7b3;
+}
+
+
+/* =========================================================
+   FEATURED GALLERY
+========================================================= */
+
+.gallery-feature {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 45px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   LEFT FEATURE IMAGE
+========================================================= */
+
+.gallery-left {
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: #101613;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.gallery-left img {
+  display: block;
+
+  width: 100%;
+  height: 800px;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.65, 0.3, 1),
+    filter 0.6s ease;
+}
+
+.gallery-left:hover img {
+  transform: scale(1.04);
+
+  filter: brightness(1.05);
+}
+
+
+/* =========================================================
+   RIGHT FEATURE CARD
+========================================================= */
+
+.gallery-card {
+  position: relative;
+
+  padding: 45px;
+
+  margin-bottom: 30px;
+
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(44, 42, 124, 0.20),
+      rgba(0, 144, 88, 0.08)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.28);
+
+  overflow: hidden;
+}
+
+
+/* Green accent line */
+
+.gallery-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 5px;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      180deg,
+      #009058,
+      #18b878
+    );
+}
+
+
+.gallery-card span {
+  display: block;
+
+  color: #18b878;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+
+.gallery-card h3 {
+  margin: 18px 0 0;
+
+  font-family: "Cinzel", serif;
+
+  font-size: clamp(30px, 3vw, 44px);
+
+  line-height: 1.3;
+
+  font-weight: 600;
+
+  color: #f5f7f6;
+}
+
+
+.gallery-card p {
+  margin-top: 20px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: #aeb7b3;
+}
+
+
+/* =========================================================
+   SMALL IMAGE GRID
+========================================================= */
+
+.gallery-small-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+.gallery-small-grid img {
+  display: block;
+
+  width: 100%;
+  height: 220px;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.35);
+
+  transition:
+    transform 0.5s ease,
+    border-color 0.5s ease,
+    filter 0.5s ease;
+}
+
+
+.gallery-small-grid img:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(0, 144, 88, 0.7);
+
+  filter: brightness(1.08);
+}
+
+
+/* =========================================================
+   MEMORY / PROJECT GALLERY
+========================================================= */
+
+.gallery-memory-section {
+  width: min(1600px, 100%);
+
+  margin: 140px auto 100px;
+}
+
+
+/* =========================================================
+   MEMORY HEADING
+========================================================= */
+
+.memory-heading {
+  margin-bottom: 55px;
+}
+
+
+.memory-heading span {
+  display: block;
+
+  margin-bottom: 14px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+  color: #18b878;
+}
+
+
+.memory-heading h2 {
+  margin: 0;
+
+  font-family: "Cinzel", serif;
+
+  font-size: clamp(34px, 4vw, 58px);
+
+  line-height: 1.15;
+
+  font-weight: 600;
+
+  color: #f5f7f6;
+}
+
+
+/* =========================================================
+   MASONRY GRID
+========================================================= */
+
+.memory-grid {
+  columns: 4 280px;
+
+  column-gap: 18px;
+}
+
+
+/* =========================================================
+   MEMORY ITEM
+========================================================= */
+
+.memory-item {
+  position: relative;
+
+  width: 100%;
+
+  margin-bottom: 18px;
+
+  break-inside: avoid;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  border-radius: 18px;
+
+  background: #111714;
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.30);
+}
+
+
+/* =========================================================
+   MEMORY IMAGE
+========================================================= */
+
+.memory-item img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  transition:
+    transform 0.7s cubic-bezier(0.2, 0.65, 0.3, 1),
+    filter 0.5s ease;
+}
+
+
+/* =========================================================
+   IMAGE HOVER
+========================================================= */
+
+.memory-item:hover img {
+  transform: scale(1.06);
+
+  filter: brightness(0.65);
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.memory-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  padding: 18px;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.4s ease;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.65),
+      transparent 50%
+    );
+}
+
+
+.memory-item:hover .memory-overlay {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   IMAGE NUMBER
+========================================================= */
+
+.memory-overlay span {
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  padding: 7px 10px;
+
+  backdrop-filter: blur(8px);
+
+  background: rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .memory-grid {
+    columns: 3 240px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 992px) {
+
+  .gallery-feature {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .gallery-left img {
+    height: 550px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .gallery-hero {
+    padding: 100px 5% 30px;
+  }
+
+
+  .gallery-title {
+    margin-bottom: 55px;
+  }
+
+
+  .gallery-title h2 {
+    font-size: 40px;
+  }
+
+
+  .gallery-title p {
+    font-size: 15px;
+
+    line-height: 1.75;
+  }
+
+
+  .gallery-left img {
+    height: 500px;
+  }
+
+
+  .gallery-card {
+    padding: 32px;
+  }
+
+
+  .gallery-card h3 {
+    font-size: 30px;
+  }
+
+
+  .gallery-small-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+  }
+
+
+  .gallery-small-grid img {
+    height: 180px;
+  }
+
+
+  .gallery-memory-section {
+    width: 90%;
+
+    margin-top: 100px;
+
+    margin-bottom: 70px;
+  }
+
+
+  .memory-heading {
+    margin-bottom: 35px;
+  }
+
+
+  .memory-grid {
+    columns: 2 160px;
+
+    column-gap: 12px;
+  }
+
+
+  .memory-item {
+    margin-bottom: 12px;
+
+    border-radius: 14px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .gallery-hero {
+    padding: 90px 15px 25px;
+  }
+
+
+  .gallery-title span {
+    font-size: 11px;
+
+    letter-spacing: 2.5px;
+  }
+
+
+  .gallery-title h2 {
+    font-size: 30px;
+
+    line-height: 1.3;
+
+    margin: 15px 0;
+  }
+
+
+  .gallery-title p {
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+
+  .gallery-feature {
+    gap: 25px;
+  }
+
+
+  .gallery-left {
+    border-radius: 20px;
+  }
+
+
+  .gallery-left img {
+    height: 300px;
+  }
+
+
+  .gallery-card {
+    padding: 25px;
+
+    border-radius: 20px;
+
+    margin-bottom: 20px;
+  }
+
+
+  .gallery-card span {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .gallery-card h3 {
+    font-size: 25px;
+
+    margin-top: 13px;
+  }
+
+
+  .gallery-small-grid {
+    gap: 10px;
+  }
+
+
+  .gallery-small-grid img {
+    height: 125px;
+
+    border-radius: 13px;
+  }
+
+
+  .gallery-memory-section {
+    width: 100%;
+
+    margin-top: 80px;
+  }
+
+
+  .memory-heading {
+    padding: 0 5%;
+
+    margin-bottom: 30px;
+  }
+
+
+  .memory-heading span {
+    font-size: 11px;
+
+    letter-spacing: 2.5px;
+  }
+
+
+  .memory-heading h2 {
+    font-size: 30px;
+  }
+
+
+  .memory-grid {
+    columns: 1;
+  }
+
+
+  .memory-item {
+    border-radius: 15px;
+  }
+
+}

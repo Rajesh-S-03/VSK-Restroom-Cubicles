@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './ContactUs.css';
+import { useLocation } from "react-router-dom";
 
 const PHONE_1 = '+91-97911 28296';
 const PHONE_2 = '+91-73051 28296';
@@ -20,6 +21,20 @@ const Icon = ({ children }) => (
 );
 
 export default function ContactUs() {
+
+  const location = useLocation();
+
+useEffect(() => {
+  if (location.hash === "#register") {
+    requestAnimationFrame(() => {
+      document.getElementById("register")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  }
+}, [location]);
+
   const rootRef = useRef(null);
   const [form, setForm] = useState({ name: '', phone: '', service: SERVICES[0], message: '' });
   const [error, setError] = useState('');
@@ -47,6 +62,16 @@ export default function ContactUs() {
   }, []);
 
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const resetForm = () => {
+  setForm({
+    name: '',
+    phone: '',
+    service: SERVICES[0],
+    message: '',
+  });
+
+  setError('');
+};
 
   const buildText = () => {
     if (!form.name.trim() || !form.phone.trim()) {
@@ -57,17 +82,35 @@ export default function ContactUs() {
     return `Name: ${form.name.trim()}\nPhone: ${form.phone.trim()}\nRequirement: ${form.service}\nDetails: ${form.message.trim()}`;
   };
 
-  const sendEmail = () => {
-    const text = buildText();
-    if (!text) return;
-    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent('Enquiry from website')}&body=${encodeURIComponent(text)}`;
-  };
+const sendEmail = () => {
+  const text = buildText();
+  if (!text) return;
 
-  const sendWhatsApp = () => {
-    const text = buildText();
-    if (!text) return;
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
-  };
+  const mailtoUrl = `mailto:${EMAIL}?subject=${encodeURIComponent(
+    'Enquiry from website'
+  )}&body=${encodeURIComponent(text)}`;
+
+  window.location.href = mailtoUrl;
+
+  resetForm();
+};
+
+const sendWhatsApp = () => {
+  const text = buildText();
+  if (!text) return;
+
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+
+  const newWindow = window.open(
+    whatsappUrl,
+    '_blank',
+    'noopener,noreferrer'
+  );
+
+  if (newWindow) {
+    resetForm();
+  }
+};
 
   return (
     <div className="contact-us-container" ref={rootRef}>
@@ -128,11 +171,13 @@ export default function ContactUs() {
       </section>
 
       {/* FORM + MAP */}
-      <section className="contact-main">
+      <section className="contact-main" id="register">
         <div className="reveal">
           <span className="eyebrow">Enquiry</span>
           <h2>Tell us what you need</h2>
-          <p className="lead">Share a few details and we will get back to you with a quote.</p>
+          <p className="lead" >
+            Share a few details and we will get back to you with a quote.
+          </p>
 
           <div className="form-card">
             <form onSubmit={(e) => e.preventDefault()} noValidate>

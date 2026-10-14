@@ -1,142 +1,1004 @@
 /* =========================================================
-   HERO 4 - BUILT TO LAST
-   Logo Navy #2c2a7c | Logo Green #009058
+   HERO 4 — VSK PREMIUM STORY SECTION
+   Sticky split-screen: image + template stay fixed,
+   only the right-side content changes while page scrolls.
 ========================================================= */
 
+/*
+  Scroll track.
+  Height = (slides + 1) viewports, so each slide gets one
+  viewport of scrolling. When the track ends, the sticky
+  layer is released and normal page scrolling continues.
+*/
+
 .hero4 {
-  --vsk-navy: #2c2a7c;
   --vsk-green: #009058;
+  --vsk-green-light: #18b878;
+  --vsk-navy: #2c2a7c;
+  --vsk-gold: #c7a96b;
+  --vsk-cream: #e8e3d8;
+  --vsk-dark: #080b0a;
+  --vsk-dark-2: #0d1210;
+  --vsk-grey: #8f9993;
+
+  --hero4-ease: cubic-bezier(0.22, 1, 0.36, 1);
 
   position: relative;
-  overflow: hidden;
-  padding: 70px 8%;
-  background: linear-gradient(135deg, #e6f3fb 0%, #dcf3f0 50%, #e2f7ec 100%);
+  width: 100%;
+
+  height: calc((var(--hero4-slides, 6) + 1) * 100vh);
+
+  background: #080b0a;
+  color: #fff;
 }
 
-/* ---------- Heading ---------- */
+/* =========================================================
+   STICKY LAYER (never moves while inside the track)
+========================================================= */
 
-.hero4-head {
-  text-align: center;
-  margin-bottom: 40px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
+.hero4-sticky {
+  position: sticky;
 
-.hero4.is-visible .hero4-head {
-  opacity: 1;
-  transform: none;
-}
+  /*
+    Start slightly before the normal viewport top,
+    but keep the content safely below the navbar.
+  */
+  top: 80px;
 
-.hero4-label {
-  margin: 0 0 14px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.28em;
-  color: var(--vsk-green);
-}
+  width: 100%;
 
-.hero4-title {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 400;
-  line-height: 1.05;
-  color: var(--vsk-navy);   /* "Built to" = logo navy */
-}
+  height: calc(100vh - 80px);
 
-.hero4-accent {
-  color: var(--vsk-green);  /* "Last" = logo green */
-}
-
-/* ---------- Cards ---------- */
-
-.hero4-grid {
-  max-width: 1100px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+
+  grid-template-columns:
+    minmax(420px, 0.95fr)
+    minmax(500px, 1.05fr);
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 40%,
+      rgba(0, 144, 88, 0.12),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 90% 70%,
+      rgba(44, 42, 124, 0.1),
+      transparent 35%
+    ),
+    #080b0a;
 }
 
-.hero4-card {
+@supports (height: 100dvh) {
+
+  .hero4 {
+    height: calc(
+      (var(--hero4-slides, 6) + 1) * 100dvh
+    );
+  }
+
+  .hero4-sticky {
+    top: 50px;
+
+    height: calc(100dvh - 80px);
+  }
+}
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.hero4-bg-grid {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.18;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+
+  background-size: 70px 70px;
+
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+}
+
+.hero4-bg-glow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  left: -220px;
+  top: 20%;
+
+  border-radius: 50%;
+
+  background: rgba(0, 144, 88, 0.12);
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   LEFT — IMAGE AREA
+========================================================= */
+
+.hero4-image-wrap {
   position: relative;
-  padding: 26px 24px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(44, 42, 124, 0.10);
-  box-shadow: 0 8px 24px rgba(44, 42, 124, 0.08);
-  opacity: 0;
-  transform: translateY(30px);
-  transition:
-    opacity 0.6s ease var(--delay),
-    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) var(--delay),
-    box-shadow 0.4s ease,
-    border-color 0.4s ease,
-    background 0.4s ease;
-}
 
-.hero4.is-visible .hero4-card {
-  opacity: 1;
-  transform: none;
-}
+  height: 100%;
 
-.hero4.is-visible .hero4-card:hover {
-  transform: translateY(-8px);
-  background: #ffffff;
-  border-color: var(--vsk-green);
-  box-shadow:
-    0 0 24px rgba(0, 144, 88, 0.30),
-    0 18px 40px rgba(44, 42, 124, 0.15);
-  transition-delay: 0s;
-}
-
-.hero4-icon {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 55px 50px;
+
+  z-index: 2;
+}
+
+.hero4-image-frame {
+  position: relative;
+
+  width: min(100%, 520px);
+  height: min(82vh, 720px);
+}
+
+.hero4-image-glow {
+  position: absolute;
+
+  inset: -25px;
+
+  border-radius: 45% 45% 18px 18px;
+
+  background: radial-gradient(
+    circle,
+    rgba(0, 144, 88, 0.24),
+    transparent 65%
+  );
+
+  filter: blur(35px);
+
+  z-index: -1;
+}
+
+/* Architectural arch card */
+
+.hero4-image-card {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  background: #d9d4c9;
+
+  border-radius: 48% 48% 24px 24px / 20% 20% 24px 24px;
+
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+
+  isolation: isolate;
+}
+
+/* Stacked images, cross-fade */
+
+.hero4-story-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  opacity: 0;
+
+  transform: scale(1.1);
+
+  filter: saturate(0.82) contrast(1.04) brightness(0.82);
+
+  transition:
+    opacity 0.9s var(--hero4-ease),
+    transform 1.4s var(--hero4-ease);
+}
+
+.hero4-story-image.is-active {
+  opacity: 1;
+
+  transform: scale(1.04);
+}
+
+.hero4-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    transparent 35%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+
+  z-index: 1;
+}
+
+.hero4-image-top {
+  position: absolute;
+
+  top: 30px;
+  left: 32px;
+  right: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 3;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 2.4px;
+
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.hero4-image-number {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  border-radius: 50%;
+
+  backdrop-filter: blur(10px);
+
+  background: rgba(0, 0, 0, 0.18);
+
+  font-size: 11px;
+}
+
+/* Image captions (stacked, swap by class) */
+
+.hero4-image-content {
+  position: absolute;
+
+  left: 35px;
+  right: 35px;
+  bottom: 125px;
+
+  height: 120px;
+
+  z-index: 3;
+}
+
+.hero4-image-caption {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  opacity: 0;
+
+  transform: translateY(24px);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.7s var(--hero4-ease);
+}
+
+.hero4-image-caption.is-active {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.hero4-image-label {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  color: var(--vsk-green-light);
+}
+
+.hero4-image-caption h3 {
+  margin: 0;
+
+  max-width: 390px;
+
+  font-size: clamp(27px, 3vw, 40px);
+
+  line-height: 1.05;
+
+  font-weight: 500;
+
+  letter-spacing: -1.2px;
+
+  color: #fff;
+}
+
+/* Image CTA */
+
+.hero4-image-button {
+  position: absolute;
+
+  left: 35px;
+  right: 35px;
+  bottom: 20px;
+
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 8px 0 22px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 40px;
+
+  color: #fff;
+
+  background: rgba(8, 11, 10, 0.42);
+
+  backdrop-filter: blur(15px);
+
+  cursor: pointer;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  z-index: 4;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.hero4-image-button:hover {
+  background: var(--vsk-green);
+
+  border-color: var(--vsk-green);
+}
+
+.hero4-button-arrow {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  font-size: 18px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.hero4-image-button:hover .hero4-button-arrow {
+  transform: translateX(3px);
+
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Corner mark */
+
+.hero4-corner-mark {
+  position: absolute;
+
+  right: -18px;
+  bottom: 35px;
+
+  width: 70px;
+  height: 70px;
+
+  pointer-events: none;
+}
+
+.hero4-corner-mark span:first-child {
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+
   width: 50px;
   height: 50px;
-  margin-bottom: 16px;
-  border-radius: 50%;
-  font-size: 22px;
-  color: #ffffff;
-  background: linear-gradient(135deg, var(--vsk-navy), var(--vsk-green));
-  box-shadow: 0 6px 18px rgba(44, 42, 124, 0.2);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+  border-right: 1px solid rgba(0, 144, 88, 0.65);
+  border-bottom: 1px solid rgba(0, 144, 88, 0.65);
 }
 
-.hero4-card:hover .hero4-icon {
-  transform: scale(1.12) rotate(-6deg);
-  box-shadow: 0 0 20px rgba(0, 144, 88, 0.55);
+.hero4-corner-mark span:last-child {
+  position: absolute;
+
+  right: 15px;
+  bottom: 15px;
+
+  width: 20px;
+  height: 20px;
+
+  border-right: 1px solid rgba(199, 169, 107, 0.7);
+  border-bottom: 1px solid rgba(199, 169, 107, 0.7);
 }
 
-.hero4-card-title {
-  margin: 0 0 8px;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--vsk-navy);
+/* =========================================================
+   RIGHT — CONTENT AREA
+========================================================= */
+
+.hero4-content {
+  position: relative;
+
+  height: 100%;
+
+  z-index: 3;
 }
 
-.hero4-card-text {
+.hero4-content-inner {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 0 clamp(50px, 7vw, 115px) 0 30px;
+}
+
+/* Fixed heading */
+
+.hero4-heading {
+  max-width: 650px;
+
+  margin-bottom: clamp(30px, 6vh, 60px);
+}
+
+.hero4-section-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 24px;
+
+  color: var(--vsk-green-light);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2.8px;
+}
+
+.hero4-section-label::before {
+  content: "";
+
+  width: 30px;
+  height: 1px;
+
+  background: var(--vsk-green);
+}
+
+.hero4-heading h1 {
   margin: 0;
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: rgba(44, 42, 124, 0.75);
+
+  font-size: clamp(44px, 5.2vw, 82px);
+
+  line-height: 0.96;
+
+  font-weight: 400;
+
+  letter-spacing: -3px;
 }
 
-/* ---------- Tablet ---------- */
-
-@media (max-width: 900px) {
-  .hero4 { padding: 60px 6%; }
-  .hero4-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.hero4-heading h1 span {
+  color: var(--vsk-green-light);
 }
 
-/* ---------- Mobile ---------- */
+.hero4-heading p {
+  max-width: 470px;
 
-@media (max-width: 600px) {
-  .hero4 { padding: 50px 6%; }
-  .hero4-head { margin-bottom: 28px; }
-  .hero4-grid { grid-template-columns: 1fr; gap: 14px; }
-  .hero4-card { padding: 20px; }
+  margin: 24px 0 0;
+
+  color: #89938d;
+
+  font-size: 15px;
+
+  line-height: 1.75;
+}
+
+/* =========================================================
+   STAGE — one fixed display area, slides replace each other
+========================================================= */
+
+.hero4-stage {
+  position: relative;
+
+  max-width: 560px;
+
+  height: clamp(250px, 36vh, 340px);
+
+  padding-top: 32px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero4-slide {
+  position: absolute;
+
+  top: 32px;
+  left: 0;
+  right: 0;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  /* next slides wait below */
+  transform: translateY(80px);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.8s var(--hero4-ease),
+    visibility 0s linear 0.8s;
+}
+
+.hero4-slide.is-active {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+  transform: translateY(0);
+
+  transition:
+    opacity 0.7s ease 0.1s,
+    transform 0.8s var(--hero4-ease) 0.1s,
+    visibility 0s;
+}
+
+/* previous slides leave upward */
+.hero4-slide.is-past {
+  transform: translateY(-80px);
+}
+
+.hero4-slide-index {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 6px;
+
+  margin-bottom: 18px;
+
+  color: var(--vsk-green-light);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+.hero4-slide-total {
+  color: #5c6660;
+
+  font-size: 11px;
+}
+
+.hero4-story-eyebrow {
+  display: block;
+
+  margin-bottom: 16px;
+
+  color: var(--vsk-gold);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 2.4px;
+}
+
+.hero4-slide h2 {
+  margin: 0 0 18px;
+
+  color: #fff;
+
+  font-size: clamp(28px, 3vw, 44px);
+
+  line-height: 1.05;
+
+  font-weight: 400;
+
+  letter-spacing: -1.5px;
+}
+
+.hero4-slide p {
+  max-width: 470px;
+
+  margin: 0;
+
+  color: #aab2ad;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+/* Closing slide */
+
+.hero4-slide-end h2 {
+  font-weight: 300;
+
+  letter-spacing: -2px;
+
+  font-size: clamp(32px, 3.6vw, 52px);
+}
+
+.hero4-slide-end h2 strong {
+  color: var(--vsk-green-light);
+
+  font-weight: 400;
+}
+
+.hero4-end-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  margin-top: 28px;
+
+  padding: 8px 8px 8px 22px;
+
+  border: 1px solid rgba(0, 144, 88, 0.5);
+
+  border-radius: 40px;
+
+  background: transparent;
+
+  color: #fff;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.hero4-end-button span {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--vsk-green);
+
+  font-size: 16px;
+}
+
+.hero4-end-button:hover {
+  background: rgba(0, 144, 88, 0.15);
+
+  border-color: var(--vsk-green);
+}
+
+/* =========================================================
+   PROGRESS DOTS
+========================================================= */
+
+.hero4-progress {
+  position: absolute;
+
+  right: clamp(18px, 2.4vw, 40px);
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.hero4-dot {
+  width: 8px;
+  height: 8px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #4b554f;
+
+  cursor: pointer;
+
+  transition:
+    height 0.4s ease,
+    background 0.4s ease,
+    border-radius 0.4s ease;
+}
+
+.hero4-dot:hover {
+  background: #7f8983;
+}
+
+.hero4-dot.is-active {
+  height: 26px;
+
+  border-radius: 6px;
+
+  background: var(--vsk-green-light);
+}
+
+.hero4-dot:focus-visible,
+.hero4-end-button:focus-visible,
+.hero4-image-button:focus-visible {
+  outline: 2px solid var(--vsk-green-light);
+
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .hero4-sticky {
+    grid-template-columns: minmax(360px, 0.9fr) minmax(420px, 1.1fr);
+  }
+
+  .hero4-image-wrap {
+    padding: 40px 30px;
+  }
+
+  .hero4-content-inner {
+    padding-left: 35px;
+    padding-right: 60px;
+  }
+}
+
+@media (max-width: 850px) {
+  .hero4-sticky {
+    grid-template-columns: minmax(300px, 0.85fr) minmax(360px, 1.15fr);
+  }
+
+  .hero4-image-wrap {
+    padding: 30px 20px;
+  }
+
+  .hero4-image-frame {
+    height: 72vh;
+  }
+
+  .hero4-content-inner {
+    padding-left: 20px;
+    padding-right: 50px;
+  }
+
+  .hero4-heading h1 {
+    font-size: 44px;
+
+    letter-spacing: -2.5px;
+  }
+}
+
+/* =========================================================
+   MOBILE — image on top, content below, both fixed
+========================================================= */
+
+@media (max-width: 768px) {
+  .hero4-sticky {
+    grid-template-columns: 1fr;
+    grid-template-rows: 42% 58%;
+  }
+
+  .hero4-bg-grid {
+    opacity: 0.1;
+
+    background-size: 45px 45px;
+  }
+
+  /* image */
+
+  .hero4-image-wrap {
+    padding: 18px 22px 8px;
+  }
+
+  .hero4-image-frame {
+    width: min(100%, 300px);
+    height: 100%;
+  }
+
+  .hero4-image-card {
+    border-radius: 48% 48% 18px 18px / 14% 14% 18px 18px;
+  }
+
+  .hero4-image-top {
+    top: 16px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .hero4-image-number {
+    width: 34px;
+    height: 34px;
+  }
+
+  .hero4-image-content {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+
+    height: 90px;
+  }
+
+  .hero4-image-caption h3 {
+    font-size: 22px;
+  }
+
+  .hero4-image-button,
+  .hero4-corner-mark {
+    display: none;
+  }
+
+  /* content */
+
+  .hero4-content-inner {
+    justify-content: flex-start;
+
+    padding: 10px 22px 0;
+  }
+
+  .hero4-heading {
+    margin-bottom: 16px;
+  }
+
+  .hero4-section-label {
+    margin-bottom: 10px;
+
+    font-size: 8px;
+  }
+
+  .hero4-heading h1 {
+    font-size: clamp(30px, 9vw, 44px);
+
+    letter-spacing: -1.5px;
+  }
+
+  .hero4-heading p {
+    display: none;
+  }
+
+  .hero4-stage {
+    height: auto;
+
+    flex: 1;
+
+    padding-top: 20px;
+  }
+
+  .hero4-slide {
+    top: 20px;
+  }
+
+  .hero4-slide-index {
+    margin-bottom: 10px;
+  }
+
+  .hero4-story-eyebrow {
+    margin-bottom: 10px;
+
+    font-size: 8px;
+  }
+
+  .hero4-slide h2 {
+    margin-bottom: 12px;
+
+    font-size: clamp(24px, 7vw, 32px);
+
+    letter-spacing: -1px;
+  }
+
+  .hero4-slide p {
+    font-size: 13px;
+
+    line-height: 1.65;
+  }
+
+  .hero4-end-button {
+    margin-top: 18px;
+  }
+
+  /* dots go horizontal under the image */
+
+  .hero4-progress {
+    right: auto;
+    left: 22px;
+    top: auto;
+    bottom: 16px;
+
+    transform: none;
+
+    flex-direction: row;
+  }
+
+  .hero4-dot.is-active {
+    width: 26px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero4-sticky {
+    grid-template-rows: 40% 60%;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero4-story-image,
+  .hero4-image-caption,
+  .hero4-slide,
+  .hero4-slide.is-active,
+  .hero4-dot,
+  .hero4-image-button,
+  .hero4-end-button {
+    transition: none;
+  }
+
+  .hero4-slide,
+  .hero4-slide.is-past {
+    transform: none;
+  }
 }

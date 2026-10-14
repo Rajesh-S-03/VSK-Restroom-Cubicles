@@ -1,6 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
 /* =========================================================
-   PREMIUM NAVBAR
+   VSK ENTERPRISES — PREMIUM NAVBAR
+   Dark Architectural / Blue + Green Brand
+========================================================= */
+
+:root {
+  --vsk-bg: #0B1012;
+  --vsk-bg-soft: #11191B;
+  --vsk-card: #151F21;
+
+  --vsk-green: #18B879;
+  --vsk-blue: #2878C8;
+
+  --vsk-white: #F2F5F4;
+  --vsk-muted: #9AA8A5;
+
+  --vsk-border: rgba(255, 255, 255, 0.08);
+  --vsk-border-strong: rgba(255, 255, 255, 0.14);
+}
+
+
+/* =========================================================
+   NAVBAR
+
+   NOTE: the glass background (backdrop-filter) lives on
+   ::before, NOT on .navbar. A backdrop-filter on the header
+   turns it into the containing block of the position:fixed
+   mobile menu and breaks the full-screen menu.
 ========================================================= */
 
 .navbar {
@@ -12,29 +39,98 @@
   height: 78px;
 
   padding: 0 46px;
+
   box-sizing: border-box;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
 
   z-index: 1000;
+  background: #f5f4f4;
 
-  /* Initially transparent — blends with Hero */
-  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-
-  border-bottom: 1px solid transparent;
-
-  box-shadow: none;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
 
   transition:
-    background 0.45s ease,
-    backdrop-filter 0.45s ease,
-    border-color 0.45s ease,
-    box-shadow 0.45s ease;
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+/* ---------- glass background layer ---------- */
+
+/* .navbar::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: -1;
+
+  background: rgba(7, 18, 20, 0.72);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition: background 0.4s ease;
+
+  pointer-events: none;
+} */
+
+
+/* =========================================================
+   SCROLLED NAVBAR
+========================================================= */
+
+.navbar-scrolled {
+  border-bottom: 1px solid rgba(20, 40, 38, 0.10);
+
+  box-shadow: 0 8px 30px rgba(15, 30, 28, 0.12);
+}
+
+/* .navbar-scrolled::before {
+  background: rgba(238, 241, 240, 0.96);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+} */
+
+
+/* =========================================================
+   SUBTLE BRAND LINE
+========================================================= */
+
+.navbar::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -1px;
+
+  width: 100%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(24, 184, 121, 0.45) 30%,
+    rgba(40, 120, 200, 0.35) 70%,
+    transparent 100%
+  );
+
+  opacity: 0.35;
+
+  pointer-events: none;
+
+  transition: opacity 0.3s ease;
+}
+
+.navbar.menu-open::after {
+  opacity: 0;
 }
 
 
@@ -45,6 +141,45 @@
 .navbar-logo {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 1003;
+  text-decoration: none;
+}
+
+.navbar-logo-primary {
+  width: 105px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+}
+
+.navbar-logo-secondary {
+  width: 75px;
+  height: 42px;
+  object-fit: contain;
+  display: block;
+}
+
+.navbar-logo-divider {
+  display: block;
+  flex: 0 0 1px;
+  width: 5px;
+  height: 59px;
+  background: #1c1c1c;
+  opacity: 0.9;
+}
+
+.navbar-logo:hover .navbar-logo-primary,
+.navbar-logo:hover .navbar-logo-secondary {
+  transform: scale(1.04);
+}
+
+/* Scrolled navbar */
+.navbar-scrolled .navbar-logo-divider {
+  opacity: 1;
 }
 
 .navbar-logo img {
@@ -54,20 +189,21 @@
   display: block;
 
   transition:
-    transform 0.4s ease,
-    filter 0.4s ease;
+    transform 0.35s ease,
+    filter 0.35s ease;
 }
 
 .navbar-logo:hover img {
-  transform: scale(1.03);
+  transform: scale(1.035);
 
   filter:
-    drop-shadow(0 0 12px rgba(25, 75, 120, 0.25));
+    drop-shadow(0 0 12px rgba(24, 184, 121, 0.16))
+    drop-shadow(0 0 18px rgba(40, 120, 200, 0.10));
 }
 
 
 /* =========================================================
-   NAVIGATION
+   DESKTOP NAVIGATION
 ========================================================= */
 
 .navbar-links {
@@ -77,36 +213,45 @@
   gap: 42px;
 }
 
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
 .navbar-links a {
   position: relative;
 
-  color: rgba(255, 255, 255, 0.72);
+ color: #20245f;
 
   text-decoration: none;
 
-  /*
-    Elegant architectural typography
-  */
-  font-family:
-    "Inter",
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
 
   font-size: 12px;
+
   font-weight: 500;
 
-  letter-spacing: 0.12em;
+  letter-spacing: 0.11em;
 
   text-transform: uppercase;
+
+  white-space: nowrap;
 
   transition:
     color 0.3s ease,
     opacity 0.3s ease;
 }
 
+.navbar-scrolled .navbar-links a {
+  color: rgba(23, 38, 37, 0.72);
+}
 
-/* Hover line */
+.navbar-scrolled .navbar-links a:hover {
+  color: #172625;
+}
+
+
+/* ---------- hover line ---------- */
 
 .navbar-links a::after {
   content: "";
@@ -114,115 +259,229 @@
   position: absolute;
 
   left: 0;
-  bottom: -9px;
+  bottom: -10px;
 
   width: 0;
   height: 1px;
 
-  background: linear-gradient(
-    90deg,
-    #ffffff,
-    rgba(255, 255, 255, 0.25)
-  );
+  background: linear-gradient(90deg, var(--vsk-green), var(--vsk-blue));
 
   transition: width 0.35s ease;
 }
 
-
 .navbar-links a:hover {
-  color: #ffffff;
+  color: #172625;;
 }
-
 
 .navbar-links a:hover::after {
   width: 100%;
 }
 
 
+/* ---------- active ---------- */
+
+.navbar-links a.active {
+   color: #009058;
+}
+
+.navbar-scrolled .navbar-links a.active {
+  color: #172625;
+}
+
+.navbar-links a.active::after {
+  width: 100%;
+}
+
+.navbar-links a.active::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -15px;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: var(--vsk-green);
+
+  transform: translateX(-50%);
+
+  box-shadow: 0 0 8px rgba(24, 184, 121, 0.65);
+}
+
+
 /* =========================================================
-   CONTACT BUTTON
+   LET'S TALK BUTTON
+   Always visible: never shrinks, never wraps, and its colours
+   are set for every state (top / scrolled / hover / menu open).
 ========================================================= */
 
 .navbar-contact {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
   gap: 12px;
 
-  padding: 12px 19px;
+  padding: 11px 18px;
 
-  color: rgba(255, 255, 255, 0.9);
+   color: #009058;;
 
   text-decoration: none;
 
-  font-family:
-    "Inter",
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
+  white-space: nowrap;
 
-  font-size: 11px;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  font-size: 10px;
+
   font-weight: 500;
 
-  letter-spacing: 0.12em;
+  letter-spacing: 0.13em;
 
   text-transform: uppercase;
 
-  /*
-    Thin premium outline
-  */
-  border: 1px solid rgba(255, 255, 255, 0.20);
+  border: 2px solid rgba(8, 78, 50, 0.45);
 
-  border-radius: 100px;
+  border-radius: 2px;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.055),
-      rgba(255, 255, 255, 0.015)
-    );
+  background: linear-gradient(
+    135deg,
+    rgba(24, 184, 121, 0.08),
+    rgba(40, 120, 200, 0.05)
+  );
+
+  position: relative;
+
+  overflow: hidden;
+
+  z-index: 1003;
 
   transition:
+    color 0.3s ease,
     background 0.35s ease,
     border-color 0.35s ease,
     transform 0.35s ease,
     box-shadow 0.35s ease;
 }
 
+/* ---------- scrolled (light bar) ---------- */
+
+.navbar-scrolled .navbar-contact {
+  color: #172625;
+
+  border-color: rgba(24, 150, 105, 0.55);
+
+  background: rgba(24, 184, 121, 0.06);
+}
+
+/* ---------- top accent ---------- */
+
+.navbar-contact::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: linear-gradient(90deg, var(--vsk-green), var(--vsk-blue));
+
+  transform: translateX(-100%);
+
+  transition: transform 0.45s ease;
+}
+
+.navbar-contact:hover::before {
+  transform: translateX(0);
+}
+
+/* ---------- hover (dark bar) ---------- */
 
 .navbar-contact:hover {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.10),
-      rgba(255, 255, 255, 0.035)
-    );
+  color: #1c1585;
 
-  border-color: rgba(255, 255, 255, 0.45);
+  background: linear-gradient(
+    135deg,
+    rgba(24, 184, 121, 0.16),
+    rgba(40, 120, 200, 0.12)
+  );
+
+  border-color: rgba(24, 184, 121, 0.75);
 
   transform: translateY(-1px);
 
-  box-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 28px rgba(24, 184, 121, 0.10);
 }
 
+/*
+  hover (light bar)
+  Before: white text on a barely tinted background = invisible.
+  Now: solid brand gradient so white text stays readable.
+*/
+
+.navbar-scrolled .navbar-contact:hover {
+  color: #ffffff;
+
+  background: linear-gradient(135deg, #18B879, #2878C8);
+
+  border-color: transparent;
+
+  box-shadow: 0 8px 24px rgba(24, 150, 105, 0.25);
+}
+
+/* ---------- menu open (always on a dark overlay) ---------- */
+
+.navbar.menu-open .navbar-contact {
+  color: var(--vsk-white);
+
+  border-color: rgba(24, 184, 121, 0.45);
+
+  background: linear-gradient(
+    135deg,
+    rgba(24, 184, 121, 0.08),
+    rgba(40, 120, 200, 0.05)
+  );
+}
+
+.navbar.menu-open .navbar-links a {
+  color: rgba(242, 245, 244, 0.72);
+}
+
+/* ---------- arrow ---------- */
 
 .arrow {
   font-size: 15px;
-
   line-height: 1;
 
+  color: var(--vsk-green);
+
   transition:
-    transform 0.3s ease;
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
-
 .navbar-contact:hover .arrow {
+  color: var(--vsk-blue);
+
   transform: translate(2px, -2px);
+}
+
+.navbar-scrolled .navbar-contact:hover .arrow {
+  color: #ffffff;
 }
 
 
 /* =========================================================
-   MOBILE MENU
+   MOBILE HAMBURGER
 ========================================================= */
 
 .navbar-menu {
@@ -233,7 +492,9 @@
 
   padding: 0;
 
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  flex: 0 0 auto;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
 
   border-radius: 50%;
 
@@ -250,40 +511,420 @@
 
   transition:
     border-color 0.3s ease,
-    background 0.3s ease;
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+
+  position: relative;
+
+  z-index: 1003;
 }
-
-
-.navbar-menu:hover {
-  background: rgba(255, 255, 255, 0.08);
-
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
 
 .navbar-menu span {
   width: 17px;
   height: 1px;
 
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(102, 149, 133, 0.9);
 
   transition:
-    transform 0.3s ease;
+    transform 0.35s ease,
+    background 0.35s ease,
+    width 0.35s ease;
+}
+
+.navbar-scrolled .navbar-menu {
+  border-color: rgba(20, 40, 38, 0.15);
+
+  background: rgba(20, 40, 38, 0.035);
+}
+
+.navbar-scrolled .navbar-menu span {
+  background: #172625;
+}
+
+/* menu open: button sits on the dark overlay */
+
+.navbar.menu-open .navbar-menu {
+  border-color: rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.navbar.menu-open .navbar-menu span {
+  background: rgba(242, 245, 244, 0.9);
+}
+
+.navbar-menu:hover {
+  background: rgba(24, 184, 121, 0.08);
+
+  border-color: rgba(24, 184, 121, 0.45);
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.20);
+}
+
+/* hamburger -> X (must stay after the menu-open rules above) */
+
+.navbar .navbar-menu.open span:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+
+  background: var(--vsk-green);
+}
+
+.navbar .navbar-menu.open span:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+
+  background: var(--vsk-green);
 }
 
 
 /* =========================================================
-   TABLET
+   MOBILE MENU
 ========================================================= */
 
-@media (max-width: 1000px) {
+.mobile-menu {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: 100vh;
+  height: 100dvh;
+
+  background: linear-gradient(
+    145deg,
+    #070B0D 0%,
+    #0B1012 52%,
+    #091411 100%
+  );
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(-20px);
+
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease,
+    transform 0.45s ease;
+
+  overflow-y: auto;
+
+  z-index: 1001;
+}
+
+.mobile-menu::before {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  top: 5%;
+  right: -180px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(40, 120, 200, 0.09),
+    transparent 65%
+  );
+
+  pointer-events: none;
+}
+
+.mobile-menu::after {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  bottom: -180px;
+  left: -180px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(24, 184, 121, 0.07),
+    transparent 65%
+  );
+
+  pointer-events: none;
+}
+
+.mobile-menu-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE INNER
+========================================================= */
+
+.mobile-menu-inner {
+  min-height: 100%;
+
+  box-sizing: border-box;
+
+  padding: 110px 28px 35px;
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================================
+   MOBILE LABEL
+========================================================= */
+
+.mobile-menu-label {
+  font-family: "Inter", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.20em;
+
+  color: var(--vsk-green);
+
+  margin-bottom: 25px;
+
+  opacity: 0;
+
+  transform: translateY(15px);
+
+  transition:
+    opacity 0.4s ease 0.1s,
+    transform 0.4s ease 0.1s;
+}
+
+.mobile-menu-open .mobile-menu-label {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE LINKS
+========================================================= */
+
+.mobile-links {
+  display: flex;
+  flex-direction: column;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.mobile-links a {
+  min-height: 68px;
+
+  display: grid;
+
+  grid-template-columns: 38px 1fr 25px;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: rgba(242, 245, 244, 0.86);
+
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.02em;
+
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  transition:
+    color 0.3s ease,
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    padding-left 0.3s ease;
+}
+
+/*
+  Stagger works for ANY number of links
+  (--i is set per link in Navbar.jsx).
+  Before, only 5 links were handled, so the 6th stayed invisible.
+*/
+
+.mobile-menu-open .mobile-links a {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  transition-delay: calc(0.12s + var(--i, 0) * 0.05s);
+}
+
+.mobile-links a:hover {
+  color: var(--vsk-green);
+
+  padding-left: 8px;
+
+  transition-delay: 0s;
+}
+
+.mobile-links a.active {
+  color: var(--vsk-green);
+}
+
+.mobile-links a.active .mobile-link-number {
+  color: var(--vsk-green);
+}
+
+.mobile-links a.active .mobile-link-arrow {
+  color: var(--vsk-blue);
+}
+
+.mobile-link-number {
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.08em;
+
+  color: rgba(255, 255, 255, 0.30);
+
+  transition: color 0.3s ease;
+}
+
+.mobile-link-arrow {
+  font-size: 17px;
+
+  color: rgba(255, 255, 255, 0.30);
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.mobile-links a:hover .mobile-link-arrow {
+  color: var(--vsk-blue);
+
+  transform: translate(2px, -2px);
+}
+
+
+/* =========================================================
+   MOBILE FOOTER
+========================================================= */
+
+.mobile-menu-footer {
+  margin-top: auto;
+
+  padding-top: 30px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 0.15em;
+
+  color: rgba(255, 255, 255, 0.30);
+}
+
+.mobile-menu-inner::after {
+  content: "";
+
+  display: block;
+
+  width: 100%;
+  height: 1px;
+
+  margin-top: 22px;
+
+  background: linear-gradient(
+    90deg,
+    var(--vsk-green),
+    var(--vsk-blue),
+    transparent
+  );
+
+  opacity: 0.65;
+}
+
+
+/* =========================================================
+   LARGE LAPTOP — tighter spacing for 6 links
+========================================================= */
+
+@media (max-width: 1280px) {
+
+  .navbar {
+    padding: 0 32px;
+  }
+
+  .navbar-links {
+    gap: 30px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET + MOBILE — hamburger mode
+   (with 6 links the desktop menu no longer fits below ~1100px,
+    which is what squeezed / hid the Let's Talk button)
+========================================================= */
+
+@media (max-width: 1100px) {
 
   .navbar {
     padding: 0 28px;
   }
 
   .navbar-links {
-    gap: 25px;
+    display: none;
+  }
+
+  .navbar-contact {
+    margin-left: auto;
+    margin-right: 12px;
+  }
+
+  .navbar-menu {
+    display: flex;
+  }
+
+}
+
+@media (min-width: 1101px) {
+
+  .mobile-menu {
+    display: none;
   }
 
 }
@@ -294,27 +935,240 @@
 ========================================================= */
 
 @media (max-width: 700px) {
+  
 
   .navbar {
     height: 68px;
 
     padding: 0 18px;
+
+    gap: 8px;
   }
+  
 
   .navbar-logo img {
-    width: 90px;
-  }
-
-  .navbar-links {
-    display: none;
+    width: 88px;
   }
 
   .navbar-contact {
-    display: none;
+    padding: 9px 13px;
+
+    gap: 8px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.10em;
+
+    margin-right: 10px;
+  }
+
+  .navbar-contact .arrow {
+    font-size: 13px;
   }
 
   .navbar-menu {
-    display: flex;
+    width: 42px;
+    height: 42px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE — 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    height: 64px;
+
+    padding: 0 15px;
+  }
+
+  .navbar-logo img {
+    width: 82px;
+  }
+
+  .navbar-contact {
+    padding: 8px 11px;
+
+    gap: 7px;
+
+    font-size: 8px;
+
+    margin-right: 8px;
+  }
+
+  .navbar-contact .arrow {
+    font-size: 12px;
+  }
+
+  .navbar-menu {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobile-menu-inner {
+    padding: 100px 22px 28px;
+  }
+
+  .mobile-links a {
+    min-height: 62px;
+
+    font-size: 16px;
+
+    grid-template-columns: 32px 1fr 22px;
+  }
+
+  .mobile-menu-footer {
+    font-size: 8px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE — 390px
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .navbar {
+    height: 60px;
+
+    padding: 0 12px;
+
+    gap: 5px;
+  }
+
+  .navbar-logo img {
+    width: 70px;
+  }
+
+  .navbar-contact {
+    padding: 7px 9px;
+
+    gap: 5px;
+
+    font-size: 8px;
+
+    margin-right: 6px;
+
+    letter-spacing: 0.06em;
+  }
+
+  .navbar-contact .arrow {
+    font-size: 11px;
+  }
+
+  .navbar-menu {
+    width: 37px;
+    height: 37px;
+
+    gap: 5px;
+  }
+
+  .navbar-menu span {
+    width: 15px;
+  }
+
+  .mobile-menu-inner {
+    padding: 92px 18px 25px;
+  }
+
+  .mobile-menu-label {
+    font-size: 9px;
+
+    margin-bottom: 20px;
+  }
+
+  .mobile-links a {
+    min-height: 58px;
+
+    font-size: 15px;
+
+    grid-template-columns: 28px 1fr 20px;
+  }
+
+  .mobile-link-number {
+    font-size: 9px;
+  }
+
+  .mobile-link-arrow {
+    font-size: 15px;
+  }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES — 350px
+========================================================= */
+
+@media (max-width: 350px) {
+
+  .navbar {
+    padding: 0 10px;
+
+    gap: 4px;
+  }
+
+  .navbar-logo img {
+    width: 60px;
+  }
+
+  .navbar-contact {
+    padding: 6px 7px;
+
+    gap: 3px;
+
+    font-size: 7px;
+
+    margin-right: 4px;
+
+    letter-spacing: 0.04em;
+  }
+
+  .navbar-contact .arrow {
+    font-size: 10px;
+  }
+
+  .navbar-menu {
+    width: 35px;
+    height: 35px;
+  }
+
+  .navbar-menu span {
+    width: 14px;
+  }
+
+  .mobile-menu-inner {
+    padding: 85px 15px 20px;
+  }
+
+  .mobile-links a {
+    min-height: 54px;
+
+    font-size: 14px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .mobile-menu,
+  .mobile-menu-label,
+  .mobile-links a,
+  .navbar-contact,
+  .navbar-menu,
+  .navbar-menu span {
+    transition: none;
   }
 
 }

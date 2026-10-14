@@ -9,6 +9,7 @@ import hotelsImg from "../../assets/applications/hotels.jpg";
 import mallsImg from "../../assets/applications/malls.jpg";
 import officesImg from "../../assets/applications/offices.jpg";
 import restaurantImg from "../../assets/applications/restaurant.jpg";
+import ComparisonSlider from "../Cubicles/Comparision_slider";
 
 const applications = [
   {
@@ -63,6 +64,7 @@ const applications = [
 
 const Hero6 = () => {
   return (
+    <>
     <section className="hero6">
       {/* Background Effects */}
       <div className="hero6-glow hero6-glow-left"></div>
@@ -115,6 +117,8 @@ const Hero6 = () => {
       {/* Bottom Fade */}
       <div className="hero6-bottom-fade"></div>
     </section>
+    <ComparisonSlider/>
+    </>
   );
 };
 

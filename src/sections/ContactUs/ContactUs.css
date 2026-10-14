@@ -1,5 +1,5 @@
 /* =========================================================
-   CONTACT US  —  VSK Enterprises theme (navy + green on white)
+   CONTACT US  —  VSK Enterprises theme (navy + green on soft grey)
    All selectors are scoped under .contact-us-container so they
    won't clash with AboutUs.css (.reveal, .badge, .card-icon...).
 ========================================================= */
@@ -16,7 +16,14 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--vsk-navy);
   line-height: 1.6;
-  background-color: #ffffff;
+
+  background: linear-gradient(
+    180deg,
+    #e3e6e9 0%,
+    #e9ebed 45%,
+    #dfe3e6 100%
+  );
+
   overflow: hidden;
 }
 
@@ -154,13 +161,16 @@
 }
 
 .contact-us-container .info-card {
-  background: #ffffff;
-  border: 1px solid var(--vsk-border);
+  background: linear-gradient(145deg, #f0f2f4, #e5e8ec);
+  border: 1px solid #c5ccd5;
   border-top: 4px solid var(--vsk-green);
-  border-radius: 10px;
+  border-radius: 14px;
   padding: 28px 24px;
-  box-shadow: 0 20px 44px rgba(44, 42, 124, 0.08);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 12px 28px rgba(31, 33, 89, 0.09);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .contact-us-container .info-card:hover {
@@ -199,15 +209,43 @@
 .contact-us-container .info-card p,
 .contact-us-container .info-card a {
   display: block;
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--vsk-text-muted);
+  width: fit-content;
+  max-width: 100%;
+
+  margin: 8px 0 0;
+
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+
+  background: linear-gradient(
+    100deg,
+    #29276d 0%,
+    #2c2a7c 40%,
+    #009058 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  overflow-wrap: anywhere;
   text-decoration: none;
-  word-break: break-word;
+
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
+}
+.contact-us-container .info-card a[href^="http"] {
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  font-weight: 800;
 }
 
+/* Attractive hover effect */
 .contact-us-container .info-card a:hover {
-  color: var(--vsk-green);
+  filter: brightness(1.2);
+  transform: translateX(4px);
 }
 
 /* =========================================================
@@ -244,43 +282,76 @@
 }
 
 .contact-us-container .form-card {
-  background: #ffffff;
-  border: 1px solid var(--vsk-border);
-  border-radius: 10px;
+  background: linear-gradient(145deg, #edf0f3, #e3e7eb);
+  border: 1px solid #b8c2ce;
+  border-top: 4px solid var(--vsk-navy);
+  border-radius: 16px;
   padding: 32px;
-  box-shadow: 0 20px 44px rgba(44, 42, 124, 0.08);
+
+  box-shadow: 0 16px 35px rgba(31, 33, 89, 0.1);
 }
+
+/* ---------- FORM LABELS ---------- */
 
 .contact-us-container .form-card label {
   display: block;
-  margin: 16px 0 6px;
-  font-weight: 600;
+  margin: 16px 0 7px;
+  font-weight: 700;
   font-size: 0.88rem;
-  color: var(--vsk-navy);
+  color: #29285f;
 }
+
+/* ---------- INPUTS, DROPDOWNS AND TEXTAREA ---------- */
 
 .contact-us-container .form-card input,
 .contact-us-container .form-card select,
 .contact-us-container .form-card textarea {
+  display: block;
   width: 100%;
-  font: inherit;
+
+  font-family: inherit;
   font-size: 0.95rem;
-  padding: 12px 14px;
-  border: 1px solid rgba(44, 42, 124, 0.22);
-  border-radius: 8px;
-  background: #fafbfd;
-  color: var(--vsk-navy);
+
+  padding: 13px 15px;
+
+  color: #282a58;
+  background: #f1f3f6;
+
+  border: 1px solid #aeb9c8;
+  border-radius: 9px;
+
+  outline: none;
+
+  box-shadow: inset 0 1px 3px rgba(31, 33, 89, 0.04);
+
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
+
+/* ---------- PLACEHOLDER ---------- */
+
+.contact-us-container .form-card input::placeholder,
+.contact-us-container .form-card textarea::placeholder {
+  color: #777f91;
+}
+
+/* ---------- FOCUS EFFECT ---------- */
 
 .contact-us-container .form-card input:focus,
 .contact-us-container .form-card select:focus,
 .contact-us-container .form-card textarea:focus {
-  border-color: var(--vsk-green);
-  background: #ffffff;
+  border-color: #009058;
+  background: #f7faf8;
+
+  box-shadow: 0 0 0 3px rgba(0, 144, 88, 0.12);
 }
 
+/* ---------- TEXTAREA ---------- */
+
 .contact-us-container .form-card textarea {
-  min-height: 110px;
+  min-height: 120px;
   resize: vertical;
 }
 
@@ -310,7 +381,7 @@
   color: #b3261e;
 }
 
-/* Pill buttons */
+/* ---------- PILL BUTTONS ---------- */
 
 .contact-us-container .btn-pill {
   display: inline-flex;
@@ -334,9 +405,21 @@
   box-shadow: 0 14px 30px rgba(44, 42, 124, 0.22);
 }
 
-.contact-us-container .btn-navy { background: var(--vsk-navy); color: #ffffff; }
-.contact-us-container .btn-green { background: var(--vsk-green); color: #ffffff; }
-.contact-us-container .btn-white { background: #ffffff; color: var(--vsk-navy); }
+.contact-us-container .btn-navy {
+  background: linear-gradient(135deg, #29276d, #1f2159);
+  color: #ffffff;
+}
+
+.contact-us-container .btn-green {
+  background: linear-gradient(135deg, #008451, #006c43);
+  color: #ffffff;
+}
+
+.contact-us-container .btn-white {
+  background: #e3e7eb;
+  color: #25265f;
+  border: 1px solid #b7c1cd;
+}
 
 .contact-us-container .btn-pill .arrow {
   transition: transform 0.35s ease;
@@ -346,7 +429,7 @@
   transform: translateX(6px);
 }
 
-/* Map */
+/* ---------- MAP ---------- */
 
 .contact-us-container .map-col {
   display: flex;
@@ -357,12 +440,14 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: #ffffff;
-  border: 1px solid var(--vsk-border);
+
+  background: #e6e9ed;
+  border: 1px solid #b8c2ce;
   border-top: 4px solid var(--vsk-green);
-  border-radius: 10px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 20px 44px rgba(44, 42, 124, 0.08);
+
+  box-shadow: 0 16px 35px rgba(31, 33, 89, 0.1);
 }
 
 .contact-us-container .map-card iframe {
@@ -390,9 +475,12 @@
 ========================================================= */
 
 .contact-us-container .services-strip {
-  background: #f6f8f9;
+  background: #dfe3e6;
   padding: 64px 20px;
   text-align: center;
+
+  border-top: 1px solid #cbd1d8;
+  border-bottom: 1px solid #cbd1d8;
 }
 
 .contact-us-container .services-strip ul {
@@ -410,12 +498,18 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  background: #ffffff;
-  border: 1px solid var(--vsk-border);
-  border-radius: 999px;
+
+  background: #e9ecef;
+  border: 1px solid #bcc5cf;
+  border-radius: 12px;
+
   padding: 12px 22px;
+
+  color: #292b58;
   font-weight: 600;
   font-size: 0.95rem;
+
+  box-shadow: 0 4px 12px rgba(31, 33, 89, 0.05);
 }
 
 .contact-us-container .services-strip li::before {
@@ -487,13 +581,26 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
+  .contact-us-container .info-card a {
+    font-size: 1.05rem;
+  }
+
+  .contact-us-container .info-card a[href^="tel:"] {
+    font-size: 1.1rem;
+  }
   .contact-us-container .reveal {
     opacity: 1;
     transform: none;
     transition: none;
   }
   .contact-us-container .info-card,
-  .contact-us-container .btn-pill {
+  .contact-us-container .btn-pill,
+  .contact-us-container .form-card input,
+  .contact-us-container .form-card select,
+  .contact-us-container .form-card textarea {
     transition: none;
+    
   }
+  
 }

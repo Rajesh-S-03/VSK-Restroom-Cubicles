@@ -1,0 +1,680 @@
+/* ===================================
+   TESTIMONIAL SECTION
+=================================== */
+
+.testimonial-section {
+  width: 100%;
+  padding: 95px 8%;
+  background: #e4e6df;
+  color: #30345f;
+  text-align: center;
+}
+
+
+/* ===================================
+   SECTION TAG
+=================================== */
+
+.testimonial-tag {
+  display: inline-block;
+
+   color: #39765c;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 14px;
+}
+
+
+/* ===================================
+   HEADING
+=================================== */
+
+.testimonial-title {
+  font-size: 48px;
+
+  font-family: "Cinzel", serif;
+
+  color: #30345f;
+
+  margin: 0 0 15px;
+
+  line-height: 1.2;
+}
+
+.testimonial-title span {
+  color: #009058;
+}
+
+
+/* ===================================
+   SUBTITLE
+=================================== */
+
+.testimonial-subtitle {
+  max-width: 680px;
+
+  margin: 0 auto 55px;
+
+  color: #667085;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+}
+
+
+/* ===================================
+   CARDS GRID
+=================================== */
+
+.testimonial-container {
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+
+/* ===================================
+   CARD CELL
+=================================== */
+
+.testimonial-cell {
+  position: relative;
+
+  min-height: 390px;
+}
+
+
+/* ===================================
+   TESTIMONIAL CARD
+=================================== */
+
+.testimonial-card {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  padding: 30px 28px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+
+  box-shadow:
+    0 12px 30px rgba(44, 42, 124, 0.08);
+
+  border: 1px solid rgba(44, 42, 124, 0.12);
+
+  display: flex;
+
+  flex-direction: column;
+
+  z-index: 1;
+}
+
+
+/* ===================================
+   SOFT VSK BACKGROUND GLOW
+=================================== */
+
+.testimonial-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -80px;
+
+  background: radial-gradient(
+    circle,
+    rgba(57, 118, 92, 0.045),
+    transparent 65%
+  );
+
+  z-index: 0;
+}
+
+
+/* ===================================
+   CONTENT ABOVE GLOW
+=================================== */
+
+.testimonial-card > * {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* ===================================
+   CARD HOVER
+=================================== */
+
+.testimonial-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(0, 144, 88, 0.35);
+
+  box-shadow:
+    0 20px 40px rgba(44, 42, 124, 0.12),
+    0 0 25px rgba(0, 144, 88, 0.10);
+}
+
+
+/* ===================================
+   EXPANDED CARD
+=================================== */
+
+.testimonial-card.is-expanded {
+  z-index: 20;
+
+  box-shadow:
+    0 25px 50px rgba(44, 42, 124, 0.18),
+    0 0 30px rgba(0, 144, 88, 0.15);
+}
+
+.testimonial-card.is-expanded:hover {
+  transform: none;
+}
+
+
+/* ===================================
+   QUOTE ICON
+=================================== */
+
+.quote-icon {
+  font-size: 40px;
+
+  color: #009058;
+
+  margin-bottom: 13px;
+
+  opacity: 0.9;
+}
+
+
+/* ===================================
+   STARS
+=================================== */
+
+.stars {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  color: #f2b01e;
+
+  font-size: 15px;
+
+  margin-bottom: 20px;
+}
+
+
+/* ===================================
+   REVIEW TEXT
+=================================== */
+
+.review-text {
+  font-size: 15px;
+
+  color: #596174;
+
+  line-height: 1.75;
+
+  margin-bottom: 25px;
+
+  flex-grow: 1;
+}
+
+
+/* ===================================
+   READ MORE
+=================================== */
+
+.read-more-btn {
+  display: block;
+
+  margin: 8px auto 0;
+
+  border: none;
+
+  background: none;
+
+  color: #009058;
+
+  font-weight: 700;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  padding: 0;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.read-more-btn:hover {
+  color: #2c2a7c;
+
+  text-decoration: underline;
+
+  transform: translateY(-1px);
+}
+
+
+/* ===================================
+   CUSTOMER
+=================================== */
+
+.customer {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-top: auto;
+}
+
+
+/* ===================================
+   AVATAR
+=================================== */
+
+.avatar {
+  width: 55px;
+
+  height: 55px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2c2a7c,
+      #009058
+    );
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  color: #ffffff;
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 7px 18px rgba(44, 42, 124, 0.20);
+
+  flex-shrink: 0;
+}
+
+
+/* ===================================
+   CUSTOMER INFO
+=================================== */
+
+.customer-info {
+  text-align: left;
+}
+
+.customer h4 {
+  font-size: 18px;
+
+  color: #2c2a7c;
+
+  margin: 0 0 3px;
+
+  font-weight: 700;
+}
+
+.customer span {
+  color: #7b8494;
+
+  font-size: 13px;
+}
+
+
+/* ===================================
+   GOOGLE REVIEW BUTTON
+=================================== */
+
+.review-btn {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin-top: 95px;
+}
+
+
+/* ===================================
+   BUTTON
+=================================== */
+
+.review-btn-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 11px 23px;
+
+  border: 1px solid rgba(0, 144, 88, 0.35);
+
+  border-radius: 50px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2c2a7c,
+      #009058
+    );
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(44, 42, 124, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* ===================================
+   GOOGLE ICON
+=================================== */
+
+.google-icon {
+  font-size: 16px;
+
+  color: #ffffff;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+/* ===================================
+   BUTTON TEXT
+=================================== */
+
+.review-btn-link span {
+  color: #ffffff;
+}
+
+
+/* ===================================
+   BUTTON HOVER
+=================================== */
+
+.review-btn-link:hover {
+  transform: translateY(-3px);
+
+  border-color: #009058;
+
+  box-shadow:
+    0 12px 25px rgba(0, 144, 88, 0.25);
+}
+
+.review-btn-link:hover .google-icon {
+  transform: scale(1.12);
+}
+
+
+/* ===================================
+   ACTIVE
+=================================== */
+
+.review-btn-link:active {
+  transform: translateY(-1px);
+}
+
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media (max-width: 1100px) {
+
+  .testimonial-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonial-cell {
+    min-height: 410px;
+  }
+
+}
+
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width: 768px) {
+
+  .testimonial-section {
+    padding: 75px 25px;
+  }
+
+  .testimonial-title {
+    font-size: 38px;
+  }
+
+  .testimonial-subtitle {
+    font-size: 15px;
+
+    margin-bottom: 40px;
+  }
+
+  .testimonial-container {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .testimonial-cell {
+    min-height: auto;
+  }
+
+  .testimonial-card {
+    position: relative;
+
+    padding: 27px 24px;
+  }
+
+  .review-text {
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+  .review-btn {
+    margin-top: 65px;
+  }
+
+}
+
+
+/* ===================================
+   SMALL MOBILE
+=================================== */
+
+@media (max-width: 500px) {
+
+  .testimonial-section {
+    padding: 60px 15px;
+  }
+
+
+  .testimonial-tag {
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+  }
+
+
+  .testimonial-title {
+    font-size: 30px;
+
+    line-height: 1.25;
+
+    margin-bottom: 12px;
+  }
+
+
+  .testimonial-subtitle {
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    margin-bottom: 30px;
+  }
+
+
+  .testimonial-container {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+
+  .testimonial-card {
+    position: relative;
+
+    padding: 24px 19px;
+
+    border-radius: 18px;
+  }
+
+
+  .quote-icon {
+    font-size: 36px;
+
+    margin-bottom: 10px;
+  }
+
+
+  .stars {
+    font-size: 14px;
+
+    gap: 4px;
+
+    margin-bottom: 16px;
+  }
+
+
+  .review-text {
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+  }
+
+
+  .read-more-btn {
+    font-size: 13px;
+
+    margin-top: 7px;
+  }
+
+
+  .customer {
+    gap: 10px;
+
+    margin-top: 18px;
+  }
+
+
+  .avatar {
+    width: 50px;
+
+    height: 50px;
+
+    font-size: 20px;
+  }
+
+
+  .customer h4 {
+    font-size: 17px;
+
+    margin-bottom: 2px;
+  }
+
+
+  .customer span {
+    font-size: 12px;
+  }
+
+
+  .review-btn {
+    margin-top: 55px;
+  }
+
+
+  .review-btn-link {
+    padding: 10px 18px;
+
+    font-size: 12px;
+  }
+
+
+  .google-icon {
+    font-size: 15px;
+  }
+
+}

@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import './Hero5.css';
+import RestroomCubicles from '../../assets/applications/ss_pipe3.png'
+import LockerSystems from '../../assets/applications/plock.jpeg'
+import UrinalPartitions from '../../assets/clients/g10.png'
+import gladding from '../../assets/applications/exteriorclading.png'
 
 const productsData = [
   {
@@ -7,7 +12,7 @@ const productsData = [
     title: 'Restroom Cubicles',
     subtitle: 'PREMIUM WASHROOM SYSTEMS',
     description: 'High-durability moisture-resistant cubicle partitions engineered for commercial and modern public spaces.',
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1000',
+    image:RestroomCubicles ,
     link: '/restroom-cubicles',
   },
   {
@@ -15,7 +20,7 @@ const productsData = [
     title: 'Locker Systems',
     subtitle: 'SECURE & MODULAR STORAGE',
     description: 'Heavy-duty modular compact laminate lockers designed for corporate offices, fitness centers, and schools.',
-    image: 'https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&q=80&w=1000',
+    image: LockerSystems,
     link: '/lockers',
   },
   {
@@ -23,7 +28,7 @@ const productsData = [
     title: 'Urinal Partitions',
     subtitle: 'HYGIENIC & MODERN DESIGN',
     description: 'Sleek wall-hung dividers providing privacy and a clean aesthetic for high-traffic corporate washrooms.',
-    image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&q=80&w=1000',
+    image: UrinalPartitions,
     link: '/urinal-partitions',
   },
   {
@@ -31,12 +36,13 @@ const productsData = [
     title: 'HPL Cladding',
     subtitle: 'EXTERIOR & INTERIOR PANELS',
     description: 'Weather-resistant decorative panel systems providing long-lasting durability and high thermal resistance.',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000',
+    image: gladding,
     link: '/hpl-cladding',
   },
 ];
 
 const Hero5 = () => {
+  const navigate = useNavigate();
   const [activeIndex, setActiveIndex] = useState(0);
 
   // Auto-rotate every 4.5 seconds
@@ -116,6 +122,7 @@ const Hero5 = () => {
                     onClick={(e) => {
                       e.stopPropagation();
                       handleNavigate(item.link);
+                      navigate("/restroom-cubicles")
                     }}
                   >
                     View More

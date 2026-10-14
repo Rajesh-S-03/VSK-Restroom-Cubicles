@@ -1,33 +1,61 @@
 /* =========================================================
-   HERO 2 - VSK AT A GLANCE
-   Navy #2c2a7c | Green #009058 | White
+   HERO 2 — VSK ENTERPRISES
+   PREMIUM ARCHITECTURAL / INDUSTRIAL STYLE
 ========================================================= */
 
 .hero2-stage {
-  --vsk-navy: #2c2a7c;
-  --vsk-green: #009058;
+  --vsk-bg: #0a0d0f;
+  --vsk-bg-soft: #0f1417;
+
+  --vsk-white: #f4f7f5;
+  --vsk-muted: #9ba7a2;
+  --vsk-muted-light: #c3ccc8;
+
+  --vsk-green: #22c58b;
+  --vsk-green-soft: rgba(34, 197, 139, 0.14);
+
+  --vsk-blue: #4b8cff;
+  --vsk-blue-soft: rgba(75, 140, 255, 0.12);
+
+  --vsk-border: rgba(255, 255, 255, 0.12);
+  --vsk-border-soft: rgba(255, 255, 255, 0.07);
 
   position: relative;
-
   width: 100%;
+  height: 185vh;
+  margin: 0;
 
-  /*
-    Longer scroll distance keeps the Hero2
-    screen sticky for longer.
-  */
-  height: 180vh;
+  background:
+    radial-gradient(
+      circle at 82% 45%,
+      rgba(34, 197, 139, 0.055),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 15% 70%,
+      rgba(75, 140, 255, 0.045),
+      transparent 30%
+    ),
+    var(--vsk-bg);
 
-  background: #ffffff;
+  color: var(--vsk-white);
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
 }
 
 
 /* =========================================================
-   STICKY SCREEN
+   STICKY VIEW
 ========================================================= */
 
 .hero2-sticky {
   position: sticky;
-
   top: 0;
 
   width: 100%;
@@ -39,49 +67,40 @@
   align-items: center;
 
   background:
-    radial-gradient(
-      circle at 10% 90%,
-      rgba(44, 42, 124, 0.20),
-      transparent 50%
-    ),
-
-    radial-gradient(
-      circle at 90% 12%,
-      rgba(0, 144, 88, 0.20),
-      transparent 46%
-    ),
-
     linear-gradient(
-      135deg,
-      #ffffff 0%,
-      #eef2fb 50%,
-      #e8f6ef 100%
+      90deg,
+      rgba(10, 13, 15, 0.98) 0%,
+      rgba(10, 13, 15, 0.94) 35%,
+      rgba(10, 13, 15, 0.75) 60%,
+      rgba(10, 13, 15, 0.9) 100%
     );
 }
 
 
 /* =========================================================
-   BACKGROUND GLOW
+   BACKGROUND GRID
+   VERY SUBTLE
 ========================================================= */
 
-.hero2-glow {
+.hero2-grid-pattern {
   position: absolute;
+  inset: 0;
 
-  top: -20%;
-  right: -8%;
-
-  width: 55%;
-
-  aspect-ratio: 1 / 1;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(0, 144, 88, 0.10) 0%,
-      transparent 68%
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
     );
 
-  filter: blur(35px);
+  background-size: 80px 80px;
+
+  opacity: 0.25;
 
   pointer-events: none;
 
@@ -90,7 +109,44 @@
 
 
 /* =========================================================
-   MAIN CONTENT
+   BACKGROUND LIGHT
+========================================================= */
+
+.hero2-bg-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.hero2-glow-green {
+  width: 420px;
+  height: 420px;
+
+  top: 18%;
+  right: 5%;
+
+  background: rgba(34, 197, 139, 0.07);
+}
+
+.hero2-glow-navy {
+  width: 420px;
+  height: 420px;
+
+  bottom: 5%;
+  left: -10%;
+
+  background: rgba(75, 140, 255, 0.045);
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
 ========================================================= */
 
 .hero2-inner {
@@ -99,60 +155,87 @@
   z-index: 2;
 
   width: 100%;
+  max-width: 1380px;
+
+  margin: 0 auto;
 
   display: grid;
 
   grid-template-columns:
-    1.1fr
-    0.9fr;
+    minmax(0, 1.05fr)
+    minmax(400px, 0.95fr);
 
   align-items: center;
 
-  gap: 70px;
+  gap: 90px;
 
-  padding: 0 8%;
+  padding:
+    70px
+    55px
+    30px;
 }
 
 
 /* =========================================================
-   TEXT CONTENT
+   LEFT CONTENT
 ========================================================= */
 
 .hero2-content {
   max-width: 650px;
+
+  padding-top: 50px;
 }
 
 
 /* =========================================================
-   ANIMATED ITEMS
+   SMALL SECTION LABEL
 ========================================================= */
 
-.hero2-label,
-.hero2-line,
-.hero2-chunk,
-.hero2-button {
-  will-change:
-    opacity,
-    transform;
+.hero2-badge-wrap {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0;
+
+  margin-bottom: 24px;
+
+  background: transparent;
+
+  border: none;
+
+  backdrop-filter: none;
 }
 
+.hero2-badge-dot {
+  width: 7px;
+  height: 7px;
 
-/* =========================================================
-   LABEL
-========================================================= */
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--vsk-green);
+
+  box-shadow:
+    0 0 0 4px rgba(34, 197, 139, 0.08),
+    0 0 14px rgba(34, 197, 139, 0.55);
+}
 
 .hero2-label {
-  margin-bottom: 26px;
+  position: relative;
 
   font-size: 11px;
 
-  font-weight: 600;
+  font-weight: 700;
 
-  letter-spacing: 0.28em;
+  letter-spacing: 0.24em;
 
-  text-transform: uppercase;
+  color: var(--vsk-green);
 
-  color: var(--vsk-navy);
+  white-space: nowrap;
 }
 
 
@@ -163,46 +246,38 @@
 .hero2-title {
   margin: 0 0 26px;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-size: clamp(
+    42px,
+    5vw,
+    72px
+  );
 
-  font-size:
-    clamp(
-      38px,
-      4.5vw,
-      58px
-    );
+  line-height: 0.98;
 
-  line-height: 1.03;
+  font-weight: 600;
 
-  font-weight: 400;
+  letter-spacing: -0.045em;
 
-  letter-spacing: -0.035em;
-
-  color: var(--vsk-navy);
+  color: var(--vsk-white);
 }
 
+
+/* individual text lines */
 
 .hero2-line {
   display: inline-block;
 }
 
 
+/* green accent */
+
 .hero2-accent {
-  background:
-    linear-gradient(
-      90deg,
-      var(--vsk-navy),
-      var(--vsk-green)
-    );
+  color: var(--vsk-green);
 
-  -webkit-background-clip: text;
+  background: none;
 
-  background-clip: text;
-
-  color: transparent;
+  -webkit-background-clip: initial;
+  background-clip: initial;
 }
 
 
@@ -211,38 +286,99 @@
 ========================================================= */
 
 .hero2-description {
-  max-width: 500px;
+  max-width: 590px;
 
-  margin: 0;
+  margin: 0 0 30px;
 
   font-size: 15px;
 
   line-height: 1.8;
 
-  letter-spacing: 0.015em;
+  font-weight: 400;
 
-  color:
-    rgba(
-      44,
-      42,
-      124,
-      0.82
-    );
+  color: var(--vsk-muted);
 }
 
-
-/*
-   Each description sentence
-   appears separately
-*/
-
 .hero2-chunk {
-  display: block;
+  display: inline;
 }
 
 
 /* =========================================================
-   ABOUT US BUTTON
+   STATS
+========================================================= */
+
+.hero2-stats {
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  width: fit-content;
+
+  margin-bottom: 30px;
+
+  padding: 0;
+
+  background: transparent;
+
+  border: none;
+
+  border-radius: 0;
+}
+
+.hero2-stat-item {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.hero2-stat-num {
+  font-size: 23px;
+
+  line-height: 1;
+
+  font-weight: 600;
+
+  letter-spacing: -0.02em;
+
+  color: var(--vsk-white);
+}
+
+.hero2-stat-lbl {
+  font-size: 9px;
+
+  line-height: 1;
+
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  color: var(--vsk-muted);
+}
+
+.hero2-stat-divider {
+  width: 1px;
+
+  height: 32px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   BUTTON
 ========================================================= */
 
 .hero2-button {
@@ -254,206 +390,116 @@
 
   gap: 18px;
 
-  margin-top: 38px;
+  padding: 13px 6px;
 
-  padding:
-    16px 28px;
-
-  overflow: hidden;
-
-  cursor: pointer;
-
-  text-decoration: none;
-
-  font-family: inherit;
-
-  font-size: 11px;
-
-  font-weight: 600;
-
-  letter-spacing: 0.26em;
-
-  text-transform: uppercase;
-
-  color: var(--vsk-navy);
+  color: var(--vsk-white);
 
   background: transparent;
 
-  border:
-    1.5px solid
-    var(--vsk-navy);
+  border: none;
 
-  border-radius: 2px;
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.25);
+
+  border-radius: 0;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
 
   transition:
-    color 0.4s ease,
-    border-color 0.4s ease,
-    box-shadow 0.4s ease;
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
-
-
-/* =========================================================
-   BUTTON HOVER FILL
-========================================================= */
 
 .hero2-button::before {
   content: "";
 
   position: absolute;
 
-  inset: 0;
+  left: 0;
+  bottom: -1px;
 
-  background:
-    linear-gradient(
-      90deg,
-      var(--vsk-navy),
-      var(--vsk-green)
-    );
+  width: 0;
+  height: 1px;
 
-  transform:
-    scaleX(0);
+  background: var(--vsk-green);
 
-  transform-origin: left;
-
-  transition:
-    transform 0.45s
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    );
-
-  z-index: 0;
+  transition: width 0.35s ease;
 }
-
-
-/* =========================================================
-   BUTTON CONTENT
-========================================================= */
-
-.hero2-button-text,
-.hero2-button-arrow {
-  position: relative;
-
-  z-index: 1;
-}
-
-
-.hero2-button-arrow {
-  display: inline-block;
-
-  font-size: 16px;
-
-  letter-spacing: 0;
-
-  transition:
-    transform 0.4s
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    );
-}
-
-
-/* =========================================================
-   BUTTON HOVER
-========================================================= */
 
 .hero2-button:hover {
-  color: #ffffff;
+  color: var(--vsk-green);
 
   border-color:
-    var(--vsk-green);
-
-  box-shadow:
-    0 10px 28px
-    rgba(
-      44,
-      42,
-      124,
-      0.25
-    );
+    rgba(255, 255, 255, 0.1);
 }
-
 
 .hero2-button:hover::before {
-  transform:
-    scaleX(1);
+  width: 100%;
 }
 
+.hero2-button-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition:
+    transform 0.3s ease;
+}
 
 .hero2-button:hover
-.hero2-button-arrow {
+.hero2-button-icon {
   transform:
-    translateX(6px);
+    translateX(5px);
 }
 
 
 /* =========================================================
-   BUTTON FOCUS
-========================================================= */
-
-.hero2-button:focus-visible {
-  outline:
-    2px solid
-    var(--vsk-green);
-
-  outline-offset: 4px;
-}
-
-
-/* =========================================================
-   IMAGE
+   RIGHT IMAGE
 ========================================================= */
 
 .hero2-visual {
+  position: relative;
+
   width: 100%;
 
   display: flex;
 
   justify-content: flex-end;
 
-  will-change:
-    transform,
-    opacity;
+  padding-top: 30px;
 }
 
 
-.hero2-photo {
+/* =========================================================
+   IMAGE FRAME
+========================================================= */
+
+.hero2-photo-card {
   position: relative;
 
   width: 100%;
+ height: 100%;
+  max-width: 540px;
 
-  max-width: 500px;
+  padding: 0;
 
-  aspect-ratio: 4 / 5;
+  background: transparent;
 
-  overflow: hidden;
+  border: none;
 
-  border-radius: 4px;
+  border-radius: 0;
 
-  background: #eef3f1;
-
-  box-shadow:
-
-    0 25px 60px
-    rgba(
-      44,
-      42,
-      124,
-      0.18
-    ),
-
-    0 0 0 1px
-    rgba(
-      44,
-      42,
-      124,
-      0.08
-    );
+  box-shadow: none;
 }
 
 
@@ -461,81 +507,185 @@
    IMAGE
 ========================================================= */
 
-.hero2-photo img {
+.hero2-photo-inner {
+  position: relative;
+
   width: 100%;
+height: 500px;
+  aspect-ratio: 4 / 5;
 
-  height: 100%;
+  overflow: hidden;
 
-  display: block;
+  border-radius: 2px;
 
-  object-fit: cover;
-
-  transform:
-    scale(1);
-
-  transition:
-    transform 0.55s
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    );
-
-  will-change:
-    transform;
+  background: #111;
 }
 
 
-.hero2-photo:hover img {
-  transform:
-    scale(1.10);
+/* image */
+
+.hero2-photo-inner img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter:
+    brightness(0.92)
+    contrast(1.04)
+    saturate(0.92);
+
+  transform: scale(1.01);
+
+  transition:
+    transform 0.8s
+      cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.5s ease;
+}
+
+.hero2-photo-card:hover
+.hero2-photo-inner img {
+  transform: scale(1.045);
+
+  filter:
+    brightness(0.98)
+    contrast(1.04)
+    saturate(1);
 }
 
 
 /* =========================================================
-   CORNER DETAILS
+   IMAGE OVERLAY
 ========================================================= */
 
-.corner {
+.hero2-photo-overlay {
   position: absolute;
 
-  width: 34px;
+  inset: 0;
 
-  height: 34px;
+  pointer-events: none;
 
-  border:
-    2px solid
-    var(--vsk-navy);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05) 0%,
+      transparent 45%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+}
 
-  z-index: 2;
+
+/* =========================================================
+   ARCHITECTURAL FRAME
+========================================================= */
+
+.hero2-photo-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: -14px;
+  left: -14px;
+
+  width: 75px;
+  height: 75px;
+
+  border-top: 1px solid
+    rgba(34, 197, 139, 0.8);
+
+  border-left: 1px solid
+    rgba(34, 197, 139, 0.8);
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+.hero2-photo-card::after {
+  content: "";
+
+  position: absolute;
+
+  right: -14px;
+  bottom: -14px;
+
+  width: 75px;
+  height: 75px;
+
+  border-right: 1px solid
+    rgba(75, 140, 255, 0.7);
+
+  border-bottom: 1px solid
+    rgba(75, 140, 255, 0.7);
+
+  z-index: 5;
 
   pointer-events: none;
 }
 
 
+/* =========================================================
+   CORNER ELEMENTS
+========================================================= */
+
+.corner {
+  position: absolute;
+
+  width: 24px;
+  height: 24px;
+
+  pointer-events: none;
+
+  z-index: 6;
+}
+
 .corner-tl {
-  top: -1px;
+  top: 0;
+  left: 0;
 
-  left: -1px;
+  border-top: 1px solid var(--vsk-green);
+  border-left: 1px solid var(--vsk-green);
+}
 
-  border-right: none;
+.corner-tr {
+  top: 0;
+  right: 0;
 
-  border-bottom: none;
+  border-top: 1px solid
+    rgba(255, 255, 255, 0.45);
+
+  border-right: 1px solid
+    rgba(255, 255, 255, 0.45);
+}
+
+.corner-bl {
+  bottom: 0;
+  left: 0;
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.45);
+
+  border-left: 1px solid
+    rgba(255, 255, 255, 0.45);
+}
+
+.corner-br {
+  right: 0;
+  bottom: 0;
+
+  border-right: 1px solid var(--vsk-blue);
+  border-bottom: 1px solid var(--vsk-blue);
 }
 
 
-.corner-br {
-  right: -1px;
+/* =========================================================
+   IMAGE SIDE LABEL
+========================================================= */
 
-  bottom: -1px;
-
-  border-left: none;
-
-  border-top: none;
-
-  border-color:
-    var(--vsk-green);
+.hero2-photo-card {
+  isolation: isolate;
 }
 
 
@@ -543,38 +693,74 @@
    TABLET
 ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
 
-  .hero2-stage {
-    height: 180vh;
+  .hero2-inner {
+    grid-template-columns:
+      1fr 0.85fr;
+
+    gap: 50px;
+
+    padding:
+      70px
+      40px
+      30px;
   }
 
+  .hero2-title {
+    font-size: clamp(
+      40px,
+      5vw,
+      58px
+    );
+  }
+
+  .hero2-photo-card {
+    max-width: 460px;
+  }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .hero2-stage {
+    height: 190vh;
+  }
 
   .hero2-inner {
     grid-template-columns: 1fr;
 
     gap: 50px;
 
-    padding: 0 6%;
+    padding:
+      80px
+      35px
+      40px;
   }
-
 
   .hero2-content {
-    max-width: 650px;
-  }
+    max-width: 700px;
 
+    padding-top: 35px;
+  }
 
   .hero2-visual {
-    justify-content: flex-start;
+    justify-content: center;
 
-    max-width: 460px;
+    padding-top: 0;
   }
 
-
-  .hero2-photo {
-    max-width: 460px;
+  .hero2-photo-card {
+    max-width: 480px;
   }
 
+  .hero2-photo-inner {
+    aspect-ratio: 16 / 10;
+  }
 }
 
 
@@ -582,82 +768,115 @@
    MOBILE
 ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
 
   .hero2-stage {
-    height: 180vh;
+    height: 185vh;
+
+    min-height: 0;
   }
 
+  .hero2-sticky {
+    height: 100vh;
+
+    align-items: center;
+  }
 
   .hero2-inner {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
     gap: 34px;
 
-    padding: 0 7%;
+    padding:
+      70px
+      22px
+      30px;
   }
 
+  .hero2-content {
+    width: 100%;
+
+    padding-top: 25px;
+  }
+
+  .hero2-badge-wrap {
+    margin-bottom: 18px;
+  }
 
   .hero2-label {
-    margin-bottom: 18px;
-
     font-size: 9px;
 
-    letter-spacing: 0.22em;
+    letter-spacing: 0.19em;
   }
-
 
   .hero2-title {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 
-    font-size:
-      clamp(
-        30px,
-        9vw,
-        40px
-      );
+    font-size: clamp(
+      34px,
+      10vw,
+      46px
+    );
 
-    line-height: 1.05;
+    line-height: 1;
   }
-
 
   .hero2-description {
-    max-width: 100%;
+    margin-bottom: 25px;
 
-    font-size: 13.5px;
+    font-size: 13px;
 
-    line-height: 1.75;
+    line-height: 1.7;
   }
 
+  .hero2-stats {
+    gap: 22px;
 
-  .hero2-button {
-    margin-top: 28px;
-
-    padding:
-      14px 22px;
-
-    font-size: 10px;
+    margin-bottom: 24px;
   }
 
-
-  .hero2-visual {
-    justify-content: center;
-
-    max-width: 100%;
+  .hero2-stat-num {
+    font-size: 20px;
   }
 
-
-  .hero2-photo {
-    max-width: 420px;
-
-    aspect-ratio: 5 / 4;
+  .hero2-stat-lbl {
+    font-size: 8px;
   }
 
+  .hero2-photo-card {
+    width: 100%;
+
+    max-width: none;
+  }
+
+  .hero2-photo-inner {
+    aspect-ratio: 16 / 10;
+  }
+
+  .hero2-photo-card::before {
+    top: -8px;
+    left: -8px;
+
+    width: 45px;
+    height: 45px;
+  }
+
+  .hero2-photo-card::after {
+    right: -8px;
+    bottom: -8px;
+
+    width: 45px;
+    height: 45px;
+  }
 
   .corner {
-    width: 25px;
-
-    height: 25px;
+    width: 16px;
+    height: 16px;
   }
-
 }
 
 
@@ -665,27 +884,83 @@
    SMALL MOBILE
 ========================================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
 
   .hero2-inner {
-    padding: 0 6%;
+    padding:
+      60px
+      18px
+      25px;
 
     gap: 28px;
   }
 
+  .hero2-content {
+    padding-top: 15px;
+  }
 
   .hero2-title {
-    font-size: 30px;
+    font-size: 33px;
   }
-
 
   .hero2-description {
-    font-size: 13px;
+    font-size: 12px;
+
+    line-height: 1.65;
   }
 
-
-  .hero2-photo {
-    aspect-ratio: 4 / 3;
+  .hero2-stats {
+    gap: 18px;
   }
 
+  .hero2-stat-num {
+    font-size: 18px;
+  }
+
+  .hero2-photo-inner {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 350px) {
+
+  .hero2-inner {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .hero2-title {
+    font-size: 29px;
+  }
+
+  .hero2-description {
+    font-size: 11.5px;
+  }
+
+  .hero2-stats {
+    gap: 14px;
+  }
+
+  .hero2-stat-divider {
+    height: 26px;
+  }
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero2-photo-inner img,
+  .hero2-button,
+  .hero2-button-icon {
+    transition: none;
+  }
 }

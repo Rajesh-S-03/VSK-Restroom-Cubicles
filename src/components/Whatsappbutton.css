@@ -1,0 +1,71 @@
+/* =========================================
+   FLOATING WHATSAPP BUTTON
+========================================= */
+
+.whatsapp-button {
+  position: fixed;
+
+  right: 85px;
+  bottom: 45px;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #29ea70;
+  color: #ffffff;
+
+  border-radius: 50%;
+
+  text-decoration: none;
+
+  font-size: 34px;
+
+  z-index: 9999;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.22);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Hover */
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.30);
+}
+
+
+/* Click */
+
+.whatsapp-button:active {
+  transform: scale(0.95);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .whatsapp-button {
+    width: 52px;
+    height: 52px;
+
+    right: 18px;
+    bottom: 18px;
+
+    font-size: 30px;
+  }
+
+}

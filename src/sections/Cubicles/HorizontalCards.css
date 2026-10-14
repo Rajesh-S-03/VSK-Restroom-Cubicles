@@ -1,0 +1,496 @@
+/* =========================================================
+   HORIZONTAL PINNING HARDWARE CAROUSEL - DARK ARCHITECTURAL
+========================================================= */
+.vsk-horizontal-pin-stage {
+  --vsk-dark: #0b0d12;
+  --vsk-card-bg: #141822;
+  --vsk-green: #00b36e;
+  --vsk-green-glow: rgba(0, 179, 110, 0.18);
+  --vsk-border: rgba(255, 255, 255, 0.08);
+
+  position: relative;
+  /* Extended vertical scroll track to comfortably scroll through 9 cards */
+  height: 500vh;
+  background-color: var(--vsk-dark);
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* STICKY VIEWPORT CONTAINER */
+.vsk-horizontal-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* BACKGROUND LIGHTING GLOWS & GRID */
+.vsk-horizontal-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.vsk-horizontal-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-1 {
+  top: 15%;
+  left: 10%;
+  width: 450px;
+  height: 450px;
+  background: var(--vsk-green-glow);
+}
+
+.glow-2 {
+  bottom: 15%;
+  right: 10%;
+  width: 500px;
+  height: 500px;
+  background: rgba(59, 55, 173, 0.18);
+}
+
+/* HEADER */
+.vsk-horizontal-header {
+  position: relative;
+  z-index: 2;
+  padding: 0 6%;
+  margin-bottom: 20px;
+}
+
+.vsk-hw-kicker-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--vsk-border);
+  border-radius: 20px;
+  margin-bottom: 10px;
+  backdrop-filter: blur(8px);
+}
+
+.vsk-hw-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--vsk-green);
+  box-shadow: 0 0 8px var(--vsk-green);
+}
+
+.vsk-horizontal-kicker {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--vsk-green);
+  text-transform: uppercase;
+}
+
+.vsk-horizontal-header h2 {
+  font-size: clamp(26px, 3.2vw, 42px);
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* MOVING TRACK CONTAINER */
+.vsk-horizontal-track-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.vsk-horizontal-track {
+  display: flex;
+  gap: 28px;
+  padding-left: 6%;
+  will-change: transform;
+}
+
+/* INDIVIDUAL SLIDE CARD */
+.vsk-card-item {
+  flex: 0 0 calc(320px + 8vw);
+  height: clamp(440px, 62vh, 580px);
+  position: relative;
+}
+
+.vsk-card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--vsk-border);
+  background: var(--vsk-card-bg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.vsk-card-item:hover .vsk-card-image-wrap {
+  transform: translateY(-8px);
+  border-color: var(--vsk-green);
+}
+
+.vsk-card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vsk-card-item:hover img {
+  transform: scale(1.08);
+}
+
+/* GRADIENT OVERLAY FOR TEXT READABILITY */
+.vsk-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(11, 13, 18, 0.98) 0%,
+    rgba(11, 13, 18, 0.6) 50%,
+    rgba(11, 13, 18, 0.3) 100%
+  );
+}
+
+/* BADGES & CAPTIONS */
+.vsk-card-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.vsk-card-eyebrow {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--vsk-green);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.vsk-card-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 2;
+}
+
+.vsk-card-caption h3 {
+  font-size: clamp(18px, 1.8vw, 24px);
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #ffffff;
+}
+
+.vsk-card-caption p {
+  font-size: 12px;
+  line-height: 1.55;
+  color: #94a3b8;
+  margin: 0 0 14px;
+}
+
+/* FEATURE BULLETS */
+.vsk-card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 10px;
+}
+
+.vsk-card-features li {
+  font-size: 11px;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vsk-card-features li::before {
+  content: "•";
+  color: var(--vsk-green);
+  font-weight: bold;
+}
+
+/* =========================================
+   RESPONSIVE HORIZONTAL HARDWARE CAROUSEL
+========================================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .vsk-horizontal-pin-stage {
+    height: 400vh;
+  }
+
+  .vsk-horizontal-header {
+    padding: 0 4%;
+    margin-bottom: 18px;
+  }
+
+  .vsk-horizontal-track {
+    gap: 20px;
+    padding-left: 4%;
+  }
+
+  .vsk-card-item {
+    flex: 0 0 380px;
+    height: clamp(400px, 58vh, 520px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .vsk-horizontal-pin-stage {
+    height: auto;
+    min-height: auto;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .vsk-horizontal-sticky {
+    position: relative;
+    top: auto;
+    height: auto;
+    min-height: auto;
+    padding: 52px 0 40px;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  /* Background effects */
+  .vsk-horizontal-grid {
+    background-size: 28px 28px;
+  }
+
+  .glow-1 {
+    top: 8%;
+    left: -100px;
+    width: 260px;
+    height: 260px;
+    filter: blur(75px);
+  }
+
+  .glow-2 {
+    bottom: 5%;
+    right: -120px;
+    width: 280px;
+    height: 280px;
+    filter: blur(80px);
+  }
+
+  /* Header */
+  .vsk-horizontal-header {
+    padding: 0 20px;
+    margin-bottom: 24px;
+  }
+
+  .vsk-hw-kicker-wrap {
+    gap: 7px;
+    padding: 6px 10px;
+    margin-bottom: 12px;
+  }
+
+  .vsk-horizontal-kicker {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+  }
+
+  .vsk-horizontal-header h2 {
+    font-size: clamp(25px, 7vw, 34px);
+    line-height: 1.2;
+    letter-spacing: -0.6px;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  /* Horizontal scroll track on mobile */
+  .vsk-horizontal-track-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 8px 0 22px;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 20px;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #00b36e #20242d;
+  }
+
+  .vsk-horizontal-track {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: max-content;
+    padding: 0 20px;
+    transform: none !important;
+    will-change: auto;
+  }
+
+  /* Responsive cards */
+  .vsk-card-item {
+    flex: 0 0 min(82vw, 340px);
+    width: min(82vw, 340px);
+    height: 440px;
+    min-height: 0;
+    scroll-snap-align: start;
+  }
+
+  .vsk-card-image-wrap {
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  }
+
+  .vsk-card-image-wrap img {
+    object-position: center;
+  }
+
+  /* Card text */
+  .vsk-card-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(11, 13, 18, 0.98) 0%,
+      rgba(11, 13, 18, 0.78) 42%,
+      rgba(11, 13, 18, 0.12) 100%
+    );
+  }
+
+  .vsk-card-badge {
+    top: 14px;
+    right: 14px;
+    font-size: 10px;
+    padding: 5px 9px;
+  }
+
+  .vsk-card-eyebrow {
+    top: 17px;
+    left: 16px;
+    right: 75px;
+    font-size: 8px;
+    line-height: 1.5;
+    letter-spacing: 0.12em;
+  }
+
+  .vsk-card-caption {
+    bottom: 17px;
+    left: 16px;
+    right: 16px;
+  }
+
+  .vsk-card-caption h3 {
+    font-size: 21px;
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+
+  .vsk-card-caption p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .vsk-card-features {
+    gap: 7px;
+    padding-top: 10px;
+  }
+
+  .vsk-card-features li {
+    font-size: 11px;
+    line-height: 1.45;
+    align-items: flex-start;
+    gap: 7px;
+  }
+
+  .vsk-card-features li::before {
+    flex-shrink: 0;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 380px) {
+  .vsk-horizontal-sticky {
+    padding-top: 40px;
+  }
+
+  .vsk-horizontal-header {
+    padding: 0 16px;
+  }
+
+  .vsk-horizontal-header h2 {
+    font-size: 26px;
+  }
+
+  .vsk-horizontal-track {
+    gap: 12px;
+    padding: 0 16px;
+  }
+
+  .vsk-horizontal-track-container {
+    scroll-padding-left: 16px;
+  }
+
+  .vsk-card-item {
+    flex-basis: 86vw;
+    width: 86vw;
+    height: 420px;
+  }
+
+  .vsk-card-caption {
+    left: 14px;
+    right: 14px;
+    bottom: 15px;
+  }
+
+  .vsk-card-caption h3 {
+    font-size: 19px;
+  }
+
+  .vsk-card-caption p {
+    font-size: 11px;
+  }
+
+  .vsk-card-features li {
+    font-size: 10px;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .vsk-card-image-wrap,
+  .vsk-card-image-wrap img {
+    transition: none;
+  }
+}

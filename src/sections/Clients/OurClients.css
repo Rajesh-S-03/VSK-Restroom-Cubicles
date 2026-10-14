@@ -1,45 +1,67 @@
 /* =========================================================
-   OUR CLIENTS — VSK ENTERPRISES
-   Clean Navy + Green Theme
-========================================================= */
-
-:root {
-  --vsk-navy: #2c2a7c;
-  --vsk-navy-deep: #1f2159;
-
-  --vsk-green: #009058;
-  --vsk-green-light: #4be39a;
-
-  --vsk-text-muted: #5a5c86;
-
-  --vsk-border: rgba(44, 42, 124, 0.1);
-}
-
-
-/* =========================================================
-   MAIN
+   VSK OUR CLIENTS
+   Professional / Architectural / Corporate Design
 ========================================================= */
 
 .our-clients {
-  position: relative;
+  --vsk-bg: #e5e7e9;
+  --vsk-bg-dark: #dadddf;
 
-  overflow: hidden;
-
-  font-family:
-    "Segoe UI",
-    Tahoma,
-    Geneva,
-    Verdana,
-    sans-serif;
-
-  color: var(--vsk-navy);
-
-  background: #ffffff;
+  background:
+    radial-gradient(
+      circle at 5% 8%,
+      rgba(44, 42, 124, 0.07),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 95% 20%,
+      rgba(0, 144, 88, 0.055),
+      transparent 25%
+    ),
+    linear-gradient(
+      180deg,
+      #e2e5e7 0%,
+      #e8eaec 45%,
+      #dfe3e5 100%
+    );
 }
 
 
 /* =========================================================
-   BACKGROUND ORBS
+   BACKGROUND GRID
+========================================================= */
+
+.clients-bg-grid {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.32;
+
+  background-image:
+    linear-gradient(
+      rgba(44, 42, 124, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(44, 42, 124, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent 75%
+  );
+}
+
+
+/* =========================================================
+   ORBS
 ========================================================= */
 
 .clients-orb {
@@ -49,33 +71,27 @@
 
   pointer-events: none;
 
-  filter: blur(70px);
-
-  opacity: 0.45;
+  filter: blur(2px);
 }
-
 
 .clients-orb-one {
   width: 420px;
   height: 420px;
 
-  top: -230px;
-  right: -150px;
+  top: 100px;
+  left: -250px;
 
-  background:
-    rgba(0, 144, 88, 0.07);
+  background: rgba(44, 42, 124, 0.035);
 }
 
-
 .clients-orb-two {
-  width: 350px;
-  height: 350px;
+  width: 360px;
+  height: 360px;
 
-  top: 650px;
-  left: -200px;
+  top: 900px;
+  right: -220px;
 
-  background:
-    rgba(44, 42, 124, 0.05);
+  background: rgba(0, 144, 88, 0.035);
 }
 
 
@@ -86,197 +102,181 @@
 .clients-hero {
   position: relative;
 
-  z-index: 1;
+  z-index: 2;
 
-  max-width: 760px;
+  max-width: 1000px;
 
   margin: 0 auto;
 
-  padding:
-    105px
-    20px
-    55px;
+  padding: 150px 24px 70px;
 
   text-align: center;
 }
 
 
-/* =========================================================
-   EYEBROW
-========================================================= */
+.clients-hero-line {
+  display: flex;
 
-.clients-eyebrow,
-.section-eyebrow {
-  display: block;
+  align-items: center;
+  justify-content: center;
 
-  margin-bottom: 13px;
+  gap: 14px;
 
-  font-size: 11px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.26em;
-
-  text-transform: uppercase;
-
-  color: var(--vsk-green);
+  margin-bottom: 25px;
 }
 
 
-/* =========================================================
-   HERO HEADING
-========================================================= */
-
-.clients-hero h1 {
-  margin: 0 0 16px;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size:
-    clamp(
-      34px,
-      4.5vw,
-      3rem
-    );
-
-  line-height: 1.2;
-
-  font-weight: 400;
-
-  letter-spacing: -0.025em;
-
-  color: var(--vsk-navy);
-}
-
-
-.clients-hero h1 em {
-  font-style: normal;
+.clients-hero-line span {
+  width: 45px;
+  height: 1px;
 
   background:
     linear-gradient(
       90deg,
-      var(--vsk-navy),
+      transparent,
       var(--vsk-green)
     );
-
-  -webkit-background-clip: text;
-
-  background-clip: text;
-
-  color: transparent;
 }
 
 
-/* =========================================================
-   HERO TEXT
-========================================================= */
+.clients-hero-line span:last-child {
+  background:
+    linear-gradient(
+      90deg,
+      var(--vsk-green),
+      transparent
+    );
+}
+
+
+.clients-hero-line small {
+  color: var(--vsk-navy);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.28em;
+}
+
+
+.clients-eyebrow,
+.section-eyebrow {
+  display: inline-block;
+
+  color: var(--vsk-green);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+}
+
+
+.clients-hero h1 {
+  margin: 18px 0 20px;
+
+  color: var(--vsk-navy-dark);
+
+  font-size: clamp(
+    44px,
+    6vw,
+    76px
+  );
+
+  line-height: 0.98;
+
+  letter-spacing: -0.045em;
+
+  font-weight: 700;
+}
+
+
+.clients-hero h1 em {
+  color: var(--vsk-green);
+
+  font-style: normal;
+}
+
 
 .clients-hero p {
-  margin: 0;
+  max-width: 550px;
 
-  color: var(--vsk-text-muted);
+  margin: 0 auto;
 
-  font-size: 1rem;
+  color: var(--vsk-muted);
 
-  line-height: 1.7;
+  font-size: 16px;
+
+  line-height: 1.8;
 }
 
 
 /* =========================================================
-   TRUST STATS
+   STATS
 ========================================================= */
 
 .clients-stats {
   position: relative;
 
-  z-index: 1;
+  z-index: 3;
 
-  max-width: 1100px;
+  max-width: 1180px;
 
   margin: 0 auto;
 
-  padding:
-    35px
-    20px
-    85px;
+  padding: 0 24px 100px;
 
   display: grid;
 
   grid-template-columns:
     repeat(4, 1fr);
 
-  gap: 20px;
-
-  text-align: center;
+  gap: 16px;
 }
 
-
-/* =========================================================
-   STAT CARD
-========================================================= */
 
 .client-stat {
   position: relative;
 
-  padding:
-    26px
-    15px;
+  min-height: 150px;
 
-  background: #ffffff;
+  padding: 28px;
 
-  border:
-    1px solid
-    var(--vsk-border);
+  overflow: hidden;
 
-  border-radius: 10px;
+  border: 1px solid
+    rgba(44, 42, 124, 0.11);
 
-  box-shadow:
-    0 10px 28px
-    rgba(44, 42, 124, 0.045);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-
-.client-stat:hover {
-  transform:
-    translateY(-4px);
-
-  box-shadow:
-    0 16px 34px
-    rgba(44, 42, 124, 0.09);
-}
-
-
-/* =========================================================
-   STAT VALUE
-========================================================= */
-
-.client-stat strong {
-  display: block;
-
-  margin-bottom: 6px;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size:
-    clamp(
-      24px,
-      2.5vw,
-      2rem
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.8),
+      rgba(226, 232, 232, 0.8)
     );
 
-  line-height: 1.2;
+  box-shadow:
+    0 15px 35px
+      rgba(25, 30, 45, 0.06);
 
-  font-weight: 400;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.client-stat::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
 
   background:
     linear-gradient(
@@ -284,26 +284,61 @@
       var(--vsk-navy),
       var(--vsk-green)
     );
-
-  -webkit-background-clip: text;
-
-  background-clip: text;
-
-  color: transparent;
 }
 
 
-/* =========================================================
-   STAT LABEL
-========================================================= */
+.client-stat:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 20px 42px
+      rgba(25, 30, 45, 0.1);
+}
+
+
+.stat-one {
+  border-radius: 22px 6px 22px 6px;
+}
+
+
+.stat-two {
+  border-radius: 6px;
+}
+
+
+.stat-three {
+  border-radius: 30px;
+}
+
+
+.stat-four {
+  border-radius: 6px 22px 6px 22px;
+}
+
+
+.client-stat strong {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--vsk-navy);
+
+  font-size: 31px;
+
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+}
+
 
 .client-stat span {
-  color:
-    var(--vsk-text-muted);
+  color: var(--vsk-muted);
 
-  font-size: 0.78rem;
+  font-size: 12px;
 
-  letter-spacing: 0.07em;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
 
   text-transform: uppercase;
 }
@@ -316,371 +351,397 @@
 .clients-logo-section {
   position: relative;
 
-  z-index: 1;
+  z-index: 2;
 
-  max-width: 1200px;
+  max-width: 1320px;
 
   margin: 0 auto;
 
-  padding:
-    10px
-    20px
-    105px;
+  padding: 20px 24px 120px;
 }
 
 
-/* =========================================================
-   SECTION HEADING
-========================================================= */
-
 .section-heading {
-  max-width: 700px;
+  max-width: 720px;
 
-  margin:
-    0 auto
-    45px;
+  margin: 0 auto 85px;
 
   text-align: center;
 }
 
 
 .section-heading h2 {
-  margin: 0 0 12px;
+  margin: 15px 0;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  color: var(--vsk-navy-dark);
 
-  font-size:
-    clamp(
-      27px,
-      3vw,
-      2.2rem
-    );
+  font-size: clamp(
+    34px,
+    4vw,
+    54px
+  );
 
-  line-height: 1.25;
+  line-height: 1.05;
 
-  font-weight: 400;
-
-  color: var(--vsk-navy);
+  letter-spacing: -0.04em;
 }
 
 
 .section-heading h2 em {
+  color: var(--vsk-green);
+
   font-style: normal;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--vsk-navy),
-      var(--vsk-green)
-    );
-
-  -webkit-background-clip: text;
-
-  background-clip: text;
-
-  color: transparent;
 }
 
 
 .section-heading p {
-  max-width: 620px;
+  max-width: 650px;
 
   margin: 0 auto;
 
-  color: var(--vsk-text-muted);
+  color: var(--vsk-muted);
 
-  font-size: 0.96rem;
+  font-size: 15px;
 
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 
 /* =========================================================
-   CLIENT GRID
+   CATEGORY LIST
 ========================================================= */
 
-.clients-grid {
+.client-category-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 110px;
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.client-category {
+  background: linear-gradient(
+    145deg,
+    #e5e7e9,
+    #d9dde0
+  );
+
+  border: 1px solid rgba(44, 42, 124, 0.14);
+
+  box-shadow: 0 18px 40px rgba(30, 35, 48, 0.08);
+}
+
+
+/* Different outer shapes */
+
+.category-education {
+  border-radius: 38px 10px 38px 10px;
+}
+
+
+.category-corporate {
+  border-radius: 8px;
+}
+
+
+.category-healthcare {
+  border-radius: 50px;
+}
+
+
+.category-industrial {
+  border-radius: 10px 45px 10px 45px;
+}
+
+
+.category-organizations {
+  border-radius: 24px 24px 5px 5px;
+}
+
+
+/* =========================================================
+   CATEGORY HEADER
+========================================================= */
+
+.category-header {
+  position: relative;
+
   display: grid;
 
   grid-template-columns:
-    repeat(4, 1fr);
+    80px 1fr auto;
 
-  gap: 20px;
+  align-items: start;
+
+  gap: 25px;
+
+  margin-bottom: 42px;
 }
 
 
-/* =========================================================
-   CLIENT CARD
-========================================================= */
-
-.client-box {
-  position: relative;
-
-  min-height: 145px;
-
-  overflow: hidden;
-
-  background: #ffffff;
-
-  border:
-    1px solid
-    var(--vsk-border);
-
-  border-radius: 10px;
-
-  opacity: 0;
-
-  transform:
-    translateY(22px);
-
-  animation:
-    clientReveal
-    0.65s
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    )
-    forwards;
-
-  box-shadow:
-    0 12px 30px
-    rgba(44, 42, 124, 0.055);
-
-  transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease,
-    border-color 0.4s ease;
-}
-
-
-.client-box:hover {
-  transform:
-    translateY(-6px);
-
-  border-color:
-    rgba(0, 144, 88, 0.25);
-
-  box-shadow:
-    0 20px 42px
-    rgba(44, 42, 124, 0.11);
-}
-
-
-/* =========================================================
-   CLIENT INNER
-========================================================= */
-
-.client-box-inner {
-  position: relative;
-
-  z-index: 2;
-
-  width: 100%;
-
-  min-height: 145px;
-
+.category-number {
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
-  padding: 22px;
+  width: 68px;
+  height: 68px;
 
-  background: #ffffff;
-}
+  color: var(--vsk-white);
 
+  font-size: 13px;
 
-/* =========================================================
-   LOGO
-========================================================= */
+  font-weight: 800;
 
-.client-box-inner img {
-  display: block;
-
-  width: auto;
-
-  max-width: 82%;
-
-  height: auto;
-
-  max-height: 70px;
-
-  object-fit: contain;
-
-  opacity: 1;
-
-  filter: none;
-
-  transition:
-    transform 0.45s
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    );
-}
-
-
-.client-box:hover
-.client-box-inner img {
-  transform:
-    scale(1.06);
-}
-
-
-/* =========================================================
-   GREEN TOP BORDER
-========================================================= */
-
-.client-box::before {
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-
-  height: 3px;
+  letter-spacing: 0.1em;
 
   background:
     linear-gradient(
-      90deg,
+      145deg,
       var(--vsk-navy),
       var(--vsk-green)
     );
 
-  transform:
-    scaleX(0);
+  box-shadow:
+    0 12px 25px
+      rgba(44, 42, 124, 0.16);
+}
 
-  transform-origin: left;
 
-  transition:
-    transform 0.5s
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
+/* Different number shapes */
+
+.category-education .category-number {
+  border-radius: 50%;
+}
+
+
+.category-corporate .category-number {
+  border-radius: 5px;
+}
+
+
+.category-healthcare .category-number {
+  border-radius: 18px;
+}
+
+
+.category-industrial .category-number {
+  border-radius: 5px 20px 5px 20px;
+}
+
+
+.category-organizations .category-number {
+  border-radius: 50% 10% 50% 10%;
+}
+
+
+.category-heading-content {
+  max-width: 700px;
+}
+
+
+.category-eyebrow {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--vsk-green);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.2em;
+}
+
+
+.category-heading-content h3 {
+  margin: 0 0 10px;
+
+  color: var(--vsk-navy-dark);
+
+  font-size: clamp(
+    25px,
+    3vw,
+    38px
+  );
+
+  line-height: 1.1;
+
+  letter-spacing: -0.035em;
+}
+
+
+.category-heading-content p {
+  max-width: 680px;
+
+  margin: 0;
+
+  color: var(--vsk-muted);
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+.category-index {
+  color: rgba(44, 42, 124, 0.12);
+
+  font-size: 70px;
+
+  font-weight: 800;
+
+  line-height: 0.8;
+
+  letter-spacing: -0.08em;
+}
+
+
+/* =========================================================
+   CATEGORY CARD SHAPES
+   (shape + background per category only.
+    All SIZES live in the "CLIENT LOGO CARDS" section at the
+    end of this file, controlled by --card-h / --inner-h /
+    --img-h, so nothing here can fight the logo sizes.)
+========================================================= */
+
+/* ---------- Education: rounded ---------- */
+
+.category-education .client-box {
+  border-radius: 28px;
+}
+
+
+.category-education .client-box-inner {
+  border-radius: 27px;
+}
+
+
+.category-education .client-box-inner::before {
+  border-radius: 20px;
+}
+
+
+/* ---------- Corporate: square / sharp ---------- */
+
+.category-corporate .client-box {
+  border-radius: 4px;
+}
+
+
+.category-corporate .client-box-inner {
+  border-radius: 3px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f5f6f7,
+      #e5e9e9
     );
-
-  z-index: 5;
 }
 
 
-.client-box:hover::before {
-  transform:
-    scaleX(1);
+.category-corporate .client-box-inner::before {
+  inset: 12px;
+
+  border-radius: 0;
 }
 
 
-/* =========================================================
-   CORNER DETAILS
-========================================================= */
+/* ---------- Healthcare: pill / soft ---------- */
 
-.client-corner {
-  position: absolute;
-
-  z-index: 4;
-
-  width: 13px;
-  height: 13px;
-
-  opacity: 0;
-
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
-}
-
-
-.client-corner.top-left {
-  top: 10px;
-  left: 10px;
-
-  border-top:
-    1px solid
-    var(--vsk-green);
-
-  border-left:
-    1px solid
-    var(--vsk-green);
-
-  transform:
-    translate(-4px, -4px);
-}
-
-
-.client-corner.bottom-right {
-  right: 10px;
-  bottom: 10px;
-
-  border-right:
-    1px solid
-    var(--vsk-green);
-
-  border-bottom:
-    1px solid
-    var(--vsk-green);
-
-  transform:
-    translate(4px, 4px);
-}
-
-
-.client-box:hover
-.client-corner {
-  opacity: 1;
-
-  transform:
-    translate(0, 0);
-}
-
-
-/* =========================================================
-   SHINE
-========================================================= */
-
-.client-shine {
-  position: absolute;
-
-  top: 0;
-  left: -120%;
-
-  z-index: 3;
-
-  width: 70%;
-  height: 100%;
+.category-healthcare .client-box {
+  border-radius: 70px;
 
   background:
     linear-gradient(
       90deg,
-      transparent,
-      rgba(255, 255, 255, 0.7),
-      transparent
+      rgba(0, 144, 88, 0.28),
+      rgba(44, 42, 124, 0.22)
     );
-
-  transform:
-    skewX(-20deg);
-
-  pointer-events: none;
 }
 
 
-.client-box:hover
-.client-shine {
-  animation:
-    clientShine
-    0.8s
-    ease;
+.category-healthcare .client-box-inner {
+  border-radius: 69px;
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(238, 245, 242, 0.97),
+      rgba(234, 237, 244, 0.96)
+    );
+}
+
+
+.category-healthcare .client-box-inner::before {
+  border-radius: 50px;
+}
+
+
+/* ---------- Industrial: architectural ---------- */
+
+.category-industrial .client-box {
+  border-radius: 6px 24px 6px 24px;
+}
+
+
+.category-industrial .client-box-inner {
+  border-radius: 5px 23px 5px 23px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #e9edee,
+      #f6f7f7
+    );
+}
+
+
+.category-industrial .client-box-inner::before {
+  border-radius: 2px 18px 2px 18px;
+
+  border-style: dashed;
+}
+
+
+/* ---------- Organizations: minimal ---------- */
+
+.category-organizations .client-box {
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(44, 42, 124, 0.18),
+      rgba(0, 144, 88, 0.2)
+    );
+}
+
+
+.category-organizations .client-box-inner {
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f4f5f5,
+      #e6eaea
+    );
+}
+
+
+.category-organizations .client-box-inner::before {
+  inset: 8px;
+
+  border-radius: 10px;
 }
 
 
@@ -695,133 +756,145 @@
 
   justify-content: center;
 
-  gap: 14px;
+  gap: 24px;
 
-  margin-top: 42px;
-}
+  max-width: 700px;
 
+  margin: 100px auto 0;
 
-.client-count span {
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  padding: 28px 35px;
 
-  font-size: 1.9rem;
+  border: 1px solid
+    rgba(44, 42, 124, 0.1);
+
+  border-radius: 18px;
 
   background:
     linear-gradient(
-      90deg,
-      var(--vsk-navy),
-      var(--vsk-green)
+      135deg,
+      rgba(255,255,255,0.65),
+      rgba(224,230,230,0.65)
     );
 
-  -webkit-background-clip: text;
-
-  background-clip: text;
-
-  color: transparent;
+  box-shadow:
+    0 15px 35px
+      rgba(30, 35, 48, 0.05);
 }
 
 
-.client-count p {
+.client-count-number {
+  display: flex;
+
+  align-items: baseline;
+
+  color: var(--vsk-navy);
+
+  line-height: 1;
+}
+
+
+.client-count-number span {
+  font-size: 45px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.07em;
+}
+
+
+.client-count-number small {
+  margin-left: 3px;
+
+  color: var(--vsk-green);
+
+  font-size: 25px;
+
+  font-weight: 800;
+}
+
+
+.client-count-text strong {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--vsk-navy-dark);
+
+  font-size: 14px;
+}
+
+
+.client-count-text p {
   margin: 0;
 
-  color:
-    var(--vsk-text-muted);
+  color: var(--vsk-muted);
 
-  font-size: 0.78rem;
+  font-size: 11px;
+
+  line-height: 1.7;
 
   letter-spacing: 0.04em;
 }
 
 
 /* =========================================================
-   WHY VSK
+   WHY VSK SECTION
 ========================================================= */
 
 .why-vsk-section {
   position: relative;
 
-  padding:
-    100px
-    20px;
+  display: grid;
 
-  background:
-    linear-gradient(
-      180deg,
-      #f7f8fb 0%,
-      #ffffff 100%
-    );
-}
+  grid-template-columns:
+    minmax(300px, 0.85fr)
+    minmax(500px, 1.15fr);
 
+  gap: 80px;
 
-/* =========================================================
-   WHY HEADING
-========================================================= */
+  max-width: 1320px;
 
-.why-vsk-heading {
-  max-width: 700px;
+  margin: 0 auto;
 
-  margin:
-    0 auto
-    50px;
+  padding: 120px 24px;
 
-  text-align: center;
+  border-top: 1px solid
+    rgba(44, 42, 124, 0.08);
 }
 
 
 .why-vsk-heading h2 {
-  margin: 0 0 18px;
+  margin: 16px 0 22px;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  color: var(--vsk-navy-dark);
 
-  font-size:
-    clamp(
-      28px,
-      3.5vw,
-      2.5rem
-    );
+  font-size: clamp(
+    35px,
+    4vw,
+    56px
+  );
 
-  line-height: 1.25;
+  line-height: 1;
 
-  font-weight: 400;
-
-  color: var(--vsk-navy);
+  letter-spacing: -0.045em;
 }
 
 
 .why-vsk-heading h2 em {
+  color: var(--vsk-green);
+
   font-style: normal;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--vsk-navy),
-      var(--vsk-green)
-    );
-
-  -webkit-background-clip: text;
-
-  background-clip: text;
-
-  color: transparent;
 }
 
 
 .why-vsk-heading p {
-  max-width: 680px;
+  max-width: 480px;
 
-  margin: 0 auto;
+  color: var(--vsk-muted);
 
-  color: var(--vsk-text-muted);
+  font-size: 14px;
 
-  font-size: 0.98rem;
-
-  line-height: 1.75;
+  line-height: 1.85;
 }
 
 
@@ -830,48 +903,63 @@
 ========================================================= */
 
 .trust-grid {
-  max-width: 1150px;
-
-  margin: 0 auto;
-
   display: grid;
 
   grid-template-columns:
-    repeat(4, 1fr);
+    repeat(2, 1fr);
 
-  gap: 20px;
+  gap: 18px;
 }
 
-
-/* =========================================================
-   TRUST CARD
-========================================================= */
 
 .trust-card {
   position: relative;
 
+  min-height: 245px;
+
+  padding: 30px;
+
   overflow: hidden;
 
-  padding:
-    32px
-    26px;
+  border: 1px solid
+    rgba(44, 42, 124, 0.09);
 
-  background: #ffffff;
+  border-radius: 16px;
 
-  border:
-    1px solid
-    var(--vsk-border);
-
-  border-radius: 10px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(250, 251, 251, 0.9),
+      rgba(225, 231, 230, 0.82)
+    );
 
   box-shadow:
-    0 12px 30px
-    rgba(44, 42, 124, 0.055);
+    0 15px 35px
+      rgba(25, 30, 45, 0.055);
 
   transition:
     transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
+    box-shadow 0.35s ease;
+}
+
+
+.trust-card:nth-child(1) {
+  border-radius: 28px 8px 8px 8px;
+}
+
+
+.trust-card:nth-child(2) {
+  border-radius: 8px 28px 8px 8px;
+}
+
+
+.trust-card:nth-child(3) {
+  border-radius: 8px 8px 8px 28px;
+}
+
+
+.trust-card:nth-child(4) {
+  border-radius: 8px 8px 28px 8px;
 }
 
 
@@ -884,7 +972,6 @@
   left: 0;
 
   width: 100%;
-
   height: 3px;
 
   background:
@@ -893,65 +980,88 @@
       var(--vsk-navy),
       var(--vsk-green)
     );
-
-  transform:
-    scaleX(0);
-
-  transform-origin: left;
-
-  transition:
-    transform 0.5s ease;
 }
 
 
 .trust-card:hover {
-  transform:
-    translateY(-6px);
+  transform: translateY(-6px);
 
   box-shadow:
-    0 20px 42px
-    rgba(44, 42, 124, 0.1);
-
-  border-color:
-    rgba(0, 144, 88, 0.2);
+    0 22px 45px
+      rgba(25, 30, 45, 0.1);
 }
 
-
-.trust-card:hover::before {
-  transform:
-    scaleX(1);
-}
-
-
-/* =========================================================
-   TRUST NUMBER
-========================================================= */
 
 .trust-number {
   position: absolute;
 
-  top: 15px;
-  right: 18px;
+  top: 25px;
+  right: 27px;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  color: rgba(44, 42, 124, 0.11);
 
-  font-size: 1.5rem;
+  font-size: 38px;
 
-  color:
-    rgba(44, 42, 124, 0.08);
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+
+.trust-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  margin-bottom: 25px;
+
+  color: var(--vsk-white);
+
+  font-size: 17px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--vsk-navy),
+      var(--vsk-green)
+    );
+}
+
+
+.trust-card h3 {
+  margin: 0 0 10px;
+
+  color: var(--vsk-navy-dark);
+
+  font-size: 18px;
+}
+
+
+.trust-card p {
+  margin: 0;
+
+  color: var(--vsk-muted);
+
+  font-size: 13px;
+
+  line-height: 1.7;
 }
 
 
 /* =========================================================
-   TRUST ICON
+   CTA
 ========================================================= */
 
-.trust-icon {
-  width: 44px;
-  height: 44px;
+.clients-cta {
+  position: relative;
+
+  min-height: 560px;
 
   display: flex;
 
@@ -959,216 +1069,144 @@
 
   justify-content: center;
 
-  margin-bottom: 20px;
-
-  border-radius: 50%;
-
-  background:
-    rgba(0, 144, 88, 0.1);
-
-  color:
-    var(--vsk-green);
-
-  font-size: 17px;
-
-  font-weight: 700;
-}
-
-
-/* =========================================================
-   TRUST TITLE
-========================================================= */
-
-.trust-card h3 {
-  margin:
-    0 0 10px;
-
-  font-size: 1.08rem;
-
-  font-weight: 700;
-
-  color:
-    var(--vsk-navy);
-}
-
-
-/* =========================================================
-   TRUST TEXT
-========================================================= */
-
-.trust-card p {
-  margin: 0;
-
-  color:
-    var(--vsk-text-muted);
-
-  font-size: 0.88rem;
-
-  line-height: 1.65;
-}
-
-
-/* =========================================================
-   PARTNERSHIP CTA
-   LIGHT VSK STYLE
-========================================================= */
-
-.clients-cta {
-  position: relative;
+  padding: 100px 24px;
 
   overflow: hidden;
 
-  padding:
-    105px
-    20px;
-
-  text-align: center;
+  color: var(--vsk-white);
 
   background:
     linear-gradient(
       135deg,
-      #ffffff 0%,
-      #f7f8fb 45%,
-      #eefaf5 100%
+      #20205d 0%,
+      #29276d 45%,
+      #08734f 100%
     );
-
-  border-top:
-    1px solid
-    rgba(44, 42, 124, 0.06);
 }
 
 
-/* =========================================================
-   CTA GLOW
-========================================================= */
+.clients-cta::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,0.15),
+      transparent 50%,
+      rgba(0,0,0,0.12)
+    );
+}
+
+
+.cta-grid {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.12;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.3) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.3) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+}
+
 
 .cta-glow {
   position: absolute;
 
   border-radius: 50%;
 
-  pointer-events: none;
+  filter: blur(20px);
 
-  filter: blur(75px);
+  pointer-events: none;
 }
 
 
-/* GREEN GLOW */
-
 .cta-glow-one {
-  width: 420px;
-  height: 420px;
+  width: 450px;
+  height: 450px;
 
   top: -250px;
   right: -120px;
 
   background:
-    rgba(75, 227, 154, 0.13);
+    rgba(255,255,255,0.08);
 }
 
 
-/* NAVY GLOW */
-
 .cta-glow-two {
-  width: 360px;
-  height: 360px;
+  width: 350px;
+  height: 350px;
 
-  bottom: -230px;
+  bottom: -220px;
   left: -100px;
 
   background:
-    rgba(44, 42, 124, 0.07);
+    rgba(0, 144, 88, 0.22);
 }
 
-
-/* =========================================================
-   CTA CONTENT
-========================================================= */
 
 .cta-content {
   position: relative;
 
   z-index: 2;
 
-  max-width: 720px;
+  max-width: 800px;
 
-  margin: 0 auto;
+  text-align: center;
 }
 
 
-/* =========================================================
-   CTA EYEBROW
-========================================================= */
-
-.cta-content .section-eyebrow {
-  color:
-    var(--vsk-green);
+.clients-cta .section-eyebrow {
+  color: var(--vsk-green-light);
 }
 
-
-/* =========================================================
-   CTA HEADING
-========================================================= */
 
 .cta-content h2 {
-  margin:
-    0 0 18px;
+  margin: 18px 0 20px;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-size: clamp(
+    42px,
+    6vw,
+    72px
+  );
 
-  font-size:
-    clamp(
-      30px,
-      4vw,
-      2.7rem
-    );
+  line-height: 0.98;
 
-  line-height: 1.25;
-
-  font-weight: 400;
-
-  color:
-    var(--vsk-navy);
+  letter-spacing: -0.05em;
 }
 
 
 .cta-content h2 em {
+  color: #74d2ad;
+
   font-style: normal;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--vsk-navy),
-      var(--vsk-green)
-    );
-
-  -webkit-background-clip: text;
-
-  background-clip: text;
-
-  color: transparent;
 }
 
-
-/* =========================================================
-   CTA TEXT
-========================================================= */
 
 .cta-content p {
   max-width: 620px;
 
-  margin:
-    0 auto;
+  margin: 0 auto 35px;
 
-  color:
-    var(--vsk-text-muted);
+  color: rgba(255,255,255,0.7);
 
-  font-size: 1rem;
+  font-size: 15px;
 
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 
@@ -1181,97 +1219,79 @@
 
   align-items: center;
 
-  gap: 14px;
+  justify-content: center;
 
-  margin-top: 32px;
+  gap: 18px;
 
-  padding:
-    15px
-    28px;
+  min-width: 205px;
 
-  border:
-    1px solid
-    rgba(44, 42, 124, 0.25);
+  padding: 16px 22px;
 
-  border-radius: 999px;
-
-  background:
-    #ffffff;
-
-  color:
-    var(--vsk-navy);
+  color: green;
 
   text-decoration: none;
 
-  font-size: 12px;
+  font-size: 13px;
 
-  font-weight: 700;
+  font-weight: 800;
 
-  letter-spacing: 0.15em;
+  letter-spacing: 0.04em;
 
-  text-transform: uppercase;
-
-  box-shadow:
-    0 10px 28px
-    rgba(44, 42, 124, 0.08);
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    background 0.35s ease,
-    color 0.35s ease,
-    border-color 0.35s ease;
-}
-
-
-.clients-cta-button:hover {
-  transform:
-    translateY(-4px);
+  border-radius: 5px;
 
   background:
     linear-gradient(
-      90deg,
-      var(--vsk-navy),
-      var(--vsk-green)
+      135deg,
+      #ffffff,
+      #e9f5f0
     );
 
-  color:
-    #ffffff;
-
-  border-color:
-    transparent;
-
   box-shadow:
-    0 16px 35px
-    rgba(44, 42, 124, 0.18);
+    0 15px 30px
+      rgba(0,0,0,0.15);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 
 .clients-cta-button span {
-  font-size: 18px;
+  color: var(--vsk-green);
+
+  font-size: 20px;
+
+  line-height: 1;
 
   transition:
     transform 0.3s ease;
 }
 
 
+.clients-cta-button:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 20px 38px
+      rgba(0,0,0,0.2);
+}
+
+
 .clients-cta-button:hover span {
-  transform:
-    translateX(5px);
+  transform: translateX(5px);
 }
 
 
 /* =========================================================
-   ANIMATIONS
+   ANIMATION
 ========================================================= */
 
 @keyframes clientReveal {
-
   from {
     opacity: 0;
 
     transform:
-      translateY(22px);
+      translateY(20px);
   }
 
   to {
@@ -1280,240 +1300,210 @@
     transform:
       translateY(0);
   }
-
 }
 
 
-@keyframes clientShine {
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
 
-  0% {
-    left: -120%;
-  }
+@media (max-width: 1100px) {
 
-  100% {
-    left: 140%;
+  .why-vsk-section {
+    grid-template-columns:
+      1fr;
+
+    gap: 50px;
   }
 
 }
 
 
 /* =========================================================
-   TABLET
+   RESPONSIVE - 900px
 ========================================================= */
 
-@media (max-width: 1000px) {
-
-  .clients-grid {
-    grid-template-columns:
-      repeat(3, 1fr);
-  }
-
-
-  .trust-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
-  }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 760px) {
-
-  .clients-hero {
-    padding:
-      80px
-      20px
-      45px;
-  }
-
+@media (max-width: 900px) {
 
   .clients-stats {
     grid-template-columns:
       repeat(2, 1fr);
-
-    padding:
-      25px
-      20px
-      65px;
   }
 
 
-  .clients-grid {
+  .category-header {
     grid-template-columns:
-      repeat(2, 1fr);
-
-    gap: 14px;
+      65px 1fr;
   }
 
 
-  .client-box,
-  .client-box-inner {
-    min-height: 125px;
+  .category-index {
+    display: none;
   }
 
 
-  .client-box-inner {
-    padding: 18px;
-  }
-
-
-  .client-box-inner img {
-    max-width: 85%;
-
-    max-height: 60px;
-  }
-
-
-  .why-vsk-section {
-    padding:
-      75px
-      20px;
-  }
-
-
-  .trust-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
-
-    gap: 14px;
-  }
-
-
-  .trust-card {
-    padding:
-      27px
-      20px;
-  }
-
-
-  .clients-cta {
-    padding:
-      80px
-      20px;
+  .client-category {
+    padding: 40px 30px;
   }
 
 }
 
 
 /* =========================================================
-   SMALL MOBILE
+   RESPONSIVE - MOBILE
 ========================================================= */
 
-@media (max-width: 500px) {
+@media (max-width: 650px) {
 
   .clients-hero {
     padding:
-      70px
-      16px
-      35px;
+      110px 20px 60px;
   }
 
 
   .clients-hero h1 {
-    font-size: 30px;
+    font-size: 43px;
   }
 
 
   .clients-hero p {
-    font-size: 0.9rem;
+    font-size: 14px;
   }
 
 
   .clients-stats {
+    grid-template-columns:
+      1fr 1fr;
+
     gap: 10px;
 
     padding:
-      20px
-      12px
-      55px;
+      0 16px 70px;
   }
 
 
   .client-stat {
-    padding:
-      20px
-      8px;
+    min-height: 125px;
+
+    padding: 22px;
   }
 
 
   .client-stat strong {
-    font-size: 1.5rem;
+    font-size: 25px;
   }
 
 
   .client-stat span {
-    font-size: 0.65rem;
+    font-size: 9px;
   }
 
 
   .clients-logo-section {
     padding:
-      10px
-      12px
-      75px;
+      20px 16px 80px;
   }
 
 
   .section-heading {
-    margin-bottom: 35px;
+    margin-bottom: 55px;
   }
 
 
   .section-heading h2 {
-    font-size: 25px;
+    font-size: 34px;
   }
 
 
   .section-heading p {
-    font-size: 0.88rem;
+    font-size: 13px;
   }
 
 
-  .clients-grid {
-    gap: 10px;
+  .client-category-list {
+    gap: 65px;
   }
 
 
-  .client-box,
-  .client-box-inner {
-    min-height: 105px;
+  .client-category {
+    padding:
+      30px 18px;
+
+    border-radius: 20px;
   }
 
 
-  .client-box-inner {
-    padding: 10px;
+  .category-header {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    margin-bottom: 30px;
   }
 
 
-  .client-box-inner img {
-    max-width: 88%;
+  .category-number {
+    width: 52px;
+    height: 52px;
 
-    max-height: 50px;
+    font-size: 11px;
+  }
+
+
+  .category-heading-content h3 {
+    font-size: 27px;
+  }
+
+
+  .category-heading-content p {
+    font-size: 13px;
+  }
+
+
+  .category-healthcare .client-box {
+    border-radius: 40px;
+  }
+
+
+  .category-healthcare .client-box-inner {
+    border-radius: 39px;
   }
 
 
   .client-count {
     flex-direction: column;
 
-    gap: 4px;
-
-    margin-top: 35px;
-
     text-align: center;
+
+    gap: 10px;
+
+    margin-top: 65px;
+
+    padding:
+      25px 18px;
   }
 
 
-  .client-count span {
-    font-size: 1.7rem;
+  .client-count-number span {
+    font-size: 40px;
   }
 
 
-  .client-count p {
-    font-size: 0.67rem;
+  .client-count-text p {
+    font-size: 9px;
+  }
+
+
+  .why-vsk-section {
+    padding:
+      80px 20px;
+  }
+
+
+  .why-vsk-heading h2 {
+    font-size: 39px;
   }
 
 
@@ -1524,50 +1514,471 @@
 
 
   .trust-card {
-    padding: 25px;
+    min-height: 210px;
+  }
+
+
+  .clients-cta {
+    min-height: 500px;
+
+    padding:
+      80px 20px;
   }
 
 
   .cta-content h2 {
-    font-size: 28px;
+    font-size: 45px;
   }
 
 
   .cta-content p {
-    font-size: 0.9rem;
-  }
-
-
-  .clients-cta-button {
-    padding:
-      14px
-      21px;
-
-    font-size: 10px;
+    font-size: 13px;
   }
 
 }
 
 
 /* =========================================================
-   VERY SMALL MOBILE
+   SMALL MOBILE
 ========================================================= */
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
 
-  .clients-grid {
-    gap: 8px;
+  .clients-stats {
+    grid-template-columns:
+      1fr;
   }
 
 
-  .client-box,
+  .client-category {
+    padding:
+      26px 14px;
+  }
+
+
+  .category-heading-content h3 {
+    font-size: 24px;
+  }
+
+
+  .cta-content h2 {
+    font-size: 39px;
+  }
+
+}
+
+
+/* =========================================================
+   CLIENT LOGO CARDS  (LARGER, PREMIUM)
+
+   Everything about the logo cards lives here, in one place.
+   To change the sizes, edit only the three variables:
+
+     --card-h   outer card height
+     --inner-h  white inner panel height
+     --img-h    logo image height
+========================================================= */
+
+.category-logos {
+  --card-h: 165px;
+  --inner-h: 153px;
+  --img-h: 125px;
+  --inner-pad: 14px;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+
+/* ---------- CARD ---------- */
+
+.client-box {
+  --logo-navy: #20245f;
+  --logo-green: #009058;
+
+  position: relative;
+  min-width: 0;
+  min-height: var(--card-h);
+  padding: 5px;
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 144, 88, 0.2),
+    #ffffff 45%,
+    rgba(44, 42, 124, 0.18)
+  );
+
+  border: 1px solid rgba(44, 42, 124, 0.18);
+  border-radius: 16px;
+
+  box-shadow: 0 5px 16px rgba(24, 35, 55, 0.06);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+
+  animation: logoCardReveal 0.55s ease both;
+}
+
+
+/* ---------- BRIGHT GRADIENT BORDER ---------- */
+
+.client-box::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 2px;
+
+  background: linear-gradient(
+    135deg,
+    #00d68f 0%,
+    #75f0bd 20%,
+    #ffffff 35%,
+    #7778ff 60%,
+    #009058 80%,
+    #00d68f 100%
+  );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  opacity: 0.9;
+  pointer-events: none;
+
+  transition: opacity 0.35s ease;
+}
+
+
+/* ---------- WHITE INNER PANEL ---------- */
+
+.client-box-inner {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  min-height: var(--inner-h);
+  padding: var(--inner-pad);
+
+  background: #ffffff;
+  border-radius: 11px;
+  overflow: hidden;
+}
+
+/* thin inner frame line */
+
+.client-box-inner::before {
+  content: "";
+
+  position: absolute;
+  inset: 9px;
+
+  border: 1px solid rgba(44, 42, 124, 0.12);
+
+  pointer-events: none;
+}
+
+
+/* ---------- LOGO IMAGE ---------- */
+
+.client-box-inner img {
+  position: relative;
+  z-index: 2;
+
+  display: block;
+
+  box-sizing: border-box;
+
+  width: 100%;
+  max-width: 100%;
+  height: var(--img-h);
+  max-height: var(--img-h);
+
+  padding: 0;
+
+  object-fit: contain;
+  object-position: center;
+
+  filter: grayscale(15%);
+
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+
+/* ---------- CORNER ACCENTS ---------- */
+
+.client-corner {
+  position: absolute;
+  z-index: 2;
+  width: 13px;
+  height: 13px;
+
+  border-color: var(--logo-green);
+  border-style: solid;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.corner-top {
+  top: 0;
+  left: 0;
+  border-width: 2px 0 0 2px;
+  border-top-left-radius: 8px;
+}
+
+.corner-bottom {
+  right: 0;
+  bottom: 0;
+  border-width: 0 2px 2px 0;
+  border-bottom-right-radius: 8px;
+}
+
+
+/* ---------- HOVER ---------- */
+
+.client-box:hover {
+  transform: translateY(-7px);
+
+  border-color: var(--logo-green);
+
+  box-shadow:
+    0 15px 30px rgba(32, 36, 95, 0.12),
+    0 4px 12px rgba(0, 144, 88, 0.1);
+}
+
+.client-box:hover::before {
+  opacity: 1;
+}
+
+.client-box:hover .client-box-inner img {
+  transform: scale(1.08);
+  filter: grayscale(0%);
+}
+
+.client-box:hover .client-corner {
+  opacity: 1;
+}
+
+
+/* ---------- ENTRY ANIMATION ---------- */
+
+@keyframes logoCardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 900px) {
+  .category-logos {
+    --card-h: 150px;
+    --inner-h: 138px;
+    --img-h: 110px;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+  .category-logos {
+    --card-h: 125px;
+    --inner-h: 115px;
+    --img-h: 95px;
+    --inner-pad: 8px;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .client-box {
+    padding: 4px;
+    border-radius: 12px;
+  }
+
   .client-box-inner {
-    min-height: 95px;
+    border-radius: 8px;
+  }
+}
+
+
+/* ---------- SMALL MOBILE ---------- */
+
+@media (max-width: 420px) {
+  .category-logos {
+    --card-h: 110px;
+    --inner-h: 100px;
+    --img-h: 82px;
+    --inner-pad: 6px;
+
+    gap: 9px;
+  }
+}
+
+
+/* ---------- REDUCED MOTION ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .client-box,
+  .client-box-inner img,
+  .client-box::before,
+  .client-corner {
+    animation: none;
+    transition: none;
   }
 
+  .client-box:hover,
+  .client-box:hover .client-box-inner img {
+    transform: none;
+  }
+}
+/* =========================================
+   VSK CLIENTS — MOBILE OVERFLOW FIX
+========================================= */
 
-  .client-box-inner img {
-    max-height: 44px;
+.our-clients,
+.our-clients *,
+.our-clients *::before,
+.our-clients *::after {
+  box-sizing: border-box;
+}
+
+.our-clients {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.clients-bg-grid,
+.clients-orb,
+.cta-grid,
+.cta-glow {
+  max-width: 100%;
+}
+
+.clients-bg-grid,
+.clients-orb,
+.cta-grid,
+.cta-glow {
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    max-width: 100%;
+    overflow-x: clip;
   }
 
+  .our-clients {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .clients-hero,
+  .clients-stats,
+  .clients-logo-section,
+  .why-vsk-section,
+  .clients-cta {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .clients-hero,
+  .clients-logo-section,
+  .why-vsk-section,
+  .clients-cta {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Prevent grid columns from forcing extra width */
+  .clients-stats,
+  .category-logos,
+  .trust-grid,
+  .why-vsk-section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .client-category-list,
+  .client-category,
+  .category-header,
+  .category-heading-content,
+  .category-logos,
+  .client-box,
+  .client-box-inner,
+  .trust-card,
+  .cta-content {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .category-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .category-index {
+    display: none;
+  }
+
+  .clients-hero h1,
+  .section-heading h2,
+  .category-heading-content h3,
+  .why-vsk-heading h2,
+  .cta-content h2 {
+    overflow-wrap: anywhere;
+  }
+
+  .clients-orb-one {
+    left: -180px;
+  }
+
+  .clients-orb-two {
+    right: -180px;
+  }
+
+  .client-count {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .trust-card {
+    width: 100%;
+  }
+}
+@media (max-width: 650px) {
+  .why-vsk-section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
 }

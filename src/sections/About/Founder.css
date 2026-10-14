@@ -1,0 +1,462 @@
+/* ==========================================
+   VSK FOUNDER SECTION
+========================================== */
+
+.vsk-founder-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 90px 24px;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 5% 15%,
+      rgba(44, 42, 124, 0.09),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 95% 85%,
+      rgba(0, 144, 88, 0.08),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #f0f2f5 0%,
+      #e7eaef 55%,
+      #edf2ef 100%
+    );
+
+  color: #191b35;
+}
+
+.vsk-founder-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8%;
+  width: 84%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(44, 42, 124, 0.2),
+    rgba(0, 144, 88, 0.4),
+    transparent
+  );
+}
+
+.vsk-founder-section::after {
+  content: "";
+  position: absolute;
+  top: 100px;
+  right: -180px;
+  width: 350px;
+  height: 350px;
+  border: 1px solid rgba(44, 42, 124, 0.07);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ==========================================
+   SECTION HEADING
+========================================== */
+
+.vsk-founder-heading {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.vsk-founder-heading > span {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #008651;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+}
+
+.vsk-founder-heading h2 {
+  margin: 0 0 16px;
+  color: #191b35;
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.vsk-founder-heading h2 span {
+  color: #009058;
+}
+
+.vsk-founder-heading p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #626879;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.vsk-founder-content {
+  position: relative;
+  z-index: 1;
+  width: min(1050px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+  gap: 75px;
+  align-items: center;
+}
+
+/* ==========================================
+   QUOTE SIDE
+========================================== */
+
+.vsk-founder-quote {
+  position: relative;
+  min-width: 0;
+  padding: 20px 0 20px 28px;
+  border-left: 3px solid #009058;
+}
+
+.vsk-quote-mark {
+  display: block;
+  height: 55px;
+  color: #009058;
+  font-family: Georgia, serif;
+  font-size: 90px;
+  line-height: 1;
+  opacity: 0.75;
+}
+
+.vsk-founder-quote > p {
+  margin: 8px 0 0;
+  color: #242744;
+  font-size: clamp(23px, 3vw, 34px);
+  font-weight: 600;
+  line-height: 1.65;
+  letter-spacing: -0.025em;
+}
+
+.vsk-quote-bottom {
+  height: 45px;
+  margin-top: 0;
+}
+
+.vsk-founder-signature {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.vsk-signature-line {
+  width: 38px;
+  height: 2px;
+  flex-shrink: 0;
+  background: #009058;
+}
+
+.vsk-founder-signature div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.vsk-founder-signature strong {
+  color: #2c2a7c;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.vsk-founder-signature small {
+  color: #777c89;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+/* ==========================================
+   FOUNDER IMAGE
+========================================== */
+
+.vsk-founder-image {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  justify-self: center;
+}
+
+.vsk-founder-image-frame {
+  position: relative;
+  padding: 10px;
+  border: 1px solid rgba(44, 42, 124, 0.16);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow:
+    0 25px 55px rgba(23, 28, 55, 0.13),
+    0 5px 15px rgba(23, 28, 55, 0.05);
+}
+
+.vsk-founder-image-frame::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 85px;
+  height: 85px;
+  border-top: 3px solid #009058;
+  border-right: 3px solid #009058;
+  border-radius: 0 15px 0 0;
+  pointer-events: none;
+}
+
+.vsk-founder-image-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 4.2;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 11px;
+  transition: transform 0.5s ease;
+}
+
+.vsk-founder-image-frame:hover img {
+  transform: scale(1.015);
+}
+
+/* ==========================================
+   IMAGE CAPTION (NAME CARD)
+========================================== */
+
+.vsk-founder-image-caption {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+
+  width: fit-content;
+  max-width: 100%;
+  padding: 18px 22px;
+
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(44, 42, 124, 0.12);
+  border-radius: 12px;
+
+  box-shadow: 0 10px 30px rgba(20, 25, 50, 0.08);
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.vsk-founder-image-caption:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(32, 36, 95, 0.13);
+}
+
+.vsk-caption-dot {
+  flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+  margin-top: 6px;
+
+  background: #009058;
+  border-radius: 50%;
+
+  box-shadow: 0 0 0 4px rgba(0, 144, 88, 0.12);
+}
+
+/* ---------- Name + tagline + link ---------- */
+
+.vsk-founder-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+.vsk-founder-name strong {
+  color: #20245f;
+  font-size: 18px;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.vsk-founder-name .vsk-founder-tagline {
+  color: #68716f;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  line-height: 1.6;
+}
+
+.vsk-founder-tagline i {
+  color: #009058;
+  font-style: normal;
+  margin: 0 3px;
+}
+
+/* ---------- Link button ---------- */
+
+.vsk-founder-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 5px;
+  padding: 9px 13px;
+
+  color: #ffffff;
+  background: #20245f;
+  border: 1px solid #20245f;
+  border-radius: 6px;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.vsk-founder-link:hover {
+  color: #ffffff;
+  background: #009058;
+  border-color: #009058;
+  transform: translateX(3px);
+}
+
+.vsk-founder-arrow {
+  font-size: 15px;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.vsk-founder-link:hover .vsk-founder-arrow {
+  transform: translate(2px, -2px);
+}
+
+.vsk-founder-link:focus-visible {
+  outline: 2px solid #009058;
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 850px) {
+  .vsk-founder-section {
+    padding: 75px 24px;
+  }
+
+  .vsk-founder-content {
+    grid-template-columns: minmax(0, 1fr) minmax(250px, 330px);
+    gap: 35px;
+  }
+
+  .vsk-founder-quote {
+    padding-left: 20px;
+  }
+
+  .vsk-founder-quote > p {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 650px) {
+  .vsk-founder-section {
+    padding: 65px 20px;
+  }
+
+  .vsk-founder-heading {
+    margin-bottom: 35px;
+  }
+
+  .vsk-founder-heading h2 {
+    font-size: 34px;
+  }
+
+  .vsk-founder-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .vsk-founder-quote {
+    order: 2;
+    padding-left: 18px;
+  }
+
+  .vsk-founder-image {
+    order: 1;
+    width: min(100%, 360px);
+  }
+
+  .vsk-founder-image-frame img {
+    aspect-ratio: 4 / 3.7;
+  }
+
+  .vsk-founder-quote > p {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vsk-founder-image-caption {
+    gap: 10px;
+    padding: 14px 16px;
+  }
+
+  .vsk-founder-name strong {
+    font-size: 16px;
+  }
+
+  .vsk-founder-name .vsk-founder-tagline {
+    font-size: 8px;
+    letter-spacing: 0.1em;
+  }
+
+  .vsk-founder-link {
+    padding: 8px 11px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .vsk-founder-heading h2 {
+    font-size: 29px;
+  }
+
+  .vsk-founder-quote > p {
+    font-size: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vsk-founder-image-frame img,
+  .vsk-founder-image-caption,
+  .vsk-founder-link,
+  .vsk-founder-arrow {
+    transition: none;
+  }
+
+  .vsk-founder-image-caption:hover,
+  .vsk-founder-link:hover,
+  .vsk-founder-link:hover .vsk-founder-arrow {
+    transform: none;
+  }
+}

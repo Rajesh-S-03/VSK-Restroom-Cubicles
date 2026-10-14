@@ -3,7 +3,7 @@ import heroImg from '../../assets/heroimg.png';
 
 const Hero = () => {
   return (
-    <section className="hero">
+    <section className="hero" id= "home">
 
       {/* Background Image */}
       <img

@@ -1,0 +1,546 @@
+/* ==========================================
+   VSK BEFORE / AFTER COMPARISON
+   Premium navy + dark teal with emerald glow
+========================================== */
+
+.comparison-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  width: 100%;
+  margin: 0 auto 25px;
+  padding: 90px 24px 75px;
+
+  text-align: center;
+  color: #f5f8ff;
+
+  background:
+    radial-gradient(
+      ellipse at 12% 18%,
+      rgba(0, 144, 88, 0.24),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 88% 80%,
+      rgba(44, 42, 124, 0.38),
+      transparent 42%
+    ),
+    linear-gradient(
+      135deg,
+      #101827 0%,
+      #172437 48%,
+      #102b2b 100%
+    );
+}
+
+/* Subtle ambient glow */
+
+.comparison-section::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(255, 255, 255, 0.055),
+    transparent 48%
+  );
+
+  opacity: 0.9;
+}
+
+.comparison-inner {
+  position: relative;
+  z-index: 1;
+
+  width: min(1200px, 100%);
+  margin: 0 auto;
+}
+
+/* ==========================================
+   HEADING
+========================================== */
+
+.comparison-heading {
+  max-width: 760px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.comparison-eyebrow {
+  display: inline-block;
+  margin-bottom: 15px;
+
+  color: #4be0a1;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+}
+
+.comparison-heading h2 {
+  margin: 0 0 17px;
+
+  color: #f7f9ff;
+
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.comparison-heading h2 span {
+  color: #35d69a;
+}
+
+.comparison-heading p {
+  max-width: 600px;
+  margin: 0 auto;
+
+  color: #b8c4d3;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   IMAGE COMPARISON FRAME
+========================================== */
+
+.comparison-frame {
+  position: relative;
+
+  width: 85%;
+  max-width: 950px;
+
+  margin: 0 auto;
+
+  aspect-ratio: 16 / 7;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+
+  background: #101827;
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(0, 144, 88, 0.08),
+    0 0 60px rgba(0, 144, 88, 0.1);
+
+  cursor: ew-resize;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.comparison-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+.comparison-before {
+  z-index: 1;
+}
+
+.comparison-after-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  overflow: hidden;
+
+  pointer-events: none;
+  will-change: clip-path;
+}
+
+.comparison-after {
+  width: 100%;
+  height: 100%;
+}
+
+/* ==========================================
+   BEFORE / AFTER LABELS
+========================================== */
+
+.comparison-label {
+  position: absolute;
+  top: 22px;
+  z-index: 4;
+
+  padding: 10px 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+
+  color: #fff;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+
+  backdrop-filter: blur(12px);
+
+  pointer-events: none;
+}
+
+.label-before {
+  left: 22px;
+
+  background: rgba(16, 24, 39, 0.72);
+}
+
+.label-after {
+  right: 22px;
+
+  background: rgba(0, 100, 63, 0.82);
+}
+
+/* ==========================================
+   DIVIDER + HANDLE
+========================================== */
+
+.comparison-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+
+  width: 2px;
+
+  background: #fff;
+
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+
+  pointer-events: none;
+}
+
+.comparison-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3px;
+
+  padding: 0;
+
+  transform: translate(-50%, -50%);
+
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+
+  color: #fff;
+
+  background: #009058;
+
+  box-shadow: 0 5px 22px rgba(0, 0, 0, 0.35);
+
+  cursor: ew-resize;
+  pointer-events: auto;
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.comparison-handle:hover,
+.comparison-handle:focus-visible {
+  background: #007a4b;
+
+  box-shadow: 0 0 0 7px rgba(0, 144, 88, 0.28);
+
+  outline: none;
+}
+
+.comparison-handle span {
+  font-size: 27px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.comparison-handle span:first-child {
+  margin-right: -3px;
+}
+
+.comparison-handle span:last-child {
+  margin-left: -3px;
+}
+
+/* ==========================================
+   FOOTER INSTRUCTION
+========================================== */
+
+.comparison-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+
+  margin-top: 25px;
+
+  color: #c0ccda;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+}
+
+.comparison-footer-line {
+  width: 36px;
+  height: 1px;
+
+  background: #35d69a;
+}
+
+/* ==========================================
+   EXPLORE MORE CTA
+========================================== */
+
+.comparison-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 32px;
+}
+
+.comparison-explore-btn {
+  position: relative;
+  isolation: isolate;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  min-width: 205px;
+
+  padding: 15px 23px;
+
+  overflow: hidden;
+
+  border-radius: 50px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  /*
+    First and last colour stops are identical and the size is 200%,
+    so animating the position by 200% loops with no visible jump.
+  */
+
+  background: linear-gradient(
+    110deg,
+    #007a50,
+    #009058,
+    #2c2a7c,
+    #00b982,
+    #007a50
+  );
+
+  background-size: 200% 100%;
+
+  animation: vsk-gradient-flow 5s linear infinite;
+
+  box-shadow:
+    0 8px 28px rgba(0, 144, 88, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.comparison-explore-btn:hover {
+  transform: translateY(-3px) scale(1.025);
+
+  box-shadow:
+    0 12px 36px rgba(0, 190, 125, 0.3),
+    0 0 20px rgba(44, 42, 124, 0.2);
+}
+
+.comparison-explore-btn:focus-visible {
+  outline: 2px solid #4be0a1;
+  outline-offset: 4px;
+}
+
+.comparison-explore-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.comparison-explore-btn .cta-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 25px;
+  height: 25px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.17);
+
+  font-size: 17px;
+
+  transition: transform 0.3s ease;
+}
+
+.comparison-explore-btn:hover .cta-arrow {
+  transform: translate(3px, -3px);
+}
+
+.comparison-cta p {
+  margin: 0;
+
+  color: #aebdca;
+
+  font-size: 12px;
+  letter-spacing: 0.035em;
+}
+
+/* Continuously moving gradient */
+
+@keyframes vsk-gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+  .comparison-section {
+    padding: 65px 18px 55px;
+  }
+
+  .comparison-heading {
+    margin-bottom: 30px;
+  }
+
+  .comparison-heading p {
+    font-size: 13px;
+  }
+
+  .comparison-frame {
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    border-radius: 14px;
+  }
+
+  .comparison-label {
+    top: 14px;
+
+    padding: 8px 10px;
+
+    font-size: 8px;
+  }
+
+  .label-before {
+    left: 14px;
+  }
+
+  .label-after {
+    right: 14px;
+  }
+
+  .comparison-handle {
+    width: 46px;
+    height: 46px;
+  }
+
+  .comparison-cta {
+    margin-top: 25px;
+  }
+
+  .comparison-explore-btn {
+    min-width: 190px;
+
+    padding: 13px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .comparison-section {
+    padding: 55px 14px 45px;
+  }
+
+  .comparison-heading h2 {
+    font-size: 37px;
+  }
+
+  .comparison-frame {
+    aspect-ratio: 3 / 4;
+  }
+
+  .comparison-footer {
+    gap: 10px;
+
+    font-size: 8px;
+  }
+
+  .comparison-footer-line {
+    width: 22px;
+  }
+
+  .comparison-cta p {
+    font-size: 11px;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .comparison-handle {
+    transition: none;
+  }
+
+  .comparison-explore-btn {
+    animation: none;
+
+    transition: none;
+  }
+
+  .comparison-explore-btn:hover {
+    transform: none;
+  }
+}

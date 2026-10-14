@@ -1,0 +1,588 @@
+.vsk-materials-mosaic,
+.vsk-materials-mosaic * {
+  box-sizing: border-box;
+}
+
+.vsk-materials-mosaic {
+  --mat-navy: #25265f;
+  --mat-green: #008b58;
+  --mat-muted: #646a78;
+  --mat-paper: #f2f3ef;
+  padding: clamp(64px, 8vw, 120px) clamp(18px, 5vw, 76px);
+  color: var(--mat-navy);
+  background: var(--mat-paper);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.vsk-materials-container {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.vsk-materials-intro {
+  max-width: 830px;
+  margin: 0 auto clamp(38px, 5vw, 66px);
+  text-align: center;
+}
+
+.vsk-materials-kicker,
+.vsk-material-eyebrow {
+  color: var(--mat-green);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  line-height: 1.7;
+}
+
+.vsk-materials-intro h2 {
+  margin: 21px 0 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 5vw, 66px);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+}
+
+.vsk-materials-intro h2 em {
+  color: var(--mat-green);
+  font-weight: 400;
+}
+
+.vsk-materials-intro > p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--mat-muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* Four-card asymmetric editorial layout: one tall card, two top cards,
+   and one wide card across the bottom-right area. */
+.vsk-materials-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.98fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-auto-rows: minmax(360px, auto);
+  align-items: stretch;
+  gap: 20px;
+}
+
+.vsk-material-card {
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(37, 38, 95, 0.09);
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(27, 35, 50, 0.035);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.vsk-material-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 42px rgba(27, 35, 50, 0.085);
+}
+
+.vsk-material-card--featured {
+  grid-row: span 2;
+}
+
+.vsk-material-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+/* Gallery and arrows */
+.vsk-material-gallery {
+  position: relative;
+  height: 225px;
+  flex: 0 0 225px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #e3e6df;
+}
+
+.vsk-material-card--featured .vsk-material-gallery {
+  height: 300px;
+  flex-basis: 300px;
+}
+
+.vsk-material-gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: vsk-material-image-in 0.32s ease both;
+}
+
+.vsk-material-gallery::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(13, 20, 25, 0.12), transparent 32%, transparent 70%, rgba(13, 20, 25, 0.12));
+}
+
+.vsk-material-gallery-label {
+  position: absolute;
+  z-index: 3;
+  top: 14px;
+  left: 14px;
+  padding: 7px 10px;
+  color: var(--mat-navy);
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.vsk-material-gallery-arrow {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  color: var(--mat-navy);
+  background: rgba(255, 255, 255, 0.91);
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.vsk-material-gallery-arrow:hover {
+  color: #fff;
+  background: var(--mat-green);
+}
+
+.vsk-material-gallery-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.vsk-material-gallery-arrow svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.vsk-material-gallery-arrow--left {
+  left: 12px;
+}
+
+.vsk-material-gallery-arrow--right {
+  right: 12px;
+}
+
+.vsk-material-gallery-arrow:focus-visible,
+.vsk-material-gallery-dots button:focus-visible {
+  outline: 2px solid var(--mat-green);
+  outline-offset: 3px;
+}
+
+.vsk-material-gallery-footer {
+  position: absolute;
+  z-index: 4;
+  right: 14px;
+  bottom: 12px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+.vsk-material-gallery-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: auto;
+}
+
+.vsk-material-gallery-dots button {
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  border: 0;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.62);
+  cursor: pointer;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.vsk-material-gallery-dots button.is-active {
+  width: 20px;
+  background: #fff;
+}
+
+/* Designed material placeholders shown until actual images are supplied. */
+.vsk-material-art {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  background: radial-gradient(ellipse at 75% 20%, #fff 0, transparent 32%), linear-gradient(135deg, #dfe3dc, #f1f0e9 55%, #cbd1ca);
+  transition: background 0.35s ease;
+}
+
+.vsk-material-art--compact { --sample-front: #252729; --sample-edge: #565b5e; --sample-back: #bbb9ae; }
+.vsk-material-art--thickness { --sample-front: #d3c5a8; --sample-edge: #8f806a; --sample-back: #ece7dc; }
+.vsk-material-art--moisture { --sample-front: #8caaa5; --sample-edge: #526d68; --sample-back: #e4eae5; }
+.vsk-material-art--resistance { --sample-front: #444b57; --sample-edge: #262e3b; --sample-back: #b7bfc7; }
+
+.vsk-material-art--slide-2 {
+  background: radial-gradient(ellipse at 24% 72%, #fff 0, transparent 28%), linear-gradient(145deg, #d1d6d0, #eff0eb 45%, #bcc4bf);
+}
+
+.vsk-material-art--slide-3 {
+  background: radial-gradient(ellipse at 80% 25%, #fff 0, transparent 24%), linear-gradient(35deg, #c6cdc7, #f3f1e8 50%, #d7d9d0);
+}
+
+.vsk-material-art-kicker {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  left: 20px;
+  color: #454d4a;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.vsk-material-sample {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  width: 46%;
+  height: 49%;
+  border: 1px solid rgba(30, 35, 35, 0.15);
+  box-shadow: 0 22px 35px rgba(30, 38, 32, 0.13);
+  transform: translateX(-50%) rotate(-8deg) skewY(1deg);
+  transition: transform 0.45s ease, top 0.45s ease, left 0.45s ease;
+}
+
+.vsk-material-sample--back {
+  top: 20%;
+  left: 56%;
+  background: var(--sample-back);
+  transform: translateX(-50%) rotate(8deg);
+}
+
+.vsk-material-sample--middle {
+  top: 24%;
+  left: 47%;
+  background: linear-gradient(135deg, #f5f5ef, #aeb5b0);
+  transform: translateX(-50%) rotate(-5deg);
+}
+
+.vsk-material-sample--front {
+  top: 27%;
+  left: 50%;
+  background: linear-gradient(110deg, var(--sample-front), var(--sample-edge) 8%, var(--sample-front) 18%, var(--sample-front) 100%);
+  transform: translateX(-50%) rotate(7deg);
+}
+
+.vsk-material-sample-edge {
+  position: absolute;
+  right: -10px;
+  bottom: -9px;
+  left: 8px;
+  height: 9px;
+  background: var(--sample-edge);
+  transform: skewX(-45deg);
+  transform-origin: top left;
+}
+
+.vsk-material-art--slide-2 .vsk-material-sample--front {
+  top: 23%;
+  left: 45%;
+  transform: translateX(-50%) rotate(-13deg);
+}
+
+.vsk-material-art--slide-2 .vsk-material-sample--middle {
+  top: 29%;
+  left: 57%;
+  transform: translateX(-50%) rotate(10deg);
+}
+
+.vsk-material-art--slide-3 .vsk-material-sample--front {
+  top: 19%;
+  left: 53%;
+  width: 40%;
+  height: 55%;
+  transform: translateX(-50%) rotate(2deg);
+}
+
+.vsk-material-art--slide-3 .vsk-material-sample--back {
+  left: 43%;
+  transform: translateX(-50%) rotate(-14deg);
+}
+
+.vsk-material-art-caption {
+  position: absolute;
+  right: 20px;
+  bottom: 34px;
+  left: 20px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  color: #303a37;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+}
+
+.vsk-material-art-caption strong {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+.vsk-material-art-note {
+  position: absolute;
+  right: 20px;
+  bottom: 17px;
+  color: #59635e;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+/* Product copy */
+.vsk-material-card-content {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 24px 22px 24px;
+}
+
+.vsk-material-card--featured .vsk-material-card-content {
+  padding: 27px 25px 28px;
+}
+
+.vsk-material-card-heading h3 {
+  margin: 12px 0 11px;
+  color: var(--mat-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(23px, 2.1vw, 31px);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.16;
+}
+
+.vsk-material-card--featured .vsk-material-card-heading h3 {
+  font-size: clamp(28px, 2.7vw, 37px);
+}
+
+.vsk-material-description {
+  margin: 0;
+  color: var(--mat-muted);
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.vsk-material-detail {
+  margin-top: 19px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(37, 38, 95, 0.1);
+}
+
+.vsk-material-detail-label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--mat-green);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.vsk-material-detail p {
+  margin: 0;
+  color: #4f5365;
+  font-size: 11px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.vsk-material-detail--thickness p {
+  display: inline-block;
+  max-width: 100%;
+  padding: 9px 11px;
+  border: 1px solid rgba(0, 139, 88, 0.22);
+  color: var(--mat-navy);
+  background: #f5f9f6;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.vsk-material-performance {
+  margin-top: 20px;
+  padding: 16px 0 0;
+  border-top: 1px solid rgba(37, 38, 95, 0.1);
+}
+
+.vsk-material-performance ul {
+  display: grid;
+  gap: 9px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vsk-material-performance li {
+  position: relative;
+  padding-left: 17px;
+  color: #4f5365;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.vsk-material-performance li::before {
+  position: absolute;
+  top: 0.1em;
+  left: 0;
+  color: var(--mat-green);
+  content: "↗";
+  font-size: 12px;
+}
+
+.vsk-material-link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: space-between;
+  gap: 23px;
+  margin-top: 26px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--mat-green);
+  color: var(--mat-navy);
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.vsk-material-link span {
+  color: var(--mat-green);
+  font-size: 17px;
+  transition: transform 0.2s ease;
+}
+
+.vsk-material-link:hover span {
+  transform: translate(3px, -3px);
+}
+
+.vsk-material-link:focus-visible {
+  outline: 2px solid var(--mat-green);
+  outline-offset: 5px;
+}
+
+.vsk-materials-image-note {
+  max-width: 700px;
+  margin: 24px auto 0;
+  color: #777c84;
+  font-size: 10px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+@keyframes vsk-material-image-in {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 1050px) {
+  .vsk-materials-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+  }
+
+  .vsk-material-card--featured {
+    grid-row: auto;
+  }
+
+  .vsk-material-card:nth-child(4) {
+    grid-column: auto;
+  }
+
+  .vsk-material-gallery,
+  .vsk-material-card--featured .vsk-material-gallery {
+    height: 240px;
+    flex-basis: 240px;
+  }
+}
+
+@media (max-width: 650px) {
+  .vsk-materials-mosaic {
+    padding: 60px 16px;
+  }
+
+  .vsk-materials-intro {
+    margin-bottom: 34px;
+  }
+
+  .vsk-materials-intro h2 {
+    font-size: clamp(34px, 9vw, 45px);
+  }
+
+  .vsk-materials-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .vsk-material-gallery,
+  .vsk-material-card--featured .vsk-material-gallery {
+    height: 245px;
+    flex-basis: 245px;
+  }
+
+  .vsk-material-card-content,
+  .vsk-material-card--featured .vsk-material-card-content {
+    padding: 22px 19px 24px;
+  }
+
+  .vsk-material-card-heading h3,
+  .vsk-material-card--featured .vsk-material-card-heading h3 {
+    font-size: 29px;
+  }
+
+  .vsk-material-art-kicker {
+    left: 16px;
+  }
+
+  .vsk-material-art-caption {
+    right: 16px;
+    left: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vsk-material-card,
+  .vsk-material-gallery-image,
+  .vsk-material-gallery-arrow,
+  .vsk-material-gallery-dots button,
+  .vsk-material-sample,
+  .vsk-material-link span {
+    animation: none;
+    transition: none;
+  }
+
+  .vsk-material-card:hover {
+    transform: none;
+  }
+}

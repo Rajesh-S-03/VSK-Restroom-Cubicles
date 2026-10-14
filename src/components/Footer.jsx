@@ -1,5 +1,6 @@
 import './Footer.css';
 import vskLogo from '../assets/vsklogo.png';
+import secondLogo from '../assets/clients/V Space.png'
 
 const Footer = () => {
   return (
@@ -20,22 +21,32 @@ const Footer = () => {
           {/* =========================
               COLUMN 1 - BRAND
           ========================== */}
-          <div className="footer-col footer-brand">
+<div className="footer-col footer-brand">
 
-            <img
-              src={vskLogo}
-              alt="VSK Enterprises"
-              className="footer-logo"
-            />
+  <div className="footer-logos">
+    <img
+      src={vskLogo}
+      alt="VSK Enterprises"
+      className="footer-logo"
+    />
 
-            <div className="brand-line"></div>
+    <span className="footer-logo-divider"></span>
 
-            <p className="footer-about">
-              Premium restroom cubicle systems engineered
-              for modern commercial spaces.
-            </p>
+    <img
+      src={secondLogo}
+      alt="Partner Logo"
+      className="footer-logo footer-logo-secondary"
+    />
+  </div>
 
-          </div>
+  <div className="brand-line"></div>
+
+  <p className="footer-about">
+    Premium restroom cubicle systems engineered
+    for modern commercial spaces.
+  </p>
+
+</div>
 
 
           {/* =========================
@@ -73,13 +84,6 @@ const Footer = () => {
               </li>
 
               <li>
-                <a href="#projects">
-                  <span>›</span>
-                  Projects
-                </a>
-              </li>
-
-              <li>
                 <a href="#contact">
                   <span>›</span>
                   Contact Us
@@ -112,30 +116,23 @@ const Footer = () => {
               </li>
 
               <li>
-                <a href="/locker-systems">
+                <a href="/restroom-cubicles">
                   <span>›</span>
                   Locker Systems
                 </a>
               </li>
 
               <li>
-                <a href="/urinal-partitions">
+                <a href="/restroom-cubicles">
                   <span>›</span>
                   Urinal Partitions
                 </a>
               </li>
 
               <li>
-                <a href="/hpl-cladding">
+                <a href="/restroom-cubicles">
                   <span>›</span>
                   HPL Exterior Cladding
-                </a>
-              </li>
-
-              <li>
-                <a href="/washroom-accessories">
-                  <span>›</span>
-                  Washroom Accessories
                 </a>
               </li>
 
@@ -280,7 +277,7 @@ const Footer = () => {
 
                 {/* INSTAGRAM */}
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/vsk_vspace_official/?hl=en"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Instagram"
@@ -320,7 +317,7 @@ const Footer = () => {
 
                 {/* FACEBOOK */}
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/profile.php?id=61592922280284"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Facebook"

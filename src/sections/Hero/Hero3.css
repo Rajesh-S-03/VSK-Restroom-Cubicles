@@ -1,254 +1,725 @@
+
 /* =========================================================
-   HERO 3 - OUR FOUNDATION  (logo light theme)
-   navy #2c2a7c  |  green #009058  |  white
+   HERO 3 — OUR FOUNDATION
+   PREMIUM CHARCOAL / BLUE + GREEN
 ========================================================= */
 
 .hero3-stage {
-  --vsk-navy: #2c2a7c;
-  --vsk-green: #009058;
+  --vsk-bg: #0B1012;
+  --vsk-bg-soft: #11191B;
+  --vsk-card: #151F21;
+
+  --vsk-green: #18B879;
+  --vsk-blue: #2878C8;
+
+  --vsk-white: #F2F5F4;
+  --vsk-muted: #9AA8A5;
 
   position: relative;
   width: 100%;
-  background: #f4f8f6;
+  background: var(--vsk-bg);
 }
+
+
+/* =========================================================
+   MAIN HERO
+========================================================= */
 
 .hero3-sticky {
   position: relative;
   min-height: 100vh;
-  padding: 90px 0;
+  padding: 110px 0 90px;
+
   width: 100%;
   overflow: hidden;
+
   display: flex;
   align-items: center;
 
-  /* bluish-green wash */
   background:
-    radial-gradient(ellipse at 8% 90%, rgba(44, 42, 124, 0.20), transparent 55%),
-    radial-gradient(ellipse at 92% 10%, rgba(0, 144, 88, 0.20), transparent 55%),
-    linear-gradient(135deg, #ffffff 0%, #eef2fb 50%, #e8f6ef 100%);
+    radial-gradient(
+      ellipse at 5% 90%,
+      rgba(24, 184, 121, 0.12),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 95% 10%,
+      rgba(40, 120, 200, 0.14),
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      #0B1012 0%,
+      #10181A 50%,
+      #0B1212 100%
+    );
 }
 
-/* BACKGROUND */
+
+/* =========================================================
+   BACKGROUND IMAGE
+========================================================= */
 
 .hero3-bg-img {
   position: absolute;
   inset: -4%;
+
   background-size: cover;
   background-position: center;
-  opacity: 0.05;
-  filter: grayscale(1) blur(2px);
+
+  opacity: 0.035;
+
+  filter:
+    grayscale(1)
+    blur(2px);
+
   transform: scale(1.1);
+
   z-index: 0;
 }
 
-.hero3-bg-wash { display: none; }
+.hero3-bg-wash {
+  display: none;
+}
+
+
+/* =========================================================
+   BACKGROUND BLOBS
+========================================================= */
 
 .hero3-blob {
   position: absolute;
+
   border-radius: 50%;
-  filter: blur(90px);
+
+  filter: blur(100px);
+
   pointer-events: none;
+
   z-index: 0;
 }
 
-.blob-a { width: 34vw; aspect-ratio: 1 / 1; top: -12%; left: -8%;  background: rgba(0, 144, 88, 0.14);  animation: blobDrift 16s ease-in-out infinite alternate; }
-.blob-b { width: 32vw; aspect-ratio: 1 / 1; top: -10%; right: -8%; background: rgba(44, 42, 124, 0.16); animation: blobDrift 20s ease-in-out infinite alternate-reverse; }
-.blob-c { width: 30vw; aspect-ratio: 1 / 1; bottom: -16%; left: 38%; background: rgba(0, 144, 88, 0.08); animation: blobDrift 18s ease-in-out infinite alternate; }
+.blob-a {
+  width: 34vw;
+  aspect-ratio: 1 / 1;
+
+  top: -12%;
+  left: -8%;
+
+  background: rgba(24, 184, 121, 0.08);
+
+  animation:
+    blobDrift 16s ease-in-out infinite alternate;
+}
+
+.blob-b {
+  width: 32vw;
+  aspect-ratio: 1 / 1;
+
+  top: -10%;
+  right: -8%;
+
+  background: rgba(40, 120, 200, 0.10);
+
+  animation:
+    blobDrift 20s ease-in-out infinite alternate-reverse;
+}
+
+.blob-c {
+  width: 30vw;
+  aspect-ratio: 1 / 1;
+
+  bottom: -16%;
+  left: 38%;
+
+  background: rgba(24, 184, 121, 0.05);
+
+  animation:
+    blobDrift 18s ease-in-out infinite alternate;
+}
+
 
 @keyframes blobDrift {
-  from { transform: translate(0, 0) scale(1); }
-  to   { transform: translate(40px, 30px) scale(1.08); }
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(40px, 30px) scale(1.08);
+  }
 }
+
+
+/* =========================================================
+   ARCHITECTURAL GRID
+========================================================= */
 
 .hero3-grid {
   position: absolute;
   inset: 0;
+
   z-index: 0;
+
   pointer-events: none;
+
   background-image:
-    linear-gradient(rgba(44, 42, 124, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(44, 42, 124, 0.045) 1px, transparent 1px);
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
   background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse at center, #000 25%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse at center, #000 25%, transparent 75%);
+
+  mask-image:
+    radial-gradient(
+      ellipse at center,
+      #000 25%,
+      transparent 75%
+    );
+
+  -webkit-mask-image:
+    radial-gradient(
+      ellipse at center,
+      #000 25%,
+      transparent 75%
+    );
 }
 
-/* INNER + HEADER */
+
+/* =========================================================
+   INNER CONTENT
+========================================================= */
 
 .hero3-inner {
   position: relative;
+
   z-index: 2;
+
   width: 100%;
+
   padding: 0 7%;
 }
 
+
+/* =========================================================
+   HEADER
+========================================================= */
+
 .hero3-head {
-  margin-bottom: clamp(24px, 4.5vh, 48px);
+  margin-bottom: clamp(28px, 4.5vh, 48px);
 }
 
 .hero3-label {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+
+  font-family:
+    "Inter",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
   font-size: 11px;
+
   font-weight: 600;
+
   letter-spacing: 0.28em;
+
   text-transform: uppercase;
-  color: var(--vsk-navy);
+
+  color: var(--vsk-green);
 }
 
 .hero3-title {
   margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(32px, 4vw, 56px);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(34px, 4vw, 56px);
+
   line-height: 1.05;
+
   font-weight: 400;
+
   letter-spacing: -0.03em;
-  color: var(--vsk-navy);
+
+  color: var(--vsk-white);
 }
 
 .hero3-title span {
-  background: linear-gradient(90deg, var(--vsk-navy), var(--vsk-green));
+  background:
+    linear-gradient(
+      90deg,
+      var(--vsk-green),
+      var(--vsk-blue)
+    );
+
   -webkit-background-clip: text;
   background-clip: text;
+
   color: transparent;
 }
 
-/* CARDS */
+
+/* =========================================================
+   CARDS CONTAINER
+========================================================= */
 
 .hero3-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
   gap: 26px;
 }
 
-.hero3-card-wrap { --p: 1; }
+
+/* =========================================================
+   CARD WRAPPER
+========================================================= */
+
+.hero3-card-wrap {
+  --p: 1;
+}
+
+
+/* =========================================================
+   PREMIUM CARD
+========================================================= */
 
 .hero3-card {
   --mx: 50%;
   --my: 50%;
 
   position: relative;
+
   height: 100%;
-  padding: 46px 34px 42px;
+
+  padding:
+    46px 34px 42px;
+
   overflow: hidden;
+
   border-radius: 6px;
-  background: #ffffff;
-  border: 1px solid rgba(44, 42, 124, 0.10);
-  box-shadow: 0 24px 50px rgba(44, 42, 124, 0.12);
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+
+  background:
+    linear-gradient(
+      145deg,
+      #151F21 0%,
+      #11191B 100%
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 24px 50px
+    rgba(0, 0, 0, 0.35);
+
+  transition:
+    transform 0.5s
+      cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s ease,
+    border-color 0.4s ease;
 }
 
+
+/* =========================================================
+   MOUSE FOLLOW GLOW
+========================================================= */
+
 .hero3-card::before {
-  content: '';
+  content: "";
+
   position: absolute;
+
   inset: 0;
-  background: radial-gradient(380px circle at var(--mx) var(--my), rgba(0, 144, 88, 0.09), transparent 60%);
+
+  background:
+    radial-gradient(
+      380px circle at var(--mx) var(--my),
+      rgba(24, 184, 121, 0.13),
+      transparent 60%
+    );
+
   opacity: 0;
-  transition: opacity 0.4s ease;
+
+  transition:
+    opacity 0.4s ease;
+
   pointer-events: none;
 }
 
-/* green top edge that draws in with scroll */
+.hero3-card:hover::before {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   TOP ACCENT LINE
+========================================================= */
+
 .hero3-card::after {
-  content: '';
+  content: "";
+
   position: absolute;
+
   top: 0;
   left: 0;
+
   width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--vsk-green), var(--vsk-navy));
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--vsk-green),
+      var(--vsk-blue)
+    );
+
   transform-origin: left;
-  transform: scaleX(var(--p));
+
+  transform:
+    scaleX(var(--p));
+
+  transition:
+    transform 0.4s ease;
 }
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
 
 .hero3-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 34px 70px rgba(44, 42, 124, 0.18), 0 0 0 1px rgba(0, 144, 88, 0.25);
+  transform:
+    translateY(-10px);
+
+  border-color:
+    rgba(24, 184, 121, 0.30);
+
+  box-shadow:
+    0 34px 70px
+      rgba(0, 0, 0, 0.50),
+
+    0 0 0 1px
+      rgba(24, 184, 121, 0.10);
 }
 
-.hero3-card:hover::before { opacity: 1; }
+
+/* =========================================================
+   CORNER DESIGN
+========================================================= */
 
 .card-corner {
   position: absolute;
+
   width: 26px;
   height: 26px;
-  border: 2px solid var(--vsk-navy);
-  opacity: calc(var(--p) * 0.95);
-  transition: width 0.4s ease, height 0.4s ease;
+
+  border:
+    2px solid
+    rgba(255, 255, 255, 0.20);
+
+  opacity:
+    calc(var(--p) * 0.95);
+
+  transition:
+    width 0.4s ease,
+    height 0.4s ease,
+    border-color 0.4s ease;
 }
 
-.card-corner-tl { top: 14px; left: 14px; border-right: none; border-bottom: none; }
-.card-corner-br { bottom: 14px; right: 14px; border-left: none; border-top: none; border-color: var(--vsk-green); }
+.card-corner-tl {
+  top: 14px;
+  left: 14px;
 
-.hero3-card:hover .card-corner { width: 40px; height: 40px; }
+  border-right: none;
+  border-bottom: none;
+}
 
-/* ICON + TITLE ROW */
+.card-corner-br {
+  bottom: 14px;
+  right: 14px;
+
+  border-left: none;
+  border-top: none;
+
+  border-color:
+    var(--vsk-green);
+}
+
+.hero3-card:hover .card-corner {
+  width: 40px;
+  height: 40px;
+}
+
+
+/* =========================================================
+   ICON + TITLE
+========================================================= */
 
 .card-head {
   display: flex;
+
   align-items: center;
+
   gap: 14px;
 }
 
 .card-icon {
   flex: 0 0 auto;
+
   display: flex;
+
   align-items: center;
   justify-content: center;
+
   width: 38px;
   height: 38px;
+
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--vsk-navy), var(--vsk-green));
-  box-shadow: 0 6px 16px rgba(44, 42, 124, 0.25);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--vsk-green),
+      var(--vsk-blue)
+    );
+
+  box-shadow:
+    0 6px 20px
+    rgba(24, 184, 121, 0.20);
 }
 
 .card-icon svg {
   width: 19px;
   height: 19px;
+
   stroke: #ffffff;
+
   fill: none;
+
   stroke-width: 1.8;
+
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
-/* TEXT */
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
 
 .card-title {
   margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
   font-size: 34px;
+
   font-weight: 400;
+
   letter-spacing: -0.02em;
-  color: var(--vsk-navy);
+
+  color: var(--vsk-white);
 }
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
 
 .card-divider {
   width: 44px;
   height: 3px;
-  margin: 20px 0 22px;
-  background: linear-gradient(90deg, var(--vsk-navy), var(--vsk-green));
-  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+
+  margin:
+    20px 0 22px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--vsk-green),
+      var(--vsk-blue)
+    );
+
+  transition:
+    width 0.5s
+    cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.hero3-card:hover .card-divider { width: 96px; }
+.hero3-card:hover .card-divider {
+  width: 96px;
+}
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
 
 .card-text {
   margin: 0;
+
+  font-family:
+    "Inter",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
   font-size: 14px;
+
   line-height: 1.8;
+
   letter-spacing: 0.02em;
-  color: rgba(44, 42, 124, 0.85);
+
+  color:
+    rgba(242, 245, 244, 0.68);
 }
 
-/* TABLET / MOBILE (no pinning) */
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media (max-width: 900px) {
-  .hero3-stage { height: auto; }
-  .hero3-sticky { position: relative; height: auto; padding: 100px 0; }
-  .hero3-cards { grid-template-columns: 1fr; gap: 22px; }
-  .hero3-inner { padding: 0 6%; }
+
+  .hero3-stage {
+    height: auto;
+  }
+
+  .hero3-sticky {
+    position: relative;
+
+    min-height: auto;
+
+    padding:
+      100px 0 80px;
+  }
+
+  .hero3-inner {
+    padding:
+      0 6%;
+  }
+
+  .hero3-cards {
+    grid-template-columns:
+      1fr;
+
+    gap: 22px;
+  }
+
+  .hero3-card {
+    padding:
+      40px 30px 36px;
+  }
+
 }
 
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 600px) {
-  .card-title { font-size: 30px; }
+
+  .hero3-sticky {
+    padding:
+      90px 0 65px;
+  }
+
+  .hero3-inner {
+    padding:
+      0 20px;
+  }
+
+  .hero3-label {
+    font-size: 9px;
+
+    letter-spacing:
+      0.22em;
+  }
+
+  .hero3-title {
+    font-size:
+      clamp(30px, 9vw, 42px);
+  }
+
+  .hero3-cards {
+    gap: 18px;
+  }
+
+  .hero3-card {
+    padding:
+      34px 24px 32px;
+  }
+
+  .card-title {
+    font-size: 30px;
+  }
+
+  .card-text {
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+  .card-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .hero3-inner {
+    padding:
+      0 16px;
+  }
+
+  .hero3-sticky {
+    padding:
+      80px 0 55px;
+  }
+
+  .hero3-title {
+    font-size: 29px;
+  }
+
+  .hero3-card {
+    padding:
+      30px 20px 28px;
+  }
+
+  .card-head {
+    gap: 11px;
+  }
+
+  .card-title {
+    font-size: 27px;
+  }
+
+  .card-text {
+    font-size: 12.5px;
+  }
+
 }

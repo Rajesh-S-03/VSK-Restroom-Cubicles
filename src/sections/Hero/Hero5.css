@@ -2,6 +2,7 @@
    HERO 5 - 3D COVERFLOW CAROUSEL
 ========================================================= */
 
+
 .hero5-section {
   --vsk-navy: #2c2a7c;
   --vsk-green: #009058;
@@ -9,9 +10,27 @@
   position: relative;
   width: 100%;
   padding: 90px 20px;
-  background: linear-gradient(180deg, #f8faf9 0%, #edf4f1 100%);
   overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 8% 15%,
+      rgba(44, 42, 124, 0.12),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 92% 85%,
+      rgba(0, 144, 88, 0.10),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #bec7c4 0%,
+      #bac5c1 50%,
+      #b3bdb8 100%
+    );
 }
+
 
 /* Header Styling */
 .hero5-header {

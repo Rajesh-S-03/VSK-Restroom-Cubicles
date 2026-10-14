@@ -1,0 +1,408 @@
+/* =========================================================
+   VSK CUBICLE RANGE - DARK ARCHITECTURAL THEME
+========================================================= */
+.vsk-cubicles-section {
+  --vsk-dark: #0b0d12;
+  --vsk-card-bg: #141822;
+  --vsk-green: #00b36e;
+  --vsk-green-glow: rgba(0, 179, 110, 0.25);
+  --vsk-border: rgba(255, 255, 255, 0.08);
+  --vsk-text-main: #f1f5f9;
+  --vsk-text-muted: #94a3b8;
+
+  position: relative;
+  width: 100%;
+  padding: clamp(60px, 8vw, 120px) clamp(20px, 5vw, 80px);
+  background-color: var(--vsk-dark);
+  color: var(--vsk-text-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+.vsk-cubicles-section * {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+.vsk-section-header {
+  max-width: 780px;
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.vsk-kicker {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--vsk-green);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.vsk-section-header h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0 0 18px;
+}
+
+.vsk-section-header h2 em {
+  font-style: normal;
+  background: linear-gradient(135deg, #ffffff 20%, var(--vsk-green) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.vsk-section-header p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--vsk-text-muted);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   CARD CONTAINER & GRID
+========================================================= */
+.vsk-card-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.vsk-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  background: var(--vsk-card-bg);
+  border: 1px solid var(--vsk-border);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.vsk-card.is-reversed .vsk-card-visual {
+  order: 2;
+}
+
+.vsk-card.is-reversed .vsk-card-content {
+  order: 1;
+}
+
+/* =========================================================
+   IMAGE CAROUSEL SLIDER
+========================================================= */
+.vsk-card-visual {
+  width: 100%;
+}
+
+.vsk-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #0f121a;
+  border: 1px solid var(--vsk-border);
+}
+
+.vsk-carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.vsk-carousel:hover .vsk-carousel-img {
+  transform: scale(1.03);
+}
+
+/* Arrow Navigation Buttons */
+.vsk-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(11, 13, 18, 0.7);
+  border: 1px solid var(--vsk-border);
+  color: #ffffff;
+  font-size: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.vsk-carousel-btn:hover {
+  background: var(--vsk-green);
+  color: #0b0d12;
+  border-color: var(--vsk-green);
+}
+
+.vsk-carousel-btn.prev {
+  left: 12px;
+}
+
+.vsk-carousel-btn.next {
+  right: 12px;
+}
+
+/* Carousel Indicators Dots */
+.vsk-carousel-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.vsk-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.vsk-dot.active {
+  background: var(--vsk-green);
+  width: 22px;
+  border-radius: 4px;
+}
+
+.vsk-card-number {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 32px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+}
+
+/* =========================================================
+   CONTENT & TABS
+========================================================= */
+.vsk-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.vsk-card-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--vsk-green);
+  margin-bottom: 6px;
+}
+
+.vsk-card-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px;
+}
+
+.vsk-card-subtitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--vsk-text-muted);
+  margin: 0 0 14px;
+}
+
+.vsk-card-description {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+}
+
+/* TABS BUTTONS */
+.vsk-tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--vsk-border);
+  margin-bottom: 16px;
+}
+
+.vsk-tab-btn {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--vsk-text-muted);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.vsk-tab-btn.active {
+  color: var(--vsk-green);
+}
+
+.vsk-tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--vsk-green);
+}
+
+/* TAB PANEL CONTENT */
+.vsk-tab-panel {
+  min-height: 150px;
+  margin-bottom: 20px;
+}
+
+.vsk-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.vsk-feature-list li {
+  font-size: 12px;
+  color: #cbd5e1;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.vsk-feature-list li::before {
+  content: "•";
+  color: var(--vsk-green);
+  font-weight: bold;
+}
+
+/* SPECS GRID */
+.vsk-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 16px;
+}
+
+.vsk-spec-row {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.vsk-spec-label {
+  font-size: 10px;
+  color: var(--vsk-text-muted);
+}
+
+.vsk-spec-value {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* OPTIONS & PREREQUISITES */
+.vsk-options-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vsk-prereq-block {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  padding: 10px 14px;
+  border-radius: 6px;
+}
+
+.vsk-prereq-title {
+  display: block;
+  font-size: 11px;
+  color: #f87171;
+  margin-bottom: 4px;
+}
+
+.vsk-prereq-block ul {
+  margin: 0;
+  padding-left: 16px;
+  font-size: 11px;
+  color: #fca5a5;
+}
+
+/* LINK / BUTTON */
+.vsk-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--vsk-green);
+  text-decoration: none;
+  margin-top: auto;
+  transition: gap 0.2s ease;
+}
+
+.vsk-card-link:hover {
+  gap: 12px;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+@media (max-width: 992px) {
+  .vsk-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .vsk-card.is-reversed .vsk-card-visual,
+  .vsk-card.is-reversed .vsk-card-content {
+    order: initial;
+  }
+
+  .vsk-feature-list {
+    grid-template-columns: 1fr;
+  }
+
+  .vsk-specs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .vsk-card {
+    padding: 18px;
+  }
+
+  .vsk-carousel-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+
+  .vsk-card-title {
+    font-size: 22px;
+  }
+}

@@ -10,7 +10,7 @@ const WHATSAPP_NUMBER = '919791128296';
 
 const MAP_QUERY = 'Malayambakkam South, Kanchipuram, Chennai 600069';
 const MAP_EMBED = `https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&output=embed`;
-const MAP_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_QUERY)}`;
+const MAP_LINK = `https://maps.app.goo.gl/qYpi9HxJqCnX6JLo9`;
 
 const SERVICES = ['Restroom Cubicles', 'Modular Furniture', 'Interiors and Exterior Cladding'];
 

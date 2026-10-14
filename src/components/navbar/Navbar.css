@@ -163,6 +163,14 @@
   display: block;
 }
 
+.navbar-logo-tertiary {
+  height: 32px;
+  width: auto;
+  max-width: 100px;
+  object-fit: contain;
+  display: block;
+}
+
 .navbar-logo-divider {
   display: block;
   flex: 0 0 1px;
@@ -174,6 +182,9 @@
 
 .navbar-logo:hover .navbar-logo-primary,
 .navbar-logo:hover .navbar-logo-secondary {
+  transform: scale(1.04);
+}
+.navbar-logo:hover .navbar-logo-tertiary {
   transform: scale(1.04);
 }
 

@@ -13,6 +13,9 @@ import ano3 from "../../assets/applications/ano3.jpeg";
 import tmm1 from "../../assets/applications/12mm1.jpeg";
 import tmm2 from "../../assets/applications/12mm2.jpeg";
 import tmm3 from "../../assets/applications/12mm3.jpeg";
+import shoe1 from "../../assets/applications/shoebox.jpeg";
+import shoe2 from "../../assets/applications/shoebox.jpeg";
+import shoe3 from "../../assets/applications/shoebox.jpeg";
 import pd1 from "../../assets/applications/pd1.jpeg";
 import pd2 from "../../assets/applications/pd2.jpeg";
 import pd3 from "../../assets/applications/pd3.jpeg";
@@ -164,8 +167,34 @@ const cubicleData = [
   },
   {
     id: "05",
-    key: "PD Door",
+    key: "12mm Box-Up Shoe",
     eyebrow: "05 / CUBICLE SERIES",
+    title: "12mm Box-Up Shoe",
+    subtitle: "Strong. Neat. Functional.",
+    images: [shoe1, shoe2, shoe3],
+    description:
+      "A 12mm compact laminate toilet cubicle system featuring a box-up shoe design for a neat, structured, and durable restroom partition solution.",
+    features: [
+      "12mm Compact Laminate Panels",
+      "Box-Up Shoe Design",
+      "Durable Toilet Partitions",
+      "Clean, Structured Appearance",
+      "Suitable for Commercial Restrooms",
+    ],
+    specifications: [
+      { label: "Panel Thickness", value: "12 mm" },
+      { label: "Configuration", value: "Box-Up Shoe System" },
+    ],
+    optionsAndUpgrades: [
+      "Multiple HBL board colours and finishes",
+      "Choice of compatible hardware options",
+      "Custom configuration based on project requirements",
+    ],
+  },
+  {
+    id: "06",
+    key: "PD Door",
+    eyebrow: "06 / CUBICLE SERIES",
     title: "PD Door — Indus Model",
     subtitle: "A coordinated door solution.",
     images: [pd1, pd2, pd3],
@@ -192,9 +221,9 @@ const cubicleData = [
     ],
   },
   {
-    id: "06",
+    id: "07",
     key: "Hoover Ceiling Hung",
-    eyebrow: "06 / CUBICLE SERIES",
+    eyebrow: "07 / CUBICLE SERIES",
     title: "Hoover Ceiling Hung",
     subtitle: "A lighter floor-level expression.",
     images: [hoover1, hoover2, hoover3],
@@ -232,9 +261,9 @@ const cubicleData = [
     ],
   },
   {
-    id: "07",
+    id: "08",
     key: "Hoover Lite / Athena Lite",
-    eyebrow: "07 / CUBICLE SERIES",
+    eyebrow: "08 / CUBICLE SERIES",
     title: "Hoover Lite / Athena Lite",
     subtitle: "Lightweight visual language.",
     images: [hooverLite1, hooverLite2, hooverLite3],

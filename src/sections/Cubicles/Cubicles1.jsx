@@ -5,6 +5,7 @@ import ssPipeSeries from "../../assets/SS_pipe_series.png";
 import nylonSeries from "../../assets/nylon_series.png";
 import ssAnodize from "../../assets/ss_anodize.png";
 import tmmBoxUp from "../../assets/applications/12mm1.jpeg";
+import shoeBox from "../../assets/applications/shoebox.jpeg";
 import pdDoor from "../../assets/applications/pd1.jpeg";
 import hooverCeiling from "../../assets/applications/hoover1.jpeg";
 import hooverLite from "../../assets/applications/hooverl2.jpeg";
@@ -46,6 +47,14 @@ const products = [
   },
   {
     id: "05",
+    title: "12mm Box-Up Shoe",
+    subtitle: "Strong. Neat. Functional.",
+    description: "A 12mm compact laminate toilet cubicle system featuring a box-up design for a clean, structured, and durable restroom partition solution.",
+    image: shoeBox,
+    features: ["12mm Compact Laminate Board","Box-Up Shoe Design","Durable Toilet Partitions",],
+  },
+  {
+    id: "06",
     title: "PD Door — Indus Model",
     subtitle: "Coordinated panels and hardware.",
     description: "The PD Door / Indus Model forms part of the VSK restroom cubicle range, with coordinated panels and hardware.",
@@ -53,7 +62,7 @@ const products = [
     features: ["Compact Laminate Panels", "Coordinated Hardware", "Professional Configuration"],
   },
   {
-    id: "06",
+    id: "07",
     title: "Hoover Ceiling Hung",
     subtitle: "Minimal floor-level expression.",
     description: "A ceiling-hung cubicle configuration designed around a clean and visually lighter restroom environment.",
@@ -61,7 +70,7 @@ const products = [
     features: ["Compact Laminate Panels", "Ceiling-Hung Configuration", "Clean Appearance"],
   },
   {
-    id: "07",
+    id: "08",
     title: "Hoover Lite / Athena Lite",
     subtitle: "A lighter visual language.",
     description: "The Hoover Lite / Athena Lite range provides another configuration within the VSK restroom cubicle collection.",
@@ -69,7 +78,7 @@ const products = [
     features: ["Compact Laminate Panels", "Lite Configuration", "Coordinated Hardware"],
   },
   {
-    id: "08",
+    id: "09",
     title: "Modular Workstation & Chair",
     subtitle: "Ergonomic. Flexible. Modern.",
     description: "Modular workstations and chairs support flexible layouts and contemporary office environments.",
@@ -77,7 +86,7 @@ const products = [
     features: ["Ergonomic Comfort", "Flexible Layouts", "Modern Office Design"],
   },
   {
-    id: "09",
+    id: "10",
     title: "6mm HPL Exterior Cladding",
     subtitle: "Durable. Weather-resistant. Contemporary.",
     description: "6mm HPL exterior cladding brings a contemporary finish to building exteriors with durable, weather-resistant surfaces.",

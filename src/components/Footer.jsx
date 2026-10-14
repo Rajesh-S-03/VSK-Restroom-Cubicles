@@ -1,6 +1,7 @@
 import './Footer.css';
 import vskLogo from '../assets/vsklogo.png';
 import secondLogo from '../assets/clients/V Space.png'
+import thirdLogo from '../assets/clients/STYLAM.png'
 
 const Footer = () => {
   return (
@@ -36,6 +37,12 @@ const Footer = () => {
       src={secondLogo}
       alt="Partner Logo"
       className="footer-logo footer-logo-secondary"
+    />
+    <span className="footer-logo-divider"></span>
+    <img
+      src={thirdLogo}
+      alt="STYLAM"
+      className="footer-logo footer-logo-tertiary"
     />
   </div>
 

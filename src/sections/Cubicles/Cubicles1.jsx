@@ -47,7 +47,7 @@ const products = [
   },
   {
     id: "05",
-    title: "12mm Box-Up Shoe",
+    title: "12mm Box-Up Shoe Series",
     subtitle: "Strong. Neat. Functional.",
     description: "A 12mm compact laminate toilet cubicle system featuring a box-up design for a clean, structured, and durable restroom partition solution.",
     image: shoeBox,

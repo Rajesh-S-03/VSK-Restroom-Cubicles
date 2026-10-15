@@ -1,4 +1,3 @@
-
 .footer-section {
   --vsk-navy: #2c2a7c;
   --vsk-dark-navy: #15163f;
@@ -10,7 +9,6 @@
   width: 100%;
   overflow: hidden;
 
-  /* ORIGINAL BACKGROUND — UNCHANGED */
   background: var(--vsk-bg);
   color: var(--vsk-navy);
 
@@ -20,7 +18,6 @@
 
 /* =========================================================
    TOP DECORATIVE SHAPE
-   ORIGINAL DESIGN — UNCHANGED
 ========================================================= */
 
 .footer-top-shape {
@@ -109,46 +106,69 @@
 
 
 /* =========================================================
-   BRAND
+   BRAND LOGOS
 ========================================================= */
 
 .footer-logos {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
+}
+
+.logo-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-logo {
   display: block;
-  width: 115px;
-  height: 135px;
+  width: auto;
+  max-width: 110px;
+  height: 52px;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
+
+/* 2nd Logo Height Increased */
 .footer-logo-secondary {
-  width: 115px;
-  height: 135px;
+  max-width: 120px;
+  height: 70px;
 }
 
-/* Only a subtle logo hover.
-   NO color/filter change. */
+/* 3rd Logo Shifted Down Slightly for Visual Balance */
+.footer-logo-tertiary {
+  max-width: 110px;
+  height: 45px;
+  transform: translateY(3px);
+}
+
+.channel-partner-label {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--vsk-green);
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+  white-space: nowrap;
+  text-align: center;
+}
 
 .footer-logo:hover {
   transform: translateY(-2px);
   opacity: 0.92;
 }
+
 .footer-logo-divider {
   width: 1px;
   height: 38px;
   flex-shrink: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    #18b879,
-    #2878c8,
-    transparent
-  );
+  align-self: center;
+  background: rgba(44, 42, 124, 0.2); /* Single solid color divider */
 }
 
 
@@ -218,9 +238,6 @@
     background 0.35s ease;
 }
 
-
-/* Small title hover effect */
-
 .footer-col:hover .title-line {
   width: 52px;
 }
@@ -240,9 +257,6 @@
 .footer-links li {
   margin-bottom: 10px;
 }
-
-
-/* Main link */
 
 .footer-links a {
   position: relative;
@@ -271,9 +285,6 @@
     transform 0.3s ease;
 }
 
-
-/* Arrow */
-
 .footer-links a span {
   display: inline-flex;
 
@@ -298,9 +309,6 @@
     opacity 0.3s ease;
 }
 
-
-/* Animated underline */
-
 .footer-links a::after {
   content: "";
 
@@ -318,9 +326,6 @@
 
   transition: width 0.35s ease;
 }
-
-
-/* Hover */
 
 .footer-links a:hover {
   color: var(--vsk-green);
@@ -352,9 +357,6 @@
 
   margin-bottom: 12px;
 }
-
-
-/* Contact icon */
 
 .contact-icon {
   flex: 0 0 auto;
@@ -396,9 +398,6 @@
   transition: transform 0.3s ease;
 }
 
-
-/* Contact icon hover */
-
 .contact-item:hover .contact-icon {
   transform: translateY(-2px);
 
@@ -432,9 +431,6 @@
   color: rgba(44, 42, 124, 0.76);
 }
 
-
-/* Phone + Email */
-
 .footer-contact a {
   position: relative;
 
@@ -452,6 +448,7 @@
 
   padding-left: 3px;
 }
+
 
 /* =========================================================
    SOCIAL MEDIA
@@ -488,11 +485,6 @@
   gap: 10px;
 }
 
-
-/* =========================================================
-   SOCIAL BUTTON
-========================================================= */
-
 .footer-socials a {
   position: relative;
 
@@ -521,11 +513,6 @@
     border-color 0.35s ease;
 }
 
-
-/* =========================================================
-   SOCIAL ICON
-========================================================= */
-
 .footer-socials svg {
   width: 15px;
   height: 15px;
@@ -550,19 +537,11 @@
     stroke 0.25s ease;
 }
 
-
-/* Facebook */
-
 .footer-socials a:last-child svg {
   fill: #ffffff;
 
   stroke: none;
 }
-
-
-/* =========================================================
-   HOVER
-========================================================= */
 
 .footer-socials a:hover {
   background: var(--vsk-green);
@@ -578,9 +557,6 @@
     0 2px 5px rgba(0, 144, 88, 0.18);
 }
 
-
-/* Make icon clearly WHITE on hover */
-
 .footer-socials a:hover svg {
   width: 17px;
   height: 17px;
@@ -592,21 +568,11 @@
   transform: scale(1.08);
 }
 
-
-/* Facebook stays filled white */
-
 .footer-socials a:last-child:hover svg {
   fill: #ffffff;
 
   stroke: none;
 }
-
-
-/* =========================================================
-   INDIVIDUAL SOCIAL HOVER
-========================================================= */
-
-/* WhatsApp */
 
 .footer-socials a:nth-child(1):hover {
   background: #009058;
@@ -614,9 +580,6 @@
   box-shadow:
     0 8px 22px rgba(0, 144, 88, 0.35);
 }
-
-
-/* Instagram */
 
 .footer-socials a:nth-child(2):hover {
   background: linear-gradient(
@@ -629,20 +592,12 @@
     0 8px 22px rgba(0, 144, 88, 0.30);
 }
 
-
-/* Facebook */
-
 .footer-socials a:nth-child(3):hover {
   background: #009058;
 
   box-shadow:
     0 8px 22px rgba(0, 144, 88, 0.35);
 }
-
-
-/* =========================================================
-   SMALL ACTIVE PRESS EFFECT
-========================================================= */
 
 .footer-socials a:active {
   transform: translateY(-2px) scale(1.02);
@@ -705,7 +660,6 @@
 
 /* =========================================================
    BOTTOM BAR
-   ORIGINAL BACKGROUND — UNCHANGED
 ========================================================= */
 
 .footer-bottom {
@@ -730,9 +684,6 @@
   overflow: hidden;
 }
 
-
-/* Green curved decoration */
-
 .footer-bottom::after {
   content: "";
 
@@ -752,11 +703,6 @@
 
   opacity: 0.9;
 }
-
-
-/* =========================================================
-   BOTTOM TEXT
-========================================================= */
 
 .footer-bottom p {
   position: relative;
@@ -855,9 +801,11 @@
 
 @media (max-width: 650px) {
 
-   .footer-logos {
-    gap: 12px;
+  .footer-logos {
+    gap: 10px;
+    align-items: center;
   }
+
   .footer-top-shape {
     height: 70px;
 
@@ -875,11 +823,9 @@
       ellipse(70% 48% at 1% 0%);
   }
 
-
   .footer-container {
     padding: 85px 7% 0;
   }
-
 
   .footer-grid {
     grid-template-columns: 1fr;
@@ -893,20 +839,31 @@
     grid-column: auto;
   }
 
-
   .footer-logo {
-    width: 95px;
-    height: 45px;
+    max-width: 75px;
+    height: 38px;
   }
-    .footer-logo-secondary {
-    width: 70px;
-    height: 40px;
+
+  .footer-logo-secondary {
+    max-width: 85px;
+    height: 50px;
+  }
+
+  .footer-logo-tertiary {
+    max-width: 75px;
+    height: 32px;
+    transform: translateY(2px);
+  }
+
+  .channel-partner-label {
+    font-size: 8px;
+    margin-top: 3px;
   }
 
   .footer-logo-divider {
     height: 30px;
+    background: rgba(44, 42, 124, 0.2);
   }
-
 
   .footer-about {
     max-width: 100%;
@@ -914,32 +871,26 @@
     font-size: 13px;
   }
 
-
   .footer-links li {
     margin-bottom: 8px;
   }
-
 
   .footer-contact .contact-item {
     margin-bottom: 10px;
   }
 
-
   .footer-social-wrapper {
     margin-top: 2px;
   }
-
 
   .footer-socials {
     gap: 8px;
   }
 
-
   .footer-socials a {
     width: 30px;
     height: 30px;
   }
-
 
   .footer-quote {
     flex-direction: column;
@@ -949,18 +900,15 @@
     padding: 16px 0;
   }
 
-
   .footer-quote span {
     width: 25px;
   }
-
 
   .footer-quote p {
     font-size: 11px;
 
     line-height: 1.5;
   }
-
 
   .footer-bottom {
     flex-direction: column;
@@ -973,7 +921,6 @@
 
     padding: 16px 7%;
   }
-
 
   .footer-bottom-links {
     flex-wrap: wrap;

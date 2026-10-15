@@ -3,7 +3,7 @@ import './Navbar.css';
 
 import logo from '../../assets/vsklogo.png';
 import secondLogo from '../../assets/clients/V Space.png'
-import thirdLogo from '../../assets/clients/STYLAM.png'
+// import thirdLogo from '../../assets/clients/STYLAM.png'
 
 import {
   NavLink,
@@ -130,7 +130,7 @@ const Navbar = () => {
     className="navbar-logo-secondary"
   />
 
-  <span
+  {/* <span
     className="navbar-logo-divider"
     aria-hidden="true"
   />
@@ -139,7 +139,7 @@ const Navbar = () => {
     src={thirdLogo}
     alt="STYLAM"
     className="navbar-logo-tertiary"
-  />
+  /> */}
 </Link>
 
 

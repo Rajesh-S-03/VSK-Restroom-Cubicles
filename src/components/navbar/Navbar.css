@@ -1166,6 +1166,56 @@
 
 }
 
+/* Fix: Keep all 3 logos and hamburger visible on mobile */
+
+@media (max-width: 700px) {
+  .navbar-logo {
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 5px;
+    justify-content: flex-start;
+  }
+
+  .navbar-logo-primary {
+    width:  min(22vw, 88px);
+    flex-shrink: 1;
+  }
+
+  .navbar-logo-secondary {
+    width: min(16vw, 60px);
+    flex-shrink: 1;
+  }
+
+  .navbar-logo-tertiary {
+    width: min(18vw, 65px);
+    height: 28px;
+    flex-shrink: 1;
+  }
+
+  .navbar-logo-divider {
+    flex: 0 0 1px;
+    width: 1px;
+    height: 30px;
+  }
+
+  .navbar-contact {
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: 4px;
+    padding: 8px 7px;
+    gap: 4px;
+    font-size: 8px;
+  }
+
+  .navbar-menu {
+    display: flex;
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+    margin-left: 0;
+    z-index: 1005;
+  }
+}
 
 /* =========================================================
    REDUCED MOTION

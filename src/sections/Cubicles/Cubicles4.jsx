@@ -3,6 +3,89 @@ import "./Cubicles4.css";
 import claddingImage from "../../assets/applications/exteriorclading.png";
 import { Link } from "react-router-dom";
 
+// --- 1. Wood Finishes Imports (vsk_category1) ---
+import denseOak from "../../assets/vsk_category1/1965-Dense Oak.jpg";
+import orlandoWalnut from "../../assets/vsk_category1/1981-Orlando Walnut.jpg";
+import weepingBeech from "../../assets/vsk_category1/2082-Weeping Beech.jpg";
+import rawCharm from "../../assets/vsk_category1/2202-Raw Charm.jpg";
+import juglanBurch from "../../assets/vsk_category1/2234-Juglan Burch.jpg";
+import polarBirch from "../../assets/vsk_category1/2303-Polar Birch.jpg";
+import rovereCristallo from "../../assets/vsk_category1/2319-Rovere Cristallo.jpg";
+import pinOak from "../../assets/vsk_category1/2334-Pin Oak.jpg";
+import hadfiledWalnut from "../../assets/vsk_category1/2381-Hadfiled Walnut.jpg";
+import hydraTeak from "../../assets/vsk_category1/2461-Hydra teak.jpg";
+import meriboOak from "../../assets/vsk_category1/2803-Meribo Oak.jpg";
+import meriboWood from "../../assets/vsk_category1/2804-Meribo Wood.jpg";
+import lignoHorizontalWood from "../../assets/vsk_category1/2833-Ligno-Horizontal-Wood.jpg";
+import nainaTeak from "../../assets/vsk_category1/2835-Naina teak.jpg";
+import teakClassical from "../../assets/vsk_category1/2838-Teak Classical.jpg";
+import eliteGrains from "../../assets/vsk_category1/2839-Elite Grains.jpg";
+import cocoTeak from "../../assets/vsk_category1/2843-Coco Teak.jpg";
+import desertTeak from "../../assets/vsk_category1/2845-Desert Teak.jpg";
+import royalWood from "../../assets/vsk_category1/2851-Royal Wood.jpg";
+import desertMarble from "../../assets/vsk_category1/2852-Desert Marble.jpg";
+import brownPattern from "../../assets/vsk_category1/2859-Brown Pattern.jpg";
+import calaisEiche from "../../assets/vsk_category1/2865-Calais Eiche.jpg";
+import wisconsinWalnut from "../../assets/vsk_category1/2913-Wisconsin Walnut.jpg";
+import fijeanHorizonWood from "../../assets/vsk_category1/2934- Fijean Horizon Wood.jpg";
+import raminLight from "../../assets/vsk_category1/2935-Ramin Light.jpg";
+import raminDark from "../../assets/vsk_category1/2936-Ramin Dark.jpg";
+import pascalWood from "../../assets/vsk_category1/2966-Pascal Wood.jpg";
+import kayokoWood from "../../assets/vsk_category1/2967-Kayoko Wood.jpg";
+import highlandPine from "../../assets/vsk_category1/7251-Highland Pine.jpg";
+import straightPine from "../../assets/vsk_category1/7254-Straight Pine.jpg";
+import mahogany from "../../assets/vsk_category1/7285-Mahogany.jpg";
+import legalMahogany from "../../assets/vsk_category1/7288-Legal Mahogany.jpg";
+import mountainMaple from "../../assets/vsk_category1/7303-Mountain Maple.jpg";
+import albertaMaple from "../../assets/vsk_category1/7305-Alberta Maple.jpg";
+import ashOak from "../../assets/vsk_category1/7416-Ash Oak.png";
+import miamiWalnut from "../../assets/vsk_category1/7712-Miami walnut.jpg";
+import vegasWalnut from "../../assets/vsk_category1/7717-Vegas Walnut.jpg";
+import wellowTreeWhite from "../../assets/vsk_category1/7771-Wellow Tree White.jpg";
+import diamondStone from "../../assets/vsk_category1/1424-Diamond Stone.jpg";
+
+// --- 2. Special Finishes Imports (vsk_category2) ---
+import tweedGray from "../../assets/vsk_category2/1353-Tweed Gray.jpg";
+import slateDust from "../../assets/vsk_category2/1384-Slate Dust.jpg";
+import chocoDust from "../../assets/vsk_category2/1385-CHOCO DUST.jpg";
+import greenDust from "../../assets/vsk_category2/1386-Green Dust.jpg";
+import lightAluminium from "../../assets/vsk_category2/1411-Light Aluminium.jpg";
+import nordicTerra from "../../assets/vsk_category2/1422-NORDIC-TERRA.jpg";
+import greyStone from "../../assets/vsk_category2/1423-Grey Stone.jpg";
+import zebrawoodMarble from "../../assets/vsk_category2/1458-Zebrawood Marble.jpg";
+import biancoCarraraVenato from "../../assets/vsk_category2/1462-Bianco Carrara Venato.jpg";
+import newPinara from "../../assets/vsk_category2/1468-New Pinara.jpg";
+import blackPinara from "../../assets/vsk_category2/1469-Black Pinara.jpg";
+import pietraMarble from "../../assets/vsk_category2/1480-Pietra Marble.jpg";
+import puntinatoMarble from "../../assets/vsk_category2/1481-Puntinato Marble.jpg";
+import landraGrain from "../../assets/vsk_category2/1489-Landra Grain.jpg";
+import dustZinger from "../../assets/vsk_category2/1490-Dust Zinger.jpg";
+import blueMarble from "../../assets/vsk_category2/1492-Blue Marble.jpg";
+import fontia from "../../assets/vsk_category2/1553-Fontia.jpg";
+import letizia from "../../assets/vsk_category2/1554-Letizia.jpg";
+import saltyPepper from "../../assets/vsk_category2/1568-Salty Pepper.jpg";
+import fireStone from "../../assets/vsk_category2/1608-Fire Stone.jpg";
+import versiliaWhite from "../../assets/vsk_category2/1609-Versilia White.jpg";
+import orientBrown from "../../assets/vsk_category2/1610-Orient Brown.jpg";
+import sorayaGrey from "../../assets/vsk_category2/1635-Soraya Grey.jpg";
+import frausinBlack from "../../assets/vsk_category2/1649-Frausin Black.jpg";
+import brecciaGrey from "../../assets/vsk_category2/1650-Breccia Grey.jpg";
+import fradellaGrey from "../../assets/vsk_category2/1651-Fradella Grey.jpg";
+import travenGreyMin from "../../assets/vsk_category2/1652-Traven Grey-min.jpg";
+import perlinaGrey from "../../assets/vsk_category2/1653-Perlina Grey.jpg";
+import peytonGrey from "../../assets/vsk_category2/1654-Peyton Grey.jpg";
+import haydenBeige from "../../assets/vsk_category2/1655-Hayden Beige.jpg";
+import adrianWhite from "../../assets/vsk_category2/1656-Adrian White.jpg";
+import eltonRed from "../../assets/vsk_category2/1657-Elton Red.jpg";
+import duncanBlue from "../../assets/vsk_category2/1658-Duncan Blue.jpg";
+import lenoraOrange from "../../assets/vsk_category2/1659-Lenora Orange.jpg";
+import yarmouthBlueScaled from "../../assets/vsk_category2/1667-Yarmouth-Blue-scaled.jpg";
+import greyLines from "../../assets/vsk_category2/2844-Grey Lines.jpg";
+import bengalMarble from "../../assets/vsk_category2/2853-Bengal Marble.jpg";
+import quintiaGrey from "../../assets/vsk_category2/2964-Quintia Grey.jpg";
+import harumiBeige from "../../assets/vsk_category2/2965-Harumi Beige.jpg";
+import octiviaGrey from "../../assets/vsk_category2/2969-Octivia Grey.jpg";
+
 const highlights = [
   { number: "01", title: "Contemporary facade", text: "A clean surface language for modern building exteriors." },
   { number: "02", title: "Designed for exterior use", text: "A cladding option intended for projects that need a durable exterior finish." },
@@ -29,83 +112,88 @@ const solidColors = [
 ];
 
 const woodFinishes = [
-  ["1965 Dense Oak", "linear-gradient(135deg,#e0d6c3,#b5a993)"],
-  ["7251 Highland Pine", "linear-gradient(135deg,#d8c4b2,#a39180)"],
-  ["2303 Polar Birch", "linear-gradient(135deg,#e8dfd3,#c2b8aa)"],
-  ["2319 Rovere Cristallo", "linear-gradient(135deg,#d1c4b2,#9e917d)"],
-  ["2334 Pin Oak", "linear-gradient(135deg,#9e9890,#706a62)"],
-  ["2804 Meribo Wood", "linear-gradient(135deg,#d4b596,#a38160)"],
-  ["2833 Ligno Horizontal Wood", "linear-gradient(135deg,#cfae8d,#9e7c5c)"],
-  ["2803 Meribo Oak", "linear-gradient(135deg,#cca682,#9c7551)"],
-  ["2838 Teak Classical", "linear-gradient(135deg,#b89775,#876646)"],
-  ["2839 Elite Grains", "linear-gradient(135deg,#b5a491,#847360)"],
-  ["7771 Wellow Tree White", "linear-gradient(135deg,#dedcd5,#b5b3ac)"],
-  ["7303 Mountain Maple", "linear-gradient(135deg,#dfb891,#ad835c)"],
-  ["7305 Alberta Maple", "linear-gradient(135deg#e0be9b,#ad8d6a)"],
-  ["2082 Weeping Beech", "linear-gradient(135deg,#d6b08a,#a37d57)"],
-  ["2966 Pascal Wood", "linear-gradient(135deg,#ba9875,#886543)"],
-  ["2967 Kayoko Wood", "linear-gradient(135deg,#b89470,#86623e)"],
-  ["7416 Ash Oak", "linear-gradient(135deg,#bfb09d,#8f806d)"],
-  ["2845 Desert Teak", "linear-gradient(135deg,#c4a27d,#93714c)"],
-  ["2851 Royal Wood", "linear-gradient(135deg,#caa783,#987552)"],
-  ["2461 Hydra Teak", "linear-gradient(135deg,#a8784d,#774d22)"],
-  ["2865 Calais Eiche", "linear-gradient(135deg,#b58c63,#845b32)"],
-  ["2913 Wisconsin Walnut", "linear-gradient(135deg,#8f6b4a,#5e3a19)"],
-  ["2381 Hadfiled Walnut", "linear-gradient(135deg,#9e683b,#6d390a)"],
-  ["1981 Orlando Walnut", "linear-gradient(135deg,#7a4b27,#491f00)"],
-  ["2835 Naina Teak", "linear-gradient(135deg,#96623b,#65330c)"],
-  ["7254 Straight Pine", "linear-gradient(135deg,#d6ab82,#a57a51)"],
-  ["7285 Mahogany", "linear-gradient(135deg,#964b2b,#651f00)"],
-  ["7288 Legal Mahogany", "linear-gradient(135deg,#8a4222,#591900)"],
-  ["2202 Raw Charm", "linear-gradient(135deg,#a86e40,#773d0f)"],
-  ["2859 Brown Pattern", "linear-gradient(135deg,#6e5b4d,#3d2a1c)"],
-  ["2234 Juglan Burch", "linear-gradient(135deg,#6b523f,#3a210e)"],
-  ["7717 Vegas Walnut", "linear-gradient(135deg,#9e5d30,#6d2d00)"],
-  ["2843 Cocoa Teak", "linear-gradient(135deg,#5e3f2b,#2d1200)"],
-  ["7712 Miami Walnut", "linear-gradient(135deg,#523824,#210d00)"]
+  ["1965 Dense Oak", denseOak],
+  ["7251 Highland Pine", highlandPine],
+  ["2303 Polar Birch", polarBirch],
+  ["2319 Rovere Cristallo", rovereCristallo],
+  ["2334 Pin Oak", pinOak],
+  ["2804 Meribo Wood", meriboWood],
+  ["2833 Ligno Horizontal Wood", lignoHorizontalWood],
+  ["2803 Meribo Oak", meriboOak],
+  ["2838 Teak Classical", teakClassical],
+  ["2839 Elite Grains", eliteGrains],
+  ["7771 Wellow Tree White", wellowTreeWhite],
+  ["7303 Mountain Maple", mountainMaple],
+  ["7305 Alberta Maple", albertaMaple],
+  ["2082 Weeping Beech", weepingBeech],
+  ["2966 Pascal Wood", pascalWood],
+  ["2967 Kayoko Wood", kayokoWood],
+  ["7416 Ash Oak", ashOak],
+  ["2845 Desert Teak", desertTeak],
+  ["2851 Royal Wood", royalWood],
+  ["2461 Hydra Teak", hydraTeak],
+  ["2865 Calais Eiche", calaisEiche],
+  ["2913 Wisconsin Walnut", wisconsinWalnut],
+  ["2381 Hadfiled Walnut", hadfiledWalnut],
+  ["1981 Orlando Walnut", orlandoWalnut],
+  ["2835 Naina Teak", nainaTeak],
+  ["7254 Straight Pine", straightPine],
+  ["7285 Mahogany", mahogany],
+  ["7288 Legal Mahogany", legalMahogany],
+  ["2202 Raw Charm", rawCharm],
+  ["2859 Brown Pattern", brownPattern],
+  ["2234 Juglan Burch", juglanBurch],
+  ["7717 Vegas Walnut", vegasWalnut],
+  ["2843 Cocoa Teak", cocoTeak],
+  ["7712 Miami Walnut", miamiWalnut],
+  ["1424 Diamond Stone", diamondStone],
+  ["2852 Desert Marble", desertMarble],
+  ["2934 Fijean Horizon Wood", fijeanHorizonWood],
+  ["2935 Ramin Light", raminLight],
+  ["2936 Ramin Dark", raminDark]
 ];
 
 const specialFinishes = [
-  ["1353 Tweed Gray", "linear-gradient(135deg,#c2c4bc,#91938b)"],
-  ["1411 Light Aluminium", "linear-gradient(135deg,#d1d5db,#9ca3af)"],
-  ["1384 Slate Dust", "linear-gradient(135deg,#8a8f98,#595e67)"],
-  ["1481 Puntinato Marble", "linear-gradient(135deg,#dedcd5,#ab9f91)"],
-  ["1489 Landra Grain", "linear-gradient(135deg,#d6d4ce,#a3a19b)"],
-  ["1490 Dust Zinger", "linear-gradient(135deg,#c7c5be,#96948d)"],
-  ["1653 Perlina Gery", "linear-gradient(135deg,#d8dede,#a7adad)"],
-  ["1650 Breccia Grey", "linear-gradient(135deg,#a3a9ad,#72787c)"],
-  ["1652 Traven Grey", "linear-gradient(135deg,#b0b6ba,#7f8589)"],
-  ["1480 Pietra Marble", "linear-gradient(135deg,#b8b8b0,#87877f)"],
-  ["1468 New Pinara", "linear-gradient(135deg,#a3a3a3,#727272)"],
-  ["1469 Black Pinara", "linear-gradient(135deg,#3d3d3d,#1a1a1a)"],
-  ["1656 Adrian White", "linear-gradient(135deg,#f0ede6,#bfa79f)"],
-  ["1654 Peyton Grey", "linear-gradient(135deg,#e0e0e0,#afafaf)"],
-  ["1655 Hayden Beige", "linear-gradient(135deg,#d9cebe,#a89d8d)"],
-  ["2853 Bengal Marble", "linear-gradient(135deg,#c4b5a3,#938472)"],
-  ["2964 Quintia Grey", "linear-gradient(135deg,#d1d5db,#9ca3af)"],
-  ["2965 Harumi Beige", "linear-gradient(135deg,#e5dccb,#b4a99a)"],
-  ["1568 Salty Pepper", "linear-gradient(135deg,#f0f0f0,#bfbfbf)"],
-  ["1553 Fontia", "linear-gradient(135deg,#e6dec9,#b5ad98)"],
-  ["1609 Versilia", "linear-gradient(135deg,#e3e6eb,#b2b5ba)"],
-  ["1667 Yarmouth Blue", "linear-gradient(135deg,#d3dbe3,#a2aab2)"],
-  ["2969 Octivia Grey", "linear-gradient(135deg,#9ca3af,#6b7280)"],
-  ["2844 Grey Lines", "linear-gradient(135deg,#848c96,#535b65)"],
-  ["1651 Fradella Grey", "linear-gradient(135deg,#6b726b,#3a413a)"],
-  ["1635 Soraya Grey", "linear-gradient(135deg,#787c7e,#474b4d)"],
-  ["1649 Frausin Black", "linear-gradient(135deg,#2b2b2b,#0a0a0a)"],
-  ["1492 Blue Marble", "linear-gradient(135deg,#3b4a59,#1a2530)"],
-  ["1608 Fire Stone", "linear-gradient(135deg,#2b2424,#0a0505)"],
-  ["1554 Letizia", "linear-gradient(135deg,#423a35,#211914)"],
-  ["1659 Lenora Orange", "linear-gradient(135deg,#d98b6c,#a85a3b)"],
-  ["1423 Grey Stone", "linear-gradient(135deg,#4a4e51,#191d20)"],
-  ["1458 Zebrawood Marbel", "linear-gradient(135deg,#54595d,#23282c)"],
-  ["1385 Choco Dust", "linear-gradient(135deg,#705642,#3f2511)"],
-  ["1386 Green Dust", "linear-gradient(135deg,#4a615d,#19302c)"],
-  ["1422 Nordic Terra", "linear-gradient(135deg,#627382,#314251)"],
-  ["1610 Orient Brown", "linear-gradient(135deg,#59362b,#280500)"],
-  ["1657 Elton Red", "linear-gradient(135deg,#7a3b4a,#490a19)"],
-  ["1658 Duncan Blue", "linear-gradient(135deg,#4a5d7a,#192c49)"],
-  ["1462 Bianco Carrara Venato", "linear-gradient(135deg,#f7f9fa,#c6c8c9)"]
+  ["1353 Tweed Gray", tweedGray],
+  ["1411 Light Aluminium", lightAluminium],
+  ["1384 Slate Dust", slateDust],
+  ["1481 Puntinato Marble", puntinatoMarble],
+  ["1489 Landra Grain", landraGrain],
+  ["1490 Dust Zinger", dustZinger],
+  ["1653 Perlina Gery", perlinaGrey],
+  ["1650 Breccia Grey", brecciaGrey],
+  ["1652 Traven Grey", travenGreyMin],
+  ["1480 Pietra Marble", pietraMarble],
+  ["1468 New Pinara", newPinara],
+  ["1469 Black Pinara", blackPinara],
+  ["1656 Adrian White", adrianWhite],
+  ["1654 Peyton Grey", peytonGrey],
+  ["1655 Hayden Beige", haydenBeige],
+  ["2853 Bengal Marble", bengalMarble],
+  ["2964 Quintia Grey", quintiaGrey],
+  ["2965 Harumi Beige", harumiBeige],
+  ["1568 Salty Pepper", saltyPepper],
+  ["1553 Fontia", fontia],
+  ["1609 Versilia", versiliaWhite],
+  ["1667 Yarmouth Blue", yarmouthBlueScaled],
+  ["2969 Octivia Grey", octiviaGrey],
+  ["2844 Grey Lines", greyLines],
+  ["1651 Fradella Grey", fradellaGrey],
+  ["1635 Soraya Grey", sorayaGrey],
+  ["1649 Frausin Black", frausinBlack],
+  ["1492 Blue Marble", blueMarble],
+  ["1608 Fire Stone", fireStone],
+  ["1554 Letizia", letizia],
+  ["1659 Lenora Orange", lenoraOrange],
+  ["1423 Grey Stone", greyStone],
+  ["1458 Zebrawood Marble", zebrawoodMarble],
+  ["1385 Choco Dust", chocoDust],
+  ["1386 Green Dust", greenDust],
+  ["1422 Nordic Terra", nordicTerra],
+  ["1610 Orient Brown", orientBrown],
+  ["1657 Elton Red", eltonRed],
+  ["1658 Duncan Blue", duncanBlue],
+  ["1462 Bianco Carrara Venato", biancoCarraraVenato]
 ];
 
 const hardware = [
@@ -131,13 +219,15 @@ export default function Cubicles4() {
     activeFinishes = specialFinishes;
   }
 
-  const finishes = activeFinishes.map(([name, value]) => {
-    const isGradient = value.startsWith("linear-gradient");
-    return {
-      name,
-      style: isGradient ? { background: value } : { backgroundColor: value },
-    };
-  });
+  
+
+  const finishes = activeFinishes.map(([name, value]) => ({
+    name,
+    value,
+    isImage: finishCategory !== "standard",
+  }));
+
+
 
   return (
     <>
@@ -224,9 +314,24 @@ export default function Cubicles4() {
                 className={`vsk-finish-swatch ${selected === finish.name ? "selected" : ""}`}
                 onClick={() => setSelected(finish.name)}
                 aria-pressed={selected === finish.name}
-              >
-                <span style={finish.style} />
+              >                      
+                <span
+                  style={
+                    finish.isImage
+                      ? {}
+                      : { backgroundColor: finish.value }
+                  }
+                >
+                  {finish.isImage && (
+                    <img
+                      src={finish.value}
+                      alt={finish.name}
+                      loading="lazy"
+                    />
+                  )}
+                </span>
                 <small>{finish.name}</small>
+
               </button>
             ))}
           </div>

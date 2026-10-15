@@ -17,7 +17,7 @@ const reviews = [
 
   {
     id: 2,
-    name: "Irfana Assiff",
+    name: "Edwin Prakash",
     place: "Chennai",
     review:
       "VSK Enterprises provided a clean and professional restroom solution for our commercial space. The cubicles look modern, strong, and well-finished. Their team was responsive and completed the installation as discussed.",

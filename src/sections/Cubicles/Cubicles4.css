@@ -127,3 +127,40 @@
   .vsk-finish-swatch > span { height: 58px; } 
   .vsk-materials-content { grid-template-columns: 1fr; } 
 }
+
+
+
+/* Bigger finish images, less empty space */
+.vsk-finish-swatch {
+  min-height: 0;
+  height: auto;
+  padding: 5px;
+}
+
+.vsk-finish-swatch > span {
+  flex: none;
+  height: 125px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.vsk-finish-swatch > span img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.vsk-finish-swatch small {
+  flex: none;
+  margin-top: 5px;
+  padding: 0 2px 2px;
+  line-height: 1.3;
+  font-size: 11px;
+}
+
+@media (max-width: 600px) {
+  .vsk-finish-swatch > span {
+    height: 90px;
+  }
+}

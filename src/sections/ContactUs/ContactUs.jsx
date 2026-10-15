@@ -8,7 +8,7 @@ const EMAIL = 'varun@vskenterprises.in';
 const WEBSITE = 'https://www.vskenterprises.in';
 const WHATSAPP_NUMBER = '919791128296';
 
-const MAP_QUERY = 'Malayambakkam South, Kanchipuram, Chennai 600069';
+const MAP_QUERY = 'VSK Enterprises, 1134/1A1B, Malayambakkam South, Chennai 600069';
 const MAP_EMBED = `https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&output=embed`;
 const MAP_LINK = `https://maps.app.goo.gl/qYpi9HxJqCnX6JLo9`;
 

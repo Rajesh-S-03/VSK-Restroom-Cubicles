@@ -214,8 +214,8 @@
 
   margin: 8px 0 0;
 
-  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
-  font-weight: 800;
+  font-size: 16px;
+  font-weight: 700;
   line-height: 1.6;
   letter-spacing: 0.2px;
 
@@ -238,14 +238,41 @@
     transform 0.3s ease;
 }
 .contact-us-container .info-card a[href^="http"] {
-  font-size: clamp(1rem, 1.3vw, 1.2rem);
-  font-weight: 800;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 /* Attractive hover effect */
 .contact-us-container .info-card a:hover {
   filter: brightness(1.2);
   transform: translateX(4px);
+}
+
+
+/* Keep contact details consistent across cards */
+.contact-us-container .info-card a {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 700;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.contact-us-container .info-card a[href^="mailto:"] {
+  font-size: clamp(13px, 1.1vw, 16px);
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.contact-us-container .info-card {
+  min-width: 0;
+}
+
+@media (min-width: 992px) {
+  .contact-us-container .contact-info {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
 }
 
 /* =========================================================

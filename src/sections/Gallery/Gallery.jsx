@@ -10,28 +10,28 @@ import img4 from "../../assets/clients/gal7.png";
 import img5 from "../../assets/clients/gallery1.png";
 import img6 from "../../assets/clients/gal8.png";
 import img7 from "../../assets/clients/gal9.png";
-// import img8 from "../../assets/clients/g10.png";
+import img8 from "../../assets/clients/ga11.png";
 import img9 from "../../assets/clients/g10.png";
 import img10 from "../../assets/clients/gal4.jpeg";
-// import img11 from "../../assets/applications/gyms.jpg";
-import img12 from "../../assets/applications/gyms.jpg";
-import img13 from "../../assets/applications/gyms.jpg";
-import img14 from "../../assets/applications/gyms.jpg";
-import img15 from "../../assets/applications/gyms.jpg";
+import img11 from "../../assets/clients/ga15.png";
+import img12 from "../../assets/clients/ga12.png";
+import img13 from "../../assets/clients/gal3.jpeg";
+import img14 from "../../assets/clients/ga68.jpeg";
+import img15 from "../../assets/clients/ga69.png";
 
 
 const galleryImages = [
-  img5,
+  //img5,
   img6,
   img7,
-  // img8,
+  img8,
   img9,
   img10,
-  // img11,
-//   img12,
-//   img13,
-//   img14,
-//   img15,
+img11,
+img12,
+img13,
+img14,
+img15,
 ];
 
 const Gallery = () => {

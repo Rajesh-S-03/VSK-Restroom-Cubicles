@@ -1,7 +1,8 @@
 import './Footer.css';
+import { Link } from 'react-router-dom';
 import vskLogo from '../assets/vsklogo.png';
-import secondLogo from '../assets/clients/V Space.png'
-import thirdLogo from '../assets/clients/STYLAM.png'
+import secondLogo from '../assets/clients/V Space.png';
+import thirdLogo from '../assets/clients/STYLAM.png';
 
 const Footer = () => {
   return (
@@ -22,38 +23,47 @@ const Footer = () => {
           {/* =========================
               COLUMN 1 - BRAND
           ========================== */}
-<div className="footer-col footer-brand">
+          <div className="footer-col footer-brand">
 
-  <div className="footer-logos">
-    <img
-      src={vskLogo}
-      alt="VSK Enterprises"
-      className="footer-logo"
-    />
+            <div className="footer-logos">
+              <div className="logo-item">
+                <img
+                  src={vskLogo}
+                  alt="VSK Enterprises"
+                  className="footer-logo"
+                />
+              </div>
 
-    <span className="footer-logo-divider"></span>
+              <span className="footer-logo-divider"></span>
 
-    <img
-      src={secondLogo}
-      alt="Partner Logo"
-      className="footer-logo footer-logo-secondary"
-    />
-    <span className="footer-logo-divider"></span>
-    <img
-      src={thirdLogo}
-      alt="STYLAM"
-      className="footer-logo footer-logo-tertiary"
-    />
-  </div>
+              <div className="logo-item">
+                <img
+                  src={secondLogo}
+                  alt="Partner Logo"
+                  className="footer-logo footer-logo-secondary"
+                />
+              </div>
 
-  <div className="brand-line"></div>
+              <span className="footer-logo-divider"></span>
 
-  <p className="footer-about">
-    Premium restroom cubicle systems engineered
-    for modern commercial spaces.
-  </p>
+              <div className="logo-item">
+                <img
+                  src={thirdLogo}
+                  alt="STYLAM"
+                  className="footer-logo footer-logo-tertiary"
+                />
+                <span className="channel-partner-label">Channel Partner</span>
+              </div>
+            </div>
 
-</div>
+            <div className="brand-line"></div>
+
+            <p className="footer-about">
+              Premium restroom cubicle systems engineered
+              for modern commercial spaces.
+            </p>
+
+          </div>
 
 
           {/* =========================
@@ -68,35 +78,12 @@ const Footer = () => {
             <div className="title-line"></div>
 
             <ul className="footer-links">
-
-              <li>
-                <a href="#home">
-                  <span>›</span>
-                  Home
-                </a>
-              </li>
-
-              <li>
-                <a href="#about">
-                  <span>›</span>
-                  About Us
-                </a>
-              </li>
-
-              <li>
-                <a href="#products">
-                  <span>›</span>
-                  Products
-                </a>
-              </li>
-
-              <li>
-                <a href="#contact">
-                  <span>›</span>
-                  Contact Us
-                </a>
-              </li>
-
+              <li><Link to="/"><span>›</span> Home</Link></li>
+              <li><Link to="/about"><span>›</span> About Us</Link></li>
+              <li><Link to="/restroom-cubicles"><span>›</span> Restroom Cubicles</Link></li>
+              <li><Link to="/our-clients"><span>›</span> Clients</Link></li>
+              <li><Link to="/gallery"><span>›</span> Gallery</Link></li>
+              <li><Link to="/contact-us"><span>›</span> Contact Us</Link></li>
             </ul>
 
           </div>

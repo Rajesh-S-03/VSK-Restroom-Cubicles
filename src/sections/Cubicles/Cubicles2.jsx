@@ -13,8 +13,8 @@ import ano3 from "../../assets/applications/ano3.jpeg";
 import tmm1 from "../../assets/applications/12mm1.jpeg";
 import tmm2 from "../../assets/applications/12mm2.jpeg";
 import tmm3 from "../../assets/applications/12mm3.jpeg";
-import shoe1 from "../../assets/applications/shoebox.jpeg";
-import shoe2 from "../../assets/applications/shoebox.jpeg";
+import shoe1 from "../../assets/applications/shoebox1.png";
+import shoe2 from "../../assets/clients/ga69.png";
 import shoe3 from "../../assets/applications/shoebox.jpeg";
 import pd1 from "../../assets/applications/pd1.jpeg";
 import pd2 from "../../assets/applications/pd2.jpeg";
@@ -167,7 +167,7 @@ const cubicleData = [
   },
   {
     id: "05",
-    key: "12mm Box-Up Shoe",
+    key: "12mm Box-Up Shoe Series",
     eyebrow: "05 / CUBICLE SERIES",
     title: "12mm Box-Up Shoe",
     subtitle: "Strong. Neat. Functional.",

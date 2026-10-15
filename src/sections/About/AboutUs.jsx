@@ -9,7 +9,7 @@ import glanceImg from '../../assets/glanceimg.png';
 // VIDEO
 // =========================================================
 
-import aboutVideo from '../../assets/applications/aboutV.mp4';
+import aboutVideo from '../../assets/applications/aboutVideo.mp4';
 import FounderSection from './Founder';
 
 

@@ -41,6 +41,9 @@ const allFrames = [...buildFrames, ...urinalsFrames];
 
 const TOTAL_FRAMES = allFrames.length;
 
+const sharedImages = new Array(TOTAL_FRAMES);
+const sharedLoaded = new Uint8Array(TOTAL_FRAMES);
+
 // =========================================================
 // FRAME BOUNDARY
 // Frames 0 .. buildEnd-1      -> BUILD
@@ -54,22 +57,19 @@ const buildEnd = buildFrames.length;
 // =========================================================
 
 /*
+  NO loading screen. The page is usable immediately.
+
   Step 1: the first frame loads ALONE with high priority.
-  Step 2: coarse frames (every 2nd + the last one) load next,
-          so half of the sequence is ready before the
-          animation can outrun the loading.
+  Step 2: coarse frames (every 2nd + the last one) load next.
   Step 3: all remaining frames fill in, in the background.
 
-  Fewer parallel requests (4) keep memory and network
-  pressure lower on laptops with large frames.
+  While frames are still loading, the nearest already-loaded
+  frame is shown, so scrolling never shows a blank screen.
 */
 
-
 const COARSE_STEP = 2;
-const CONCURRENCY = 3;
+const CONCURRENCY = 6;
 const MAX_RETRIES = 2;
-const DECODE_AHEAD = 4;
-
 
 // =========================================================
 // SCROLL SETTINGS
@@ -141,12 +141,6 @@ const LOAD_ORDER = (() => {
   return order;
 })();
 
-const COARSE_COUNT = Math.min(
-  TOTAL_FRAMES,
-  Math.ceil(TOTAL_FRAMES / COARSE_STEP) +
-    (TOTAL_FRAMES > 0 && (TOTAL_FRAMES - 1) % COARSE_STEP !== 0 ? 1 : 0)
-);
-
 // =========================================================
 // HERO1
 // =========================================================
@@ -155,45 +149,43 @@ const Hero1 = () => {
   const [frameIndex, setFrameIndex] = useState(0);
   const [progress, setProgress] = useState(0);
 
-  const [ready, setReady] = useState(TOTAL_FRAMES === 0);
-  const [loadedCount, setLoadedCount] = useState(0);
-
   // Only used to re-render while background frames keep loading,
   // so the nearest-frame fallback upgrades even if the user is idle.
   const [, setFillTick] = useState(0);
 
   // Keep references to the Image objects so the browser
   // does not garbage-collect / evict them.
-  const imagesRef = useRef([]);
-  const loadedRef = useRef(new Uint8Array(TOTAL_FRAMES));
+  const imagesRef = useRef(sharedImages);
+  const loadedRef = useRef(sharedLoaded);
 
   // Frame the scroll position asks for / frame currently shown.
   const targetFrameRef = useRef(0);
   const currentFrameRef = useRef(0);
 
   // =======================================================
-  // PRELOAD FRAMES
+  // PRELOAD FRAMES (background, no loading screen)
   // (first frame alone -> coarse frames -> remaining frames;
   //  parallel, decoded, with retries and full cleanup)
   // =======================================================
 
   useEffect(() => {
-    if (TOTAL_FRAMES === 0) {
-      setReady(true);
-      return undefined;
-    }
+    if (TOTAL_FRAMES === 0) return undefined;
 
     let cancelled = false;
     let cursor = 0;
-    let coarseDone = 0;
-    let fillDone = 0;
+    let doneCount = 0;
 
     const retryTimers = new Set();
     const inFlight = new Set();
 
     // Load one image, decode it, and retry if necessary.
-    const loadOne = (index) =>
-      new Promise((resolve) => {
+    const loadOne = (index) => {
+      // Already loaded? Reuse the cached image.
+      if (loadedRef.current[index] && imagesRef.current[index]) {
+        return Promise.resolve(true);
+      }
+
+      return new Promise((resolve) => {
         let attemptNumber = 0;
         let settled = false;
 
@@ -224,14 +216,12 @@ const Hero1 = () => {
           inFlight.add(img);
 
           img.onload = async () => {
-            // onload does not guarantee the image is decoded,
-            // so decode() it once before marking it ready.
             try {
               if (typeof img.decode === 'function') {
                 await img.decode();
               }
             } catch {
-              // Image loaded; continue even if decode() rejects.
+              // Continue even if decode() rejects.
             }
 
             inFlight.delete(img);
@@ -264,20 +254,14 @@ const Hero1 = () => {
 
         attempt();
       });
+    };
 
-    // Counts a finished frame (loaded OR failed) so the loader
-    // can never stay stuck on one bad image.
-    const registerDone = (position) => {
-      if (position < COARSE_COUNT) {
-        coarseDone++;
-        setLoadedCount(coarseDone);
+    // Re-render every few finished frames so the nearest-frame
+    // fallback upgrades to the exact frame as soon as it loads.
+    const registerDone = () => {
+      doneCount++;
 
-        if (coarseDone >= COARSE_COUNT) setReady(true);
-      } else {
-        fillDone++;
-
-        if (fillDone % 8 === 0) setFillTick((tick) => tick + 1);
-      }
+      if (doneCount % 4 === 0) setFillTick((tick) => tick + 1);
     };
 
     const worker = async () => {
@@ -291,7 +275,7 @@ const Hero1 = () => {
 
         if (cancelled) return;
 
-        registerDone(position);
+        registerDone();
       }
     };
 
@@ -303,7 +287,8 @@ const Hero1 = () => {
 
       if (cancelled) return;
 
-      registerDone(0);
+      registerDone();
+      setFillTick((tick) => tick + 1);
 
       // STEP 2 + 3 — coarse frames first, then the rest, in parallel
       await Promise.all(
@@ -315,8 +300,6 @@ const Hero1 = () => {
 
       if (cancelled) return;
 
-      // All preload attempts have finished.
-      setReady(true);
       setFillTick((tick) => tick + 1);
 
       console.info(
@@ -554,16 +537,6 @@ const Hero1 = () => {
   const hero1Y = Math.max(0, 100 - (progress / 0.12) * 100);
 
   // =======================================================
-  // LOADER (inline styles, no CSS changes needed)
-  // Tied to the coarse frames that make the animation usable.
-  // =======================================================
-
-  const loadPercent = Math.min(
-    100,
-    Math.round((loadedCount / Math.max(1, COARSE_COUNT)) * 100)
-  );
-
-  // =======================================================
   // RETURN
   // =======================================================
 
@@ -685,46 +658,6 @@ const Hero1 = () => {
 
           {String(TOTAL_FRAMES).padStart(3, '0')}
         </div> */}
-
-        {/* LOADING OVERLAY (until the coarse pass is done) */}
-
-        {!ready && (
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              zIndex: 50,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '18px',
-              background: '#080b0a',
-              color: '#fff',
-              fontSize: '11px',
-              letterSpacing: '3px',
-            }}
-          >
-            <span>LOADING {loadPercent}%</span>
-
-            <div
-              style={{
-                width: '180px',
-                height: '2px',
-                background: 'rgba(255,255,255,0.15)',
-              }}
-            >
-              <div
-                style={{
-                  width: `${loadPercent}%`,
-                  height: '100%',
-                  background: '#18b878',
-                  transition: 'width 0.2s ease',
-                }}
-              />
-            </div>
-          </div>
-        )}
 
       </div>
     </div>
